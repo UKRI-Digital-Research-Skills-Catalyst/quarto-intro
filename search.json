@@ -2,15 +2,15 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "quarto-intro",
+    "title": "Welcome",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "general info about the course"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "before.html",
+    "href": "before.html",
+    "title": "Pre-course instructions for participants",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "To participate in this course, you will need a computer with internet access.\nOption 1: Use Posit Cloud\nOption 2: Install R and RStudio on your computer"
   }
 ]
