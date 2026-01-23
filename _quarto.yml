@@ -1,21 +1,63 @@
 project:
   type: website
+  output-dir: _site
+
+date: last-modified
+date-format: D MMMM, YYYY
 
 website:
-  title: "quarto-intro"
+  title: "Introduction Quarto"
+
   navbar:
+    background: primary  # Or remove this to use brand background color
+    site-url: https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
+    repo-url: https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
+    page-navigation: true
+    search: true
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "Welcome!"
+        file: index.qmd
+      - text: "Before the course"
+        file:  before.qmd
+      - text: "Materials"
+        file:  materials.qmd
+
+execute:
+  echo: true
+  warning: false
+  output: true
+  error: true
+  collapse: true
+  freeze: auto
+
+engine: knitr
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
     css: styles.css
+    link-external-newwindow: true
+    link-external-filter: '^(?:http:|https:)\/\/ukri-digital-research-skills-catalyst\.github\.io\/quarto-intro'
+    # Consider removing theme to let brand colors work fully
+    # Or create a custom SCSS theme that uses your brand colors
+    code-copy: true
+    code-link: true
+    code-tools: true
+    code-overflow: wrap
+    code-line-numbers: false
     toc: true
+    toc-depth: 4
+    fig-format: svg
+    lightbox: true
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 300px
 
+metadata-files:
+  - _downlit.yml
 
+fig-dpi: 600
 
+bibliography: references.bib
+
+editor: source

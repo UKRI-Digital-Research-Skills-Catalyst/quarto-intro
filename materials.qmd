@@ -1,0 +1,5 @@
+---
+title: "Reproducible reports with Quarto"
+toc: true
+toc-location: right
+---

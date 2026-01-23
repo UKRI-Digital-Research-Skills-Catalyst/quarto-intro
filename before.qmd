@@ -1,0 +1,12 @@
+---
+title: "Pre-course instructions for participants"
+toc: true
+toc-location: right
+---
+
+To participate in this course, you will need a computer with internet
+access.
+
+Option 1: Use Posit Cloud
+
+Option 2: Install R and RStudio on your computer

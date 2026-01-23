@@ -1,11 +1,7 @@
 ---
-title: "quarto-intro"
+title: "Welcome"
+toc: true
+toc-location: right
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+general info about the course
