@@ -7,7 +7,8 @@ date-format: D MMMM, YYYY
 
 website:
   title: "Introduction Quarto"
-
+  page-footer:
+    left: "<https://digitalskillscatalyst.ac.uk/>."
   navbar:
     background: primary  # Or remove this to use brand background color
     site-url: https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
