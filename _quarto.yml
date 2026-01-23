@@ -10,7 +10,7 @@ website:
   page-footer:
     left: "<https://digitalskillscatalyst.ac.uk/>."
   navbar:
-    background: primary  # Or remove this to use brand background color
+    background: foreground  # Or remove this to use brand background color
     site-url: https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
     repo-url: https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
     page-navigation: true
