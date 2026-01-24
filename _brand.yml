@@ -11,9 +11,9 @@ meta:
 logo:
   images:
     icon:
-      path: images/logo_no_text_cream_background.png
+      path: images/logo_transparent_background.png
       alt: UKRI Digital Research Skills Catalyst logo
-  small: images/logo_no_text_cream_background.png
+  small: images/logo_transparent_background.png
 
 color:
   palette:
@@ -51,6 +51,6 @@ typography:
   
   link:
     weight: 700
-    color: secondary
+    color: tertiary
     decoration: none
 
