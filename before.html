@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pre-course instructions for participants – Introduction Quarto</title>
+<title>Pre-course instructions – Reproducible reports with Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <img src="./images/logo_no_text_cream_background.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Introduction Quarto</span>
+    <span class="navbar-title">Reproducible reports with Quarto</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -157,15 +157,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#use-posit-cloud" id="toc-use-posit-cloud" class="nav-link active" data-scroll-target="#use-posit-cloud">Use Posit Cloud</a></li>
+  <li><a href="#install-r-and-rstudio-on-your-computer" id="toc-install-r-and-rstudio-on-your-computer" class="nav-link" data-scroll-target="#install-r-and-rstudio-on-your-computer">Install R and RStudio on your computer</a>
+  <ul>
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a></li>
+  <li><a href="#mac" id="toc-mac" class="nav-link" data-scroll-target="#mac">Mac</a></li>
+  <li><a href="#linux" id="toc-linux" class="nav-link" data-scroll-target="#linux">Linux</a></li>
+  </ul></li>
+  <li><a href="#additional-considerations" id="toc-additional-considerations" class="nav-link" data-scroll-target="#additional-considerations">Additional considerations</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Pre-course instructions for participants</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title">Pre-course instructions</h1>
 </div>
 
 
@@ -176,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">23 January, 2026</p>
+      <p class="date">24 January, 2026</p>
     </div>
   </div>
   
@@ -189,12 +202,113 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>To participate in this course, you will need a computer with internet access.</p>
-<p>Option 1: Use Posit Cloud</p>
-<p>Option 2: Install R and RStudio on your computer</p>
+<p>To follow along with the activities with the instructor, you will need R and RStudio installed on your computer, <strong>or</strong> access to Posit Cloud, an online platform for R and RStudio.</p>
+<p>If you are using a computer provided by your organization (e.g., employer, school), you may need your IT department to install the software. If that is not possible, you can use Posit Cloud instead.</p>
+<section id="use-posit-cloud" class="level2">
+<h2 class="anchored" data-anchor-id="use-posit-cloud">Use Posit Cloud</h2>
+<p>Posit Cloud is an online platform that allows you to use R and RStudio directly from your web browser, without needing to install anything on your computer. The <a href="https://posit.cloud/plans/free">free plan</a> is plenty for this workshop</p>
+<ol type="1">
+<li>Go to <a href="https://positcloud.com/" class="uri">https://positcloud.com/</a></li>
+<li>Create a free account by clicking “Sign Up” in the top right corner</li>
+<li>Once logged in, click “New Project” and select “New RStudio Project”</li>
+<li>You can now use R and RStudio in your web browser!</li>
+</ol>
+</section>
+<section id="install-r-and-rstudio-on-your-computer" class="level2">
+<h2 class="anchored" data-anchor-id="install-r-and-rstudio-on-your-computer">Install R and RStudio on your computer</h2>
+<p>If you already have R and RStudio installed, check that you have at least R version 4.2 and RStudio version 2022.07 or later. If not, please install the latest versions by following the instructions below. Quarto comes with recent versions of RStudio and does not need to be installed separately.</p>
+<section id="windows" class="level3">
+<h3 class="anchored" data-anchor-id="windows">Windows</h3>
+<ol type="1">
+<li><strong>Install R:</strong>
+<ul>
+<li>Go to <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a></li>
+<li>Click “Download R-4.x.x for Windows” (where x.x is the latest version number)</li>
+<li>Run the downloaded <code>.exe</code> file and follow the installation wizard</li>
+<li>Accept the default settings</li>
+</ul></li>
+<li><strong>Install RStudio:</strong>
+<ul>
+<li>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></li>
+<li>Click “Download RStudio Desktop for Windows”</li>
+<li>Run the downloaded <code>.exe</code> file and follow the installation wizard</li>
+<li>Accept the default settings</li>
+</ul></li>
+</ol>
+</section>
+<section id="mac" class="level3">
+<h3 class="anchored" data-anchor-id="mac">Mac</h3>
+<ol type="1">
+<li><strong>Install R:</strong>
+<ul>
+<li>Go to <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a></li>
+<li>Download the <code>.pkg</code> file for your Mac:
+<ul>
+<li>For Apple Silicon Macs (M1, M2, M3): Download the “arm64” version</li>
+<li>For Intel Macs: Download the “x86_64” version</li>
+</ul></li>
+<li>Open the downloaded <code>.pkg</code> file and follow the installation wizard</li>
+<li>Accept the default settings</li>
+</ul></li>
+<li><strong>Install RStudio:</strong>
+<ul>
+<li>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></li>
+<li>Click “Download RStudio Desktop for macOS”</li>
+<li>Open the downloaded <code>.dmg</code> file</li>
+<li>Drag the RStudio icon to your Applications folder</li>
+</ul></li>
+</ol>
+</section>
+<section id="linux" class="level3">
+<h3 class="anchored" data-anchor-id="linux">Linux</h3>
+<ol type="1">
+<li><p><strong>Install R:</strong></p>
+<ul>
+<li>Open a terminal</li>
+<li>For Ubuntu/Debian:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sudo</span> apt update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sudo</span> apt install r-base r-base-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>For Fedora:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sudo</span> dnf install R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>For other distributions, see <a href="https://cran.r-project.org/bin/linux/" class="uri">https://cran.r-project.org/bin/linux/</a></li>
+</ul></li>
+<li><p><strong>Install RStudio:</strong></p>
+<ul>
+<li>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></li>
+<li>Download the appropriate <code>.deb</code> (Ubuntu/Debian) or <code>.rpm</code> (Fedora/RedHat) file</li>
+<li>For Ubuntu/Debian:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sudo</span> dpkg <span class="at">-i</span> rstudio-<span class="pp">*</span>.deb</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sudo</span> apt install <span class="at">-f</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>For Fedora:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sudo</span> dnf install rstudio-<span class="pp">*</span>.rpm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Verify your installation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open RStudio and you should see the R console. Type <code>version</code> and press Enter to confirm R is working.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="additional-considerations">Additional considerations</h2>
 
 
-<!-- -->
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -267,57 +381,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -652,20 +715,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Pre-course instructions for participants"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">toc-location:</span><span class="co"> right</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>To participate in this course, you will need a computer with internet</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>access.</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Option 1: Use Posit Cloud</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Option 2: Install R and RStudio on your computer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
