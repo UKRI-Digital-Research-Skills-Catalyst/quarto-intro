@@ -7,10 +7,12 @@ date-format: D MMMM, YYYY
 
 website:
   title: "Reproducible reports<br>with Quarto"
+  favicon: images/logo_no_text_transparent.png
   page-footer:
     left: "<https://digitalskillscatalyst.ac.uk/>."
   navbar:
     logo: images/logo_transparent_background.png
+    logo-href: https://digitalskillscatalyst.ac.uk/
     background: primary
     site-url: https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
     repo-url: https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/

@@ -13,7 +13,7 @@ logo:
     icon:
       path: images/logo_transparent_background.png
       alt: UKRI Digital Research Skills Catalyst logo
-  small: images/logo_no_text_transparent.png
+  small: images/logo_transparent_background.png
 
 color:
   palette:
