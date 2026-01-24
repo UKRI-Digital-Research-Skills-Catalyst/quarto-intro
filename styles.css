@@ -12,10 +12,10 @@
 }
 
 /* Add padding to navbar to accommodate larger logo */
-/* .navbar {
-/*   padding-top: 0.75rem;
-/*   padding-bottom: 0.75rem;
-/* }
+.navbar {
+ padding-top: 0.75rem;
+ padding-bottom: 0.75rem;
+}
 
 /* Ensure navbar has enough height */
 .navbar-collapse {
