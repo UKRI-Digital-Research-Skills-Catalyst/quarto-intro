@@ -6,7 +6,7 @@ date: last-modified
 date-format: D MMMM, YYYY
 
 website:
-  title: "Introduction Quarto"
+  title: "Reproducible reports with Quarto"
   page-footer:
     left: "<https://digitalskillscatalyst.ac.uk/>."
   navbar:
@@ -42,7 +42,6 @@ format:
     # Or create a custom SCSS theme that uses your brand colors
     code-copy: true
     code-link: true
-    code-tools: true
     code-overflow: wrap
     code-line-numbers: false
     toc: true

@@ -1,5 +1,5 @@
 ---
-title: "Pre-course instructions for participants"
+title: "Pre-course instructions"
 toc: true
 toc-location: right
 ---
@@ -7,6 +7,111 @@ toc-location: right
 To participate in this course, you will need a computer with internet
 access.
 
-Option 1: Use Posit Cloud
+To follow along with the activities with the instructor, you will need R
+and RStudio installed on your computer, **or** access to Posit Cloud, an
+online platform for R and RStudio.
 
-Option 2: Install R and RStudio on your computer
+If you are using a computer provided by your organization (e.g.,
+employer, school), you may need your IT department to install the
+software. If that is not possible, you can use Posit Cloud instead.
+
+## Use Posit Cloud
+
+Posit Cloud is an online platform that allows you to use R and RStudio
+directly from your web browser, without needing to install anything on
+your computer. The [free plan](https://posit.cloud/plans/free) is plenty
+for this workshop
+
+1.  Go to <https://positcloud.com/>
+2.  Create a free account by clicking "Sign Up" in the top right corner
+3.  Once logged in, click "New Project" and select "New RStudio Project"
+4.  You can now use R and RStudio in your web browser!
+
+## Install R and RStudio on your computer
+
+If you already have R and RStudio installed, check that you have at
+least R version 4.2 and RStudio version 2022.07 or later. If not, please
+install the latest versions by following the instructions below. Quarto
+comes with recent versions of RStudio and does not need to be installed
+separately.
+
+### Windows
+
+1.  **Install R:**
+    -   Go to <https://cran.r-project.org/bin/windows/base/>
+    -   Click "Download R-4.x.x for Windows" (where x.x is the latest
+        version number)
+    -   Run the downloaded `.exe` file and follow the installation
+        wizard
+    -   Accept the default settings
+2.  **Install RStudio:**
+    -   Go to <https://posit.co/download/rstudio-desktop/>
+    -   Click "Download RStudio Desktop for Windows"
+    -   Run the downloaded `.exe` file and follow the installation
+        wizard
+    -   Accept the default settings
+
+### Mac
+
+1.  **Install R:**
+    -   Go to <https://cran.r-project.org/bin/macosx/>
+    -   Download the `.pkg` file for your Mac:
+        -   For Apple Silicon Macs (M1, M2, M3): Download the "arm64"
+            version
+        -   For Intel Macs: Download the "x86_64" version
+    -   Open the downloaded `.pkg` file and follow the installation
+        wizard
+    -   Accept the default settings
+2.  **Install RStudio:**
+    -   Go to <https://posit.co/download/rstudio-desktop/>
+    -   Click "Download RStudio Desktop for macOS"
+    -   Open the downloaded `.dmg` file
+    -   Drag the RStudio icon to your Applications folder
+
+### Linux
+
+1.  **Install R:**
+
+    -   Open a terminal
+    -   For Ubuntu/Debian:
+
+    ``` bash
+      sudo apt update
+      sudo apt install r-base r-base-dev
+    ```
+
+    -   For Fedora:
+
+    ``` bash
+      sudo dnf install R
+    ```
+
+    -   For other distributions, see
+        <https://cran.r-project.org/bin/linux/>
+
+2.  **Install RStudio:**
+
+    -   Go to <https://posit.co/download/rstudio-desktop/>
+    -   Download the appropriate `.deb` (Ubuntu/Debian) or `.rpm`
+        (Fedora/RedHat) file
+    -   For Ubuntu/Debian:
+
+    ``` bash
+      sudo dpkg -i rstudio-*.deb
+      sudo apt install -f
+    ```
+
+    -   For Fedora:
+
+    ``` bash
+      sudo dnf install rstudio-*.rpm
+    ```
+
+::: callout-tip
+## Verify your installation
+
+Open RStudio and you should see the R console. Type `version` and press
+Enter to confirm R is working.
+:::
+
+## Additional considerations
