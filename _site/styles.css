@@ -4,12 +4,14 @@
 .navbar-brand img {
   max-height: 100%;
   height: 100%;
+  width: auto; /* allow width to scale proportionally */
   padding: 4px 0; /* small padding to prevent touching edges */
 }
 
 .navbar-brand {
-  height: 100%;
+  height: 60px;
   padding: 0;
+  width: auto; /* allow container to fit logo */
 }
 
 /* Style callout-tip with brand colors */
