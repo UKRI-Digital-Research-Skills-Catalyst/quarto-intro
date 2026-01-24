@@ -19,11 +19,14 @@ color:
   palette:
     strong-white: "#FFFFFF"
     york-navy:   "#2E2D62"
-    york-teal:   "#29A69D"
-    york-pink:   "#FA6862"
+    york-blue:   "#58579B"
     york-white:  "#F5F3EF"
-    york-grey:   "#DDD9E2"
-    york-blue:   "#9088A4"
+    york-light-blue: "#E0F1FA"
+    york-purple:   "#9088A4" 
+    york-pink:   "#FA6862"
+    york-green: "#2EE2BA"
+    york-teal:   "#29A69D"
+
 
   background: york-white
   foreground: york-navy
