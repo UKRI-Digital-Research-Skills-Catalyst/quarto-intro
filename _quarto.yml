@@ -6,11 +6,12 @@ date: last-modified
 date-format: D MMMM, YYYY
 
 website:
-  title: "Reproducible reports with Quarto"
+  title: "Reproducible reports<br>with Quarto"
   page-footer:
     left: "<https://digitalskillscatalyst.ac.uk/>."
   navbar:
-    background: primary  # Or remove this to use brand background color
+    logo: images/logo_transparent_background.png
+    background: primary
     site-url: https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
     repo-url: https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
     page-navigation: true
