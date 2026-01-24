@@ -39,8 +39,6 @@ format:
     css: styles.css
     link-external-newwindow: true
     link-external-filter: '^(?:http:|https:)\/\/ukri-digital-research-skills-catalyst\.github\.io\/quarto-intro'
-    # Consider removing theme to let brand colors work fully
-    # Or create a custom SCSS theme that uses your brand colors
     code-copy: true
     code-link: true
     code-overflow: wrap
