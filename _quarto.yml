@@ -12,7 +12,6 @@ website:
     left: "<https://digitalskillscatalyst.ac.uk/>."
   navbar:
     logo: images/logo_transparent_background.png
-    logo-href: https://digitalskillscatalyst.ac.uk/
     background: primary
     site-url: https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
     repo-url: https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
