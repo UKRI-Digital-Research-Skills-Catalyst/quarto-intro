@@ -2,7 +2,7 @@
 
 /* Make navbar logo bigger but not oversized */
 .navbar-brand img {
-  max-height: 100px; /* set a reasonable maximum height */
+  max-height: 70px; /* set a reasonable maximum height */
   height: auto;
   width: auto; /* allow width to scale proportionally */
 }
