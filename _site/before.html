@@ -156,14 +156,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#use-posit-cloud" id="toc-use-posit-cloud" class="nav-link active" data-scroll-target="#use-posit-cloud">Use Posit Cloud</a></li>
-  <li><a href="#install-r-and-rstudio-on-your-computer" id="toc-install-r-and-rstudio-on-your-computer" class="nav-link" data-scroll-target="#install-r-and-rstudio-on-your-computer">Install R and RStudio on your computer</a>
+  <li><a href="#step-1-install-r-and-rstudio-or-use-posit-cloud" id="toc-step-1-install-r-and-rstudio-or-use-posit-cloud" class="nav-link active" data-scroll-target="#step-1-install-r-and-rstudio-or-use-posit-cloud">Step 1: Install R and RStudio or use Posit Cloud</a>
   <ul>
+  <li><a href="#use-posit-cloud" id="toc-use-posit-cloud" class="nav-link" data-scroll-target="#use-posit-cloud">Use Posit Cloud</a></li>
+  <li><a href="#install-r-and-rstudio-on-your-computer" id="toc-install-r-and-rstudio-on-your-computer" class="nav-link" data-scroll-target="#install-r-and-rstudio-on-your-computer">Install R and RStudio on your computer</a>
+  <ul class="collapse">
   <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a></li>
   <li><a href="#mac" id="toc-mac" class="nav-link" data-scroll-target="#mac">Mac</a></li>
   <li><a href="#linux" id="toc-linux" class="nav-link" data-scroll-target="#linux">Linux</a></li>
   </ul></li>
-  <li><a href="#additional-considerations" id="toc-additional-considerations" class="nav-link" data-scroll-target="#additional-considerations">Additional considerations</a></li>
+  </ul></li>
+  <li><a href="#step-2-install-packages" id="toc-step-2-install-packages" class="nav-link" data-scroll-target="#step-2-install-packages">Step 2: Install packages</a></li>
   </ul>
 </nav>
     </div>
@@ -183,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">24 January, 2026</p>
+      <p class="date">26 January, 2026</p>
     </div>
   </div>
   
@@ -196,10 +199,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>To participate in this course, you will need a computer with internet access.</p>
-<p>To follow along with the activities with the instructor, you will need R and RStudio installed on your computer, <strong>or</strong> access to Posit Cloud, an online platform for R and RStudio.</p>
-<p>If you are using a computer provided by your organization (e.g., employer, school), you may need your IT department to install the software. If that is not possible, you can use Posit Cloud instead.</p>
-<section id="use-posit-cloud" class="level2">
-<h2 class="anchored" data-anchor-id="use-posit-cloud">Use Posit Cloud</h2>
+<p>To follow along with the activities with the instructor, you will need R and RStudio installed on your computer, <strong>or</strong> access to Posit Cloud, an online platform for R and RStudio. You will also need some R packages and optionally, a lateX distribution if you want to create PDF reports.</p>
+<p>If you are using a computer provided by your organisation you may need your IT department to install the software. If that is not possible, you can use Posit Cloud instead.</p>
+<section id="step-1-install-r-and-rstudio-or-use-posit-cloud" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-install-r-and-rstudio-or-use-posit-cloud">Step 1: Install R and RStudio or use Posit Cloud</h2>
+<section id="use-posit-cloud" class="level3">
+<h3 class="anchored" data-anchor-id="use-posit-cloud">Use Posit Cloud</h3>
 <p>Posit Cloud is an online platform that allows you to use R and RStudio directly from your web browser, without needing to install anything on your computer. The <a href="https://posit.cloud/plans/free">free plan</a> is plenty for this workshop</p>
 <ol type="1">
 <li>Go to <a href="https://positcloud.com/" class="uri">https://positcloud.com/</a></li>
@@ -208,11 +213,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>You can now use R and RStudio in your web browser!</li>
 </ol>
 </section>
-<section id="install-r-and-rstudio-on-your-computer" class="level2">
-<h2 class="anchored" data-anchor-id="install-r-and-rstudio-on-your-computer">Install R and RStudio on your computer</h2>
+<section id="install-r-and-rstudio-on-your-computer" class="level3">
+<h3 class="anchored" data-anchor-id="install-r-and-rstudio-on-your-computer">Install R and RStudio on your computer</h3>
 <p>If you already have R and RStudio installed, check that you have at least R version 4.2 and RStudio version 2022.07 or later. If not, please install the latest versions by following the instructions below. Quarto comes with recent versions of RStudio and does not need to be installed separately.</p>
-<section id="windows" class="level3">
-<h3 class="anchored" data-anchor-id="windows">Windows</h3>
+<section id="windows" class="level4">
+<h4 class="anchored" data-anchor-id="windows">Windows</h4>
 <ol type="1">
 <li><strong>Install R:</strong>
 <ul>
@@ -230,8 +235,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ol>
 </section>
-<section id="mac" class="level3">
-<h3 class="anchored" data-anchor-id="mac">Mac</h3>
+<section id="mac" class="level4">
+<h4 class="anchored" data-anchor-id="mac">Mac</h4>
 <ol type="1">
 <li><strong>Install R:</strong>
 <ul>
@@ -253,8 +258,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ol>
 </section>
-<section id="linux" class="level3">
-<h3 class="anchored" data-anchor-id="linux">Linux</h3>
+<section id="linux" class="level4">
+<h4 class="anchored" data-anchor-id="linux">Linux</h4>
 <ol type="1">
 <li><p><strong>Install R:</strong></p>
 <ul>
@@ -283,23 +288,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sudo</span> dnf install rstudio-<span class="pp">*</span>.rpm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Verify your installation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Open RStudio and you should see the R console. Type <code>version</code> and press Enter to confirm R is working.</p>
-</div>
-</div>
 </section>
 </section>
-<section id="additional-considerations" class="level2">
-<h2 class="anchored" data-anchor-id="additional-considerations">Additional considerations</h2>
+</section>
+<section id="step-2-install-packages" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-install-packages">Step 2: Install packages</h2>
+<p>We will use several R packages during the workshop. To install them, download <a href="setup.R">setup.R</a> from the course website and open it in RStudio and run it by clicking “Source” in the top right corner of the script editor.</p>
+<p>If you are using Posit Cloud, use the “Upload” button in the Files pane to upload <code>setup.R</code>, then open it and click “Source”.</p>
 
 
 </section>

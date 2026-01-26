@@ -9,13 +9,16 @@ access.
 
 To follow along with the activities with the instructor, you will need R
 and RStudio installed on your computer, **or** access to Posit Cloud, an
-online platform for R and RStudio.
+online platform for R and RStudio. You will also need some R packages
+and optionally, a lateX distribution if you want to create PDF reports.
 
-If you are using a computer provided by your organization (e.g.,
-employer, school), you may need your IT department to install the
-software. If that is not possible, you can use Posit Cloud instead.
+If you are using a computer provided by your organisation you may need
+your IT department to install the software. If that is not possible, you
+can use Posit Cloud instead.
 
-## Use Posit Cloud
+## Step 1: Install R and RStudio or use Posit Cloud
+
+### Use Posit Cloud
 
 Posit Cloud is an online platform that allows you to use R and RStudio
 directly from your web browser, without needing to install anything on
@@ -27,7 +30,7 @@ for this workshop
 3.  Once logged in, click "New Project" and select "New RStudio Project"
 4.  You can now use R and RStudio in your web browser!
 
-## Install R and RStudio on your computer
+### Install R and RStudio on your computer
 
 If you already have R and RStudio installed, check that you have at
 least R version 4.2 and RStudio version 2022.07 or later. If not, please
@@ -35,7 +38,7 @@ install the latest versions by following the instructions below. Quarto
 comes with recent versions of RStudio and does not need to be installed
 separately.
 
-### Windows
+#### Windows
 
 1.  **Install R:**
     -   Go to <https://cran.r-project.org/bin/windows/base/>
@@ -51,7 +54,7 @@ separately.
         wizard
     -   Accept the default settings
 
-### Mac
+#### Mac
 
 1.  **Install R:**
     -   Go to <https://cran.r-project.org/bin/macosx/>
@@ -68,7 +71,7 @@ separately.
     -   Open the downloaded `.dmg` file
     -   Drag the RStudio icon to your Applications folder
 
-### Linux
+#### Linux
 
 1.  **Install R:**
 
@@ -107,11 +110,12 @@ separately.
       sudo dnf install rstudio-*.rpm
     ```
 
-::: callout-tip
-## Verify your installation
+## Step 2: Install packages
 
-Open RStudio and you should see the R console. Type `version` and press
-Enter to confirm R is working.
-:::
+We will use several R packages during the workshop. To install them,
+download [setup.R](setup.R) from the course website and open it in
+RStudio and run it by clicking "Source" in the top right corner of the
+script editor.
 
-## Additional considerations
+If you are using Posit Cloud, use the "Upload" button in the Files pane
+to upload `setup.R`, then open it and click "Source".
