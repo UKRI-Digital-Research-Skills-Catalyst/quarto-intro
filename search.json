@@ -4,251 +4,69 @@
     "href": "materials.html",
     "title": "Reproducible reports with Quarto",
     "section": "",
-    "text": "This workshop introduces you to Quarto (Allaire et al. 2024) for creating reproducible reports.\n🎬 An instruction to do something\n\n\nThe successful student will be able to:\n\nexplain what Quarto and markdown are\nappreciate the role of the YAML header\nset default code chunk behaviour and that for individual chunks\nuse headings, simple text formatting and special characters\nadd citations and references\nuse inline code to report results in text\ncreate automatically numbered tables and figures and cross reference them in text\n\n\n\n\n\nTypically people analyse, plot and write up in different programs.\n90% use Word/Pages/Writer/Googledocs\nUpdates to data require manual updates to all the figures and tables as well as to text reporting results.\nGraphs are saved to files and inserted into the final report.\nReordering figures, tables and equations means updating everywhere they are cross-referenced.\nSubmitting to a different journal requires reformatting the document.\nManual labour ….. error prone\n\n\n\n\n\nAn open-source scientific and technical publishing system that allows you to create dynamic reproducible reports in a variety of output formats.\nNext generation RMarkdown. Many new features, greater standardisation and more flexibility.\n\nMarkdown is a lightweight markup language for creating formatted text using a plain-text editor. It was designed by John Gruber in 2004\nRMarkdown is an extension of Markdown that adds support for embedding R code chunks in Markdown documents. It was created by JJ Allaire and Yihui Xie early in 2014 but has been worked on by many others since.\n\nMutli-language: Python, R, Julia, and Observable.\nInclude auto-numbered and cross-referencable equations, figures and tables\nIntegrates with Zotero"
-  },
-  {
-    "objectID": "materials.html#learning-outcomes",
-    "href": "materials.html#learning-outcomes",
-    "title": "Reproducible reports with Quarto",
-    "section": "",
-    "text": "The successful student will be able to:\n\nexplain what Quarto and markdown are\nappreciate the role of the YAML header\nset default code chunk behaviour and that for individual chunks\nuse headings, simple text formatting and special characters\nadd citations and references\nuse inline code to report results in text\ncreate automatically numbered tables and figures and cross reference them in text"
-  },
-  {
-    "objectID": "materials.html#current-process",
-    "href": "materials.html#current-process",
-    "title": "Reproducible reports with Quarto",
-    "section": "",
-    "text": "Typically people analyse, plot and write up in different programs.\n90% use Word/Pages/Writer/Googledocs\nUpdates to data require manual updates to all the figures and tables as well as to text reporting results.\nGraphs are saved to files and inserted into the final report.\nReordering figures, tables and equations means updating everywhere they are cross-referenced.\nSubmitting to a different journal requires reformatting the document.\nManual labour ….. error prone"
-  },
-  {
-    "objectID": "materials.html#what-is-quarto",
-    "href": "materials.html#what-is-quarto",
-    "title": "Reproducible reports with Quarto",
-    "section": "",
-    "text": "An open-source scientific and technical publishing system that allows you to create dynamic reproducible reports in a variety of output formats.\nNext generation RMarkdown. Many new features, greater standardisation and more flexibility.\n\nMarkdown is a lightweight markup language for creating formatted text using a plain-text editor. It was designed by John Gruber in 2004\nRMarkdown is an extension of Markdown that adds support for embedding R code chunks in Markdown documents. It was created by JJ Allaire and Yihui Xie early in 2014 but has been worked on by many others since.\n\nMutli-language: Python, R, Julia, and Observable.\nInclude auto-numbered and cross-referencable equations, figures and tables\nIntegrates with Zotero"
-  },
-  {
-    "objectID": "materials.html#key-points-from-the-demo",
-    "href": "materials.html#key-points-from-the-demo",
-    "title": "Reproducible reports with Quarto",
-    "section": "Key points from the demo",
-    "text": "Key points from the demo\n\nQuarto mixes text and code to create dynamic reports\nThe YAML header sets the default behaviour for the document and is between --- at the top of the document\nR Code chunks are between ```{r} and ``` and chunk options, starting #|, determine how/whether they run whether code/output is included in the rendered document\nYou can run code chunk interactively or through rendering\nComments: |#, # in code chunks, &lt;!-- in text --&gt; but use Ctrl+Shift+C"
-  },
-  {
-    "objectID": "materials.html#text-formatting",
-    "href": "materials.html#text-formatting",
-    "title": "Reproducible reports with Quarto",
-    "section": "Text Formatting",
-    "text": "Text Formatting\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n*italics*,**bold**\nitalics, bold\n\n\n***bold italics ***\nbold italics\n\n\nsuperscript^2^\nsuperscript2\n\n\nsubscript~2~\nsubscript2\n\n\n~~strikethrough~~\nstrikethrough\n\n\n`verbatim code`\nverbatim code"
-  },
-  {
-    "objectID": "materials.html#headings",
-    "href": "materials.html#headings",
-    "title": "Reproducible reports with Quarto",
-    "section": "Headings",
-    "text": "Headings\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n# Header 1\nHeader 1\n\n\n## Header 2\nHeader 2\n\n\n### Header 3\nHeader 3\n\n\n#### Header 4\nHeader 4\n\n\n\n\nLinks & Images\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n[Quar\nto](https://quarto.org)\nQuarto\n\n\n![Cap\ntion](images/chaff.jpg)\n\n\n\nCaption"
-  },
-  {
-    "objectID": "materials.html#equations",
-    "href": "materials.html#equations",
-    "title": "Reproducible reports with Quarto",
-    "section": "Equations",
-    "text": "Equations\nUse $ delimiters for inline maths and $$ delimiters for display maths. For example:\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\ni\nnline maths: $E = mc^{2}$\ninline maths: \\(E=mc^{2}\\)\n\n\ndisplay maths:\n\n$$E = mc^{2}$$\ndisplay maths:\n\\[E = mc^{2}\\]"
-  },
-  {
-    "objectID": "materials.html#divs",
-    "href": "materials.html#divs",
-    "title": "Reproducible reports with Quarto",
-    "section": "Divs",
-    "text": "Divs\n“Divs” are used to group content together. They can be used to apply styling to that content.\nWe also use them for grouping a code chunks with text. This is useful for creating multi-panel figures with legends."
-  },
-  {
-    "objectID": "materials.html#create-a-new-project",
-    "href": "materials.html#create-a-new-project",
-    "title": "Reproducible reports with Quarto",
-    "section": "Create a new project",
-    "text": "Create a new project\n🎬 File | New Project | New Directory | Quarto Project\n\nBrowse to an appropriate place and give your project a name.\nI used wr-chaff\nChoose Engine: Knitr\nTurn visual markdown editor off (for now)"
-  },
-  {
-    "objectID": "materials.html#change-some-rstudio-settings",
-    "href": "materials.html#change-some-rstudio-settings",
-    "title": "Reproducible reports with Quarto",
-    "section": "Change some RStudio settings",
-    "text": "Change some RStudio settings\n🎬 Tools | Global Options\n\nGeneral:\n\nTurn off the three “Restore ….” options\nTurn “Save workspace to .RData on exit” to Never\n\nR Markdown:\n\nTurn “Show output preview in:” to Viewer pane"
-  },
-  {
-    "objectID": "materials.html#your-project-contains",
-    "href": "materials.html#your-project-contains",
-    "title": "Reproducible reports with Quarto",
-    "section": "Your project contains",
-    "text": "Your project contains\n\nwr-chaff.RProj - what makes the folder an RStudio project\n_quarto.yml - the configuration file\nwr-chaff.md - the main document containing some template text\n\n🎬 Hit Render (Ctrl-Shift-K)\nNote that wr-chaff.html is created and opened in the Viewer pane"
-  },
-  {
-    "objectID": "materials.html#add-some-content",
-    "href": "materials.html#add-some-content",
-    "title": "Reproducible reports with Quarto",
-    "section": "Add some content",
-    "text": "Add some content\n🎬 Add a code chunk (Ctrl-Shift-I) for a simple graph.\n\n```{r}\nhist(rnorm(100))\n```\n\n\n\n\n\n\n\n\n🎬 Hit Render (Ctrl-Shift-K)"
-  },
-  {
-    "objectID": "materials.html#edit-the-yaml-header-default-code-chunk-options",
-    "href": "materials.html#edit-the-yaml-header-default-code-chunk-options",
-    "title": "Reproducible reports with Quarto",
-    "section": "Edit the YAML header: default code chunk options",
-    "text": "Edit the YAML header: default code chunk options\n🎬 Set some default code chunk options. I recommend these for reports\n---\ntitle: \"The difference in mass between subspecies of common chaffinch.\"\nauthor: \"Emma Rand\"\nengine: knitr\nformat:\n  html\nexecute:\n  echo: false\n  include: true\n  error: false\n  message: false\n  warning: false\n\n---\n🎬 Hit Render (Ctrl-Shift-K)\nCode chunk options\n\necho: false code will not be included in output\ninclude: true output will be included\nerror: false halt render if a code error occurs\nmessage: false messages and warnings will not be included\nwarning: false\n\n🎬 Experiment with change the options and re-rendering. Try misspelling rnorm to see the error option in action."
-  },
-  {
-    "objectID": "materials.html#an-introduction",
-    "href": "materials.html#an-introduction",
-    "title": "Reproducible reports with Quarto",
-    "section": "An Introduction",
-    "text": "An Introduction\n🎬 Add this test to the Introduction\n\nA number of subspecies of the common chaffinch, Fringilla coelebs, have been described based principally on the differences in the pattern and colour of the adult male plumage. Two of groups of these subspecies are the “coelebs group” that occurs in Europe and Asia and the “canariensis group” that occurs on the Canary Islands.\n\n🎬 Make the species name italic\n🎬 Make “common chaffinch” a link to https://en.wikipedia.org/wiki/Common_chaffinch"
-  },
-  {
-    "objectID": "materials.html#data-import",
-    "href": "materials.html#data-import",
-    "title": "Reproducible reports with Quarto",
-    "section": "Data import",
-    "text": "Data import\n🎬 Make a folder called data-raw\n🎬 Save chaff.txt to data-raw\n🎬 Add a code chunk with:\n\n```{r}\n#| label: import-data\nfile &lt;- \"data-raw/chaff.txt\"\nchaff &lt;- read_table(file)\n```\n\n🎬 Run chunks interactively\n🎬 Render"
-  },
-  {
-    "objectID": "materials.html#data-summary",
-    "href": "materials.html#data-summary",
-    "title": "Reproducible reports with Quarto",
-    "section": "Data summary",
-    "text": "Data summary\n🎬 Add a code chunk with:\n\n```{r}\n#| label: data-summary\nchaff_summary &lt;- chaff |&gt; \n  group_by(subspecies) |&gt;  \n  summarise(mean = mean(mass, na.rm = TRUE),\n            sd = sd(mass, na.rm = TRUE),\n            n = length(mass),\n            se = sd / sqrt(n))\n```\n\n🎬 Render\nNotice the chunk labels being used in “Background Jobs”"
-  },
-  {
-    "objectID": "materials.html#methods-text",
-    "href": "materials.html#methods-text",
-    "title": "Reproducible reports with Quarto",
-    "section": "Methods text",
-    "text": "Methods text\n🎬 Add this text to Methods:\n\nWe randomly sampled 20 F. c. coelebs males and 20 F. c. palmae males and determined their mass with spring scales. Analysis was carried out with R and tidyverse packages.\n\nIt would be good not to have “hard coded” those numbers in the text. What if we get more data. Or we just misremember or mis-type the numbers?"
-  },
-  {
-    "objectID": "materials.html#extract-summary-information-for-use-in-inline-code",
-    "href": "materials.html#extract-summary-information-for-use-in-inline-code",
-    "title": "Reproducible reports with Quarto",
-    "section": "Extract summary information for use in inline code",
-    "text": "Extract summary information for use in inline code\n🎬 Add a code chunk with:\n\n```{r}\n#| label: extract-summary\n# extract values for inline reporting\n\n# sample sizes\nn_coelebs &lt;- chaff_summary |&gt; \n  filter(subspecies == \"coelebs\") |&gt; \n  pull(n)\n\nn_canariensis &lt;- chaff_summary |&gt; \n  filter(subspecies == \"canariensis\") |&gt; \n  pull(n)\n```\n\n🎬 Replace the sample sizes in the Methods text with inline code\n🎬 Render"
-  },
-  {
-    "objectID": "materials.html#cross-referencing-figures",
-    "href": "materials.html#cross-referencing-figures",
-    "title": "Reproducible reports with Quarto",
-    "section": "Cross referencing figures",
-    "text": "Cross referencing figures\nThe label of the code chunk is important when creating figures because it is used to cross reference the figure in the text. We give cross references with @ followed by the label of the code chunk.\nThat is starts with a fig- prefix also matters - this is what determines what is treated as a figure numbered in order of appearance.\n🎬 Add a sentence with a cross reference to the figure:\n\nCanariensis have higher mass than coelebs. See @fig-chaff."
-  },
-  {
-    "objectID": "materials.html#figure-legends",
-    "href": "materials.html#figure-legends",
-    "title": "Reproducible reports with Quarto",
-    "section": "Figure legends",
-    "text": "Figure legends\nThere are two ways to add a legend:\n\nAdd the fig-cap chunk option: fig-cap: \"Mass of chaffinches\" to the code chunk.\nUse a div. :::\n\nDivs are more flexible:\n\nYou can include inline code, citations, special characters and formatting\nYou can more easily make multipanel figures"
-  },
-  {
-    "objectID": "materials.html#a-figure-legend-with-a-div",
-    "href": "materials.html#a-figure-legend-with-a-div",
-    "title": "Reproducible reports with Quarto",
-    "section": "A figure legend with a div",
-    "text": "A figure legend with a div\n🎬 Add a div by:\n\nremoving the fig-cap option and the label option\nadding ::: before and after the code chunk\nplacing the label after the opening ::: like this: :::{#fig-chaff} Note the# is important for numbering\nPutting the legend text between the code chunk and the closing :::\n\nIn the example figure legend I have included inline code, formatting and a special character using inline math."
-  },
-  {
-    "objectID": "materials.html#set-the-figure-size-and-alignment",
-    "href": "materials.html#set-the-figure-size-and-alignment",
-    "title": "Reproducible reports with Quarto",
-    "section": "Set the figure size and alignment",
-    "text": "Set the figure size and alignment\n🎬 Add a chunk options fig-width, fig-height and fig-align to the code chunk:\n\n```{r}\n#| fig-width: 3.5\n#| fig-height: 3.5\nggplot() +\n  geom_point(data = chaff, aes(x = subspecies, y = mass),\n             position = position_jitter(width = 0.1, height = 0),\n             colour = \"gray50\") +\n  geom_errorbar(data = chaff_summary, \n                aes(x = subspecies, ymin = mean - se, ymax = mean + se),\n                width = 0.3) +\n  geom_errorbar(data = chaff_summary, \n                aes(x = subspecies, ymin = mean, ymax = mean),\n                width = 0.2) +\n  scale_y_continuous(name = \"Mass (g)\", \n                     limits = c(0, 30), \n                     expand = c(0, 0)) +\n  scale_x_discrete(name = \"Subspecies\", \n                   labels = c(\"Canariensis\", \"Coelebs\")) +\n  theme_classic()\n```"
-  },
-  {
-    "objectID": "materials.html#the-panels",
-    "href": "materials.html#the-panels",
-    "title": "Reproducible reports with Quarto",
-    "section": "The panels",
-    "text": "The panels\n🎬 Add these two chunks to the Results section below the last figure (make sure you’re outside the last div)\n\n```{r}\n#| label: fig-hist-canariensis\nchaff |&gt; filter(subspecies == \"canariensis\") |&gt;\n  ggplot(aes(x = mass)) +\n  geom_histogram(bins = 8) +\n  theme_minimal()\n```\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n```{r}\n#| label: fig-hist-coelebs\nchaff |&gt; filter(subspecies == \"coelebs\") |&gt;\n  ggplot(aes(x = mass)) +\n  geom_histogram(bins = 8) +\n  theme_minimal()\n```\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\nIf you render, you’ll see that the two figures are added as separate figures."
-  },
-  {
-    "objectID": "materials.html#as-one-figure",
-    "href": "materials.html#as-one-figure",
-    "title": "Reproducible reports with Quarto",
-    "section": "As one figure",
-    "text": "As one figure\nTo make them into one figure we need to use a div.\n🎬 Add the div a round those chunks\n{##fig-histograms layout-ncol=2}\n\nthe two code chunks\n\n:::\n🎬 Render\n🛝 Add a figure legend to the two panel figure\n🛝 Add a sentence with a cross reference to the figure. Can you cross reference the sub figures?\n🛝 Change the order of the figures and marvel at the updated numbers"
-  },
-  {
-    "objectID": "materials.html#crossreferencing-tables",
-    "href": "materials.html#crossreferencing-tables",
-    "title": "Reproducible reports with Quarto",
-    "section": "Crossreferencing Tables",
-    "text": "Crossreferencing Tables\nJust as the fig- prefix matters for corrected numbering of figures, the tbl- prefix is important for the corrected numbering of figures.\nJust as the label of the code chunk is important for cross referencing of figures so it is for tables and we use @ followed by the label of the code chunk to cross reference the table in the text.\n🎬 Add a sentence with a cross reference to the table."
-  },
-  {
-    "objectID": "materials.html#tables---improve-format",
-    "href": "materials.html#tables---improve-format",
-    "title": "Reproducible reports with Quarto",
-    "section": "Tables - improve format",
-    "text": "Tables - improve format\nThe decimal places are over-the-top. They can be set\n\nin the table by adding digits = 2 to the kable() function\nFor the document overall by adding:\n\n\n```{r}\noptions(digits = 2)\n```\n\n🎬 Do one of these."
-  },
-  {
-    "objectID": "materials.html#tables---improve-format-1",
-    "href": "materials.html#tables---improve-format-1",
-    "title": "Reproducible reports with Quarto",
-    "section": "Tables - improve format",
-    "text": "Tables - improve format\nA handy tidyverse function, str_to_sentence(), can be used for converting lower case to sentence case. We will do this for column names\n🎬 Add col.names = names(chaff_summary) |&gt; str_to_sentence() to the kable() function"
-  },
-  {
-    "objectID": "materials.html#package-citations",
-    "href": "materials.html#package-citations",
-    "title": "Reproducible reports with Quarto",
-    "section": "Package citations",
-    "text": "Package citations\nYou can add citations for R and packages, from doi, from a .bib file, or from zotero.\n🎬 Put your cursor where you want the citation to go and click the Insert button in the top right and select Citation (Ctrl-Shift-F8) and add a citation for the tidverse package.\n🎬 Render\n\nthe in-text citation has been added\nthe reference has been added to the references section\na references.bib file has been created in the project folder"
-  },
-  {
-    "objectID": "materials.html#citations-from-doi",
-    "href": "materials.html#citations-from-doi",
-    "title": "Reproducible reports with Quarto",
-    "section": "Citations from DOI",
-    "text": "Citations from DOI\n🎬 Put your cursor after “plumage” in the Introduction and click the Insert button in the top right and select Citation (Ctrl-Shift-F8). Select From DOI and paste in 10.1016/j.ympev.2009.07.018\n🎬 Render\nYou can also add citations to the .bib file manually. E.g. for R itself"
-  },
-  {
-    "objectID": "materials.html#extra-exercises",
-    "href": "materials.html#extra-exercises",
-    "title": "Reproducible reports with Quarto",
-    "section": "Extra exercises",
-    "text": "Extra exercises\n🛝 Make a folder called images and save these two images of the subspecies to it: canariensis.jpg and coelebs.jpg. Then add images of each of the chaffinch subspecies as a multi-panel figure in the introduction"
+    "text": "Introduction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n` but use –&gt;"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "general info about the course"
+    "text": "This on-line workshop introduces you to Quarto, a scientific and technical publishing system designed to facilitate reproducible working practices by allowing you to integrate code, results, and narrative text in a single document. Quarto supports multiple programming languages, including R, Python, Julia, and Observable JavaScript.\nThe workshop will be taught using R and RStudio, but the concepts are applicable to other programming languages supported by Quarto. Some familiarity with the layout of RStudio and beginner level knowledge of R is assumed.\nBy the end of this workshop, participants will be able to transform raw data into a professional, polished report (HTML, Word, or PDF) where the text and analysis remain in sync. We will use the Gapminder data on global development to demonstrate how to produce a reproducible country profile report that analyses the relationship between wealth (GDP per capita) and health (Life Expectancy) over the last 50 years.\n\n\n\nThis workshop is intended for researchers and research support staff in academia or industry or others that regularly produce reports with data analysis.\n\n\n\nThe on-line workshop is on 22 April 2026 1400 - 1600 GMT\nTODO\n\n\n\nParticipants will learn how to:\n\nConstruct a structured Quarto (.qmd) document using YAML headers to define metadata (title, author, table of contents).\nFormat narrative text using Markdown syntax to create headers, lists, and emphasis without relying on word processor GUIs.\nIntegrate R code chunks into prose to produce tables and visualizations directly within the document.\nImplement “Inline Code” to insert dynamic statistics (e.g., specific means or p-values) directly into sentences, ensuring numbers update automatically if the data changes.\nControl report output using “Chunk Options” to hide raw code from the final reader while keeping the results visible.\nRender a single source document into multiple output formats (HTML for web, MS Word for collaboration, or PDF for publication).\n\n\n\n\nEmma Rand is a Professor in the Department of Biology at the University of York where she specializes in teaching data science and reproducibility, particularly to those who do not see themselves as programmers. She leads a UKRI funded projects called Cloud-SPAN and the UKRI Digital Research Skills Catalyst."
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Welcome",
+    "section": "",
+    "text": "This on-line workshop introduces you to Quarto, a scientific and technical publishing system designed to facilitate reproducible working practices by allowing you to integrate code, results, and narrative text in a single document. Quarto supports multiple programming languages, including R, Python, Julia, and Observable JavaScript.\nThe workshop will be taught using R and RStudio, but the concepts are applicable to other programming languages supported by Quarto. Some familiarity with the layout of RStudio and beginner level knowledge of R is assumed.\nBy the end of this workshop, participants will be able to transform raw data into a professional, polished report (HTML, Word, or PDF) where the text and analysis remain in sync. We will use the Gapminder data on global development to demonstrate how to produce a reproducible country profile report that analyses the relationship between wealth (GDP per capita) and health (Life Expectancy) over the last 50 years."
+  },
+  {
+    "objectID": "index.html#audience",
+    "href": "index.html#audience",
+    "title": "Welcome",
+    "section": "",
+    "text": "This workshop is intended for researchers and research support staff in academia or industry or others that regularly produce reports with data analysis."
+  },
+  {
+    "objectID": "index.html#how-to-sign-up",
+    "href": "index.html#how-to-sign-up",
+    "title": "Welcome",
+    "section": "",
+    "text": "The on-line workshop is on 22 April 2026 1400 - 1600 GMT\nTODO"
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Welcome",
+    "section": "",
+    "text": "Participants will learn how to:\n\nConstruct a structured Quarto (.qmd) document using YAML headers to define metadata (title, author, table of contents).\nFormat narrative text using Markdown syntax to create headers, lists, and emphasis without relying on word processor GUIs.\nIntegrate R code chunks into prose to produce tables and visualizations directly within the document.\nImplement “Inline Code” to insert dynamic statistics (e.g., specific means or p-values) directly into sentences, ensuring numbers update automatically if the data changes.\nControl report output using “Chunk Options” to hide raw code from the final reader while keeping the results visible.\nRender a single source document into multiple output formats (HTML for web, MS Word for collaboration, or PDF for publication)."
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "Welcome",
+    "section": "",
+    "text": "Emma Rand is a Professor in the Department of Biology at the University of York where she specializes in teaching data science and reproducibility, particularly to those who do not see themselves as programmers. She leads a UKRI funded projects called Cloud-SPAN and the UKRI Digital Research Skills Catalyst."
   },
   {
     "objectID": "before.html",
     "href": "before.html",
     "title": "Pre-course instructions",
     "section": "",
-    "text": "To participate in this course, you will need a computer with internet access.\nTo follow along with the activities with the instructor, you will need R and RStudio installed on your computer, or access to Posit Cloud, an online platform for R and RStudio.\nIf you are using a computer provided by your organization (e.g., employer, school), you may need your IT department to install the software. If that is not possible, you can use Posit Cloud instead."
+    "text": "To participate in this course, you will need a computer with internet access.\nTo follow along with the activities with the instructor, you will need R and RStudio installed on your computer, or access to Posit Cloud, an online platform for R and RStudio. You will also need some R packages and optionally, a lateX distribution if you want to create PDF reports.\nIf you are using a computer provided by your organisation you may need your IT department to install the software. If that is not possible, you can use Posit Cloud instead."
   },
   {
-    "objectID": "before.html#use-posit-cloud",
-    "href": "before.html#use-posit-cloud",
+    "objectID": "before.html#step-1-install-r-and-rstudio-or-use-posit-cloud",
+    "href": "before.html#step-1-install-r-and-rstudio-or-use-posit-cloud",
     "title": "Pre-course instructions",
-    "section": "Use Posit Cloud",
-    "text": "Use Posit Cloud\nPosit Cloud is an online platform that allows you to use R and RStudio directly from your web browser, without needing to install anything on your computer. The free plan is plenty for this workshop\n\nGo to https://positcloud.com/\nCreate a free account by clicking “Sign Up” in the top right corner\nOnce logged in, click “New Project” and select “New RStudio Project”\nYou can now use R and RStudio in your web browser!"
+    "section": "Step 1: Install R and RStudio or use Posit Cloud",
+    "text": "Step 1: Install R and RStudio or use Posit Cloud\n\nUse Posit Cloud\nPosit Cloud is an online platform that allows you to use R and RStudio directly from your web browser, without needing to install anything on your computer. The free plan is plenty for this workshop\n\nGo to https://positcloud.com/\nCreate a free account by clicking “Sign Up” in the top right corner\nOnce logged in, click “New Project” and select “New RStudio Project”\nYou can now use R and RStudio in your web browser!\n\n\n\nInstall R and RStudio on your computer\nIf you already have R and RStudio installed, check that you have at least R version 4.2 and RStudio version 2022.07 or later. If not, please install the latest versions by following the instructions below. Quarto comes with recent versions of RStudio and does not need to be installed separately.\n\nWindows\n\nInstall R:\n\nGo to https://cran.r-project.org/bin/windows/base/\nClick “Download R-4.x.x for Windows” (where x.x is the latest version number)\nRun the downloaded .exe file and follow the installation wizard\nAccept the default settings\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nClick “Download RStudio Desktop for Windows”\nRun the downloaded .exe file and follow the installation wizard\nAccept the default settings\n\n\n\n\nMac\n\nInstall R:\n\nGo to https://cran.r-project.org/bin/macosx/\nDownload the .pkg file for your Mac:\n\nFor Apple Silicon Macs (M1, M2, M3): Download the “arm64” version\nFor Intel Macs: Download the “x86_64” version\n\nOpen the downloaded .pkg file and follow the installation wizard\nAccept the default settings\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nClick “Download RStudio Desktop for macOS”\nOpen the downloaded .dmg file\nDrag the RStudio icon to your Applications folder\n\n\n\n\nLinux\n\nInstall R:\n\nOpen a terminal\nFor Ubuntu/Debian:\n\n  sudo apt update\n  sudo apt install r-base r-base-dev\n\nFor Fedora:\n\n  sudo dnf install R\n\nFor other distributions, see https://cran.r-project.org/bin/linux/\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nDownload the appropriate .deb (Ubuntu/Debian) or .rpm (Fedora/RedHat) file\nFor Ubuntu/Debian:\n\n  sudo dpkg -i rstudio-*.deb\n  sudo apt install -f\n\nFor Fedora:\n\n  sudo dnf install rstudio-*.rpm"
   },
   {
-    "objectID": "before.html#install-r-and-rstudio-on-your-computer",
-    "href": "before.html#install-r-and-rstudio-on-your-computer",
+    "objectID": "before.html#step-2-install-packages",
+    "href": "before.html#step-2-install-packages",
     "title": "Pre-course instructions",
-    "section": "Install R and RStudio on your computer",
-    "text": "Install R and RStudio on your computer\nIf you already have R and RStudio installed, check that you have at least R version 4.2 and RStudio version 2022.07 or later. If not, please install the latest versions by following the instructions below. Quarto comes with recent versions of RStudio and does not need to be installed separately.\n\nWindows\n\nInstall R:\n\nGo to https://cran.r-project.org/bin/windows/base/\nClick “Download R-4.x.x for Windows” (where x.x is the latest version number)\nRun the downloaded .exe file and follow the installation wizard\nAccept the default settings\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nClick “Download RStudio Desktop for Windows”\nRun the downloaded .exe file and follow the installation wizard\nAccept the default settings\n\n\n\n\nMac\n\nInstall R:\n\nGo to https://cran.r-project.org/bin/macosx/\nDownload the .pkg file for your Mac:\n\nFor Apple Silicon Macs (M1, M2, M3): Download the “arm64” version\nFor Intel Macs: Download the “x86_64” version\n\nOpen the downloaded .pkg file and follow the installation wizard\nAccept the default settings\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nClick “Download RStudio Desktop for macOS”\nOpen the downloaded .dmg file\nDrag the RStudio icon to your Applications folder\n\n\n\n\nLinux\n\nInstall R:\n\nOpen a terminal\nFor Ubuntu/Debian:\n\n  sudo apt update\n  sudo apt install r-base r-base-dev\n\nFor Fedora:\n\n  sudo dnf install R\n\nFor other distributions, see https://cran.r-project.org/bin/linux/\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nDownload the appropriate .deb (Ubuntu/Debian) or .rpm (Fedora/RedHat) file\nFor Ubuntu/Debian:\n\n  sudo dpkg -i rstudio-*.deb\n  sudo apt install -f\n\nFor Fedora:\n\n  sudo dnf install rstudio-*.rpm\n\n\n\n\n\n\n\nTipVerify your installation\n\n\n\nOpen RStudio and you should see the R console. Type version and press Enter to confirm R is working."
-  },
-  {
-    "objectID": "before.html#additional-considerations",
-    "href": "before.html#additional-considerations",
-    "title": "Pre-course instructions",
-    "section": "Additional considerations",
-    "text": "Additional considerations"
+    "section": "Step 2: Install packages",
+    "text": "Step 2: Install packages\nWe will use several R packages during the workshop. To install them, download setup.R from the course website and open it in RStudio and run it by clicking “Source” in the top right corner of the script editor.\nIf you are using Posit Cloud, use the “Upload” button in the Files pane to upload setup.R, then open it and click “Source”."
   }
 ]
