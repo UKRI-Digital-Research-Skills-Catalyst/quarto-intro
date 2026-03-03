@@ -1,17 +1,31 @@
 [
   {
-    "objectID": "materials.html",
-    "href": "materials.html",
-    "title": "Reproducible reports with Quarto",
+    "objectID": "before.html",
+    "href": "before.html",
+    "title": "Pre-course instructions",
     "section": "",
-    "text": "Introduction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n` but use –&gt;"
+    "text": "To participate in this course, you will need a computer with internet access.\nTo follow along with the activities with the instructor, you will need R and RStudio installed on your computer, or access to Posit Cloud, an online platform for R and RStudio. You will also need some R packages and optionally, a lateX distribution if you want to create PDF reports.\nIf you are using a computer provided by your organisation you may need your IT department to install the software. If that is not possible, you can use Posit Cloud instead."
+  },
+  {
+    "objectID": "before.html#step-1-install-r-and-rstudio-or-use-posit-cloud",
+    "href": "before.html#step-1-install-r-and-rstudio-or-use-posit-cloud",
+    "title": "Pre-course instructions",
+    "section": "Step 1: Install R and RStudio or use Posit Cloud",
+    "text": "Step 1: Install R and RStudio or use Posit Cloud\n\nUse Posit Cloud\nPosit Cloud is an online platform that allows you to use R and RStudio directly from your web browser, without needing to install anything on your computer. The free plan is plenty for this workshop\n\nGo to https://positcloud.com/\nCreate a free account by clicking “Sign Up” in the top right corner\nOnce logged in, click “New Project” and select “New RStudio Project”\nYou can now use R and RStudio in your web browser!\n\n\n\nInstall R and RStudio on your computer\nIf you already have R and RStudio installed, check that you have at least R version 4.2 and RStudio version 2022.07 or later. If not, please install the latest versions by following the instructions below. Quarto comes with recent versions of RStudio and does not need to be installed separately.\n\nWindows\n\nInstall R:\n\nGo to https://cran.r-project.org/bin/windows/base/\nClick “Download R-4.x.x for Windows” (where x.x is the latest version number)\nRun the downloaded .exe file and follow the installation wizard\nAccept the default settings\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nClick “Download RStudio Desktop for Windows”\nRun the downloaded .exe file and follow the installation wizard\nAccept the default settings\n\n\n\n\nMac\n\nInstall R:\n\nGo to https://cran.r-project.org/bin/macosx/\nDownload the .pkg file for your Mac:\n\nFor Apple Silicon Macs (M1, M2, M3): Download the “arm64” version\nFor Intel Macs: Download the “x86_64” version\n\nOpen the downloaded .pkg file and follow the installation wizard\nAccept the default settings\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nClick “Download RStudio Desktop for macOS”\nOpen the downloaded .dmg file\nDrag the RStudio icon to your Applications folder\n\n\n\n\nLinux\n\nInstall R:\n\nOpen a terminal\nFor Ubuntu/Debian:\n\n  sudo apt update\n  sudo apt install r-base r-base-dev\n\nFor Fedora:\n\n  sudo dnf install R\n\nFor other distributions, see https://cran.r-project.org/bin/linux/\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nDownload the appropriate .deb (Ubuntu/Debian) or .rpm (Fedora/RedHat) file\nFor Ubuntu/Debian:\n\n  sudo dpkg -i rstudio-*.deb\n  sudo apt install -f\n\nFor Fedora:\n\n  sudo dnf install rstudio-*.rpm"
+  },
+  {
+    "objectID": "before.html#step-2-install-packages",
+    "href": "before.html#step-2-install-packages",
+    "title": "Pre-course instructions",
+    "section": "Step 2: Install packages",
+    "text": "Step 2: Install packages\nWe will use several R packages during the workshop. To install them, download setup.R from the course website and open it in RStudio and run it by clicking “Source” in the top right corner of the script editor.\nIf you are using Posit Cloud, use the “Upload” button in the Files pane to upload setup.R, then open it and click “Source”."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "This on-line workshop introduces you to Quarto, a scientific and technical publishing system designed to facilitate reproducible working practices by allowing you to integrate code, results, and narrative text in a single document. Quarto supports multiple programming languages, including R, Python, Julia, and Observable JavaScript.\nThe workshop will be taught using R and RStudio, but the concepts are applicable to other programming languages supported by Quarto. Some familiarity with the layout of RStudio and beginner level knowledge of R is assumed.\nBy the end of this workshop, participants will be able to transform raw data into a professional, polished report (HTML, Word, or PDF) where the text and analysis remain in sync. We will use the Gapminder data on global development to demonstrate how to produce a reproducible country profile report that analyses the relationship between wealth (GDP per capita) and health (Life Expectancy) over the last 50 years.\n\n\n\nThis workshop is intended for researchers and research support staff in academia or industry or others that regularly produce reports with data analysis.\n\n\n\nThe on-line workshop is on 22 April 2026 1400 - 1600 GMT\nTODO\n\n\n\nParticipants will learn how to:\n\nConstruct a structured Quarto (.qmd) document using YAML headers to define metadata (title, author, table of contents).\nFormat narrative text using Markdown syntax to create headers, lists, and emphasis without relying on word processor GUIs.\nIntegrate R code chunks into prose to produce tables and visualizations directly within the document.\nImplement “Inline Code” to insert dynamic statistics (e.g., specific means or p-values) directly into sentences, ensuring numbers update automatically if the data changes.\nControl report output using “Chunk Options” to hide raw code from the final reader while keeping the results visible.\nRender a single source document into multiple output formats (HTML for web, MS Word for collaboration, or PDF for publication).\n\n\n\n\nEmma Rand is a Professor in the Department of Biology at the University of York where she specializes in teaching data science and reproducibility, particularly to those who do not see themselves as programmers. She leads a UKRI funded projects called Cloud-SPAN and the UKRI Digital Research Skills Catalyst."
+    "text": "This on-line workshop introduces you to Quarto, a scientific and technical publishing system designed to facilitate reproducible working practices by allowing you to integrate code, results, and narrative text in a single document. Quarto supports multiple programming languages, including R, Python, Julia, and Observable JavaScript.\nThe workshop will be taught using R and RStudio, but the concepts are applicable to other programming languages supported by Quarto. Some familiarity with the layout of RStudio and beginner level knowledge of R is assumed.\nBy the end of this workshop, participants will be able to transform raw data into a professional, polished report (HTML, Word, or PDF) where the text and analysis remain in sync. We will use the Gapminder data on global development to demonstrate how to produce a reproducible country profile report that analyses the relationship between wealth (GDP per capita) and health (Life Expectancy) over the last 50 years.\n\n\n\nThis workshop is intended for researchers and research support staff in academia or industry or others that regularly produce reports with data analysis.\n\n\n\nThe on-line workshop is on 22 April 2026 1400 - 1600 GMT\nRegister for the workshop\n\n\n\nParticipants will learn how to:\n\nConstruct a structured Quarto (.qmd) document using YAML headers to define metadata (title, author, table of contents).\nFormat narrative text using Markdown syntax to create headers, lists, and emphasis without relying on word processor GUIs.\nIntegrate R code chunks into prose to produce tables and visualizations directly within the document.\nImplement “Inline Code” to insert dynamic statistics (e.g., specific means or p-values) directly into sentences, ensuring numbers update automatically if the data changes.\nControl report output using “Chunk Options” to hide raw code from the final reader while keeping the results visible.\nRender a single source document into multiple output formats (HTML for web, MS Word for collaboration, or PDF for publication).\n\n\n\n\nEmma Rand is a Professor in the Department of Biology at the University of York where she specializes in teaching data science and reproducibility, particularly to those who do not see themselves as programmers. She leads a UKRI funded projects called Cloud-SPAN and the UKRI Digital Research Skills Catalyst."
   },
   {
     "objectID": "index.html#overview",
@@ -32,7 +46,7 @@
     "href": "index.html#how-to-sign-up",
     "title": "Welcome",
     "section": "",
-    "text": "The on-line workshop is on 22 April 2026 1400 - 1600 GMT\nTODO"
+    "text": "The on-line workshop is on 22 April 2026 1400 - 1600 GMT\nRegister for the workshop"
   },
   {
     "objectID": "index.html#learning-objectives",
@@ -49,24 +63,10 @@
     "text": "Emma Rand is a Professor in the Department of Biology at the University of York where she specializes in teaching data science and reproducibility, particularly to those who do not see themselves as programmers. She leads a UKRI funded projects called Cloud-SPAN and the UKRI Digital Research Skills Catalyst."
   },
   {
-    "objectID": "before.html",
-    "href": "before.html",
-    "title": "Pre-course instructions",
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "Reproducible reports with Quarto",
     "section": "",
-    "text": "To participate in this course, you will need a computer with internet access.\nTo follow along with the activities with the instructor, you will need R and RStudio installed on your computer, or access to Posit Cloud, an online platform for R and RStudio. You will also need some R packages and optionally, a lateX distribution if you want to create PDF reports.\nIf you are using a computer provided by your organisation you may need your IT department to install the software. If that is not possible, you can use Posit Cloud instead."
-  },
-  {
-    "objectID": "before.html#step-1-install-r-and-rstudio-or-use-posit-cloud",
-    "href": "before.html#step-1-install-r-and-rstudio-or-use-posit-cloud",
-    "title": "Pre-course instructions",
-    "section": "Step 1: Install R and RStudio or use Posit Cloud",
-    "text": "Step 1: Install R and RStudio or use Posit Cloud\n\nUse Posit Cloud\nPosit Cloud is an online platform that allows you to use R and RStudio directly from your web browser, without needing to install anything on your computer. The free plan is plenty for this workshop\n\nGo to https://positcloud.com/\nCreate a free account by clicking “Sign Up” in the top right corner\nOnce logged in, click “New Project” and select “New RStudio Project”\nYou can now use R and RStudio in your web browser!\n\n\n\nInstall R and RStudio on your computer\nIf you already have R and RStudio installed, check that you have at least R version 4.2 and RStudio version 2022.07 or later. If not, please install the latest versions by following the instructions below. Quarto comes with recent versions of RStudio and does not need to be installed separately.\n\nWindows\n\nInstall R:\n\nGo to https://cran.r-project.org/bin/windows/base/\nClick “Download R-4.x.x for Windows” (where x.x is the latest version number)\nRun the downloaded .exe file and follow the installation wizard\nAccept the default settings\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nClick “Download RStudio Desktop for Windows”\nRun the downloaded .exe file and follow the installation wizard\nAccept the default settings\n\n\n\n\nMac\n\nInstall R:\n\nGo to https://cran.r-project.org/bin/macosx/\nDownload the .pkg file for your Mac:\n\nFor Apple Silicon Macs (M1, M2, M3): Download the “arm64” version\nFor Intel Macs: Download the “x86_64” version\n\nOpen the downloaded .pkg file and follow the installation wizard\nAccept the default settings\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nClick “Download RStudio Desktop for macOS”\nOpen the downloaded .dmg file\nDrag the RStudio icon to your Applications folder\n\n\n\n\nLinux\n\nInstall R:\n\nOpen a terminal\nFor Ubuntu/Debian:\n\n  sudo apt update\n  sudo apt install r-base r-base-dev\n\nFor Fedora:\n\n  sudo dnf install R\n\nFor other distributions, see https://cran.r-project.org/bin/linux/\n\nInstall RStudio:\n\nGo to https://posit.co/download/rstudio-desktop/\nDownload the appropriate .deb (Ubuntu/Debian) or .rpm (Fedora/RedHat) file\nFor Ubuntu/Debian:\n\n  sudo dpkg -i rstudio-*.deb\n  sudo apt install -f\n\nFor Fedora:\n\n  sudo dnf install rstudio-*.rpm"
-  },
-  {
-    "objectID": "before.html#step-2-install-packages",
-    "href": "before.html#step-2-install-packages",
-    "title": "Pre-course instructions",
-    "section": "Step 2: Install packages",
-    "text": "Step 2: Install packages\nWe will use several R packages during the workshop. To install them, download setup.R from the course website and open it in RStudio and run it by clicking “Source” in the top right corner of the script editor.\nIf you are using Posit Cloud, use the “Upload” button in the Files pane to upload setup.R, then open it and click “Source”."
+    "text": "Introduction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n` but use –&gt;"
   }
 ]
