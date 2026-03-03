@@ -1,0 +1,66 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Reproducible reports with Quarto. A UKRI Digital Research
+  Skills Catalyst workshop (Funded by UKRI/ST/B000299/1)
+message: >-
+  If you use or reuse this training material, please cite
+  it! Thank you
+type: software
+authors:
+  - given-names: Emma
+    family-names: Rand
+    email: emma.rand@york.ac.uk
+    affiliation: University of York
+    orcid: 'https://orcid.org/0000-0002-1358-8275'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.18848356
+    description: >-
+      UKRI-Digital-Research-Skills-Catalyst/quarto-intro:
+      v0.1.0-alpha
+      https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
+repository-code: >-
+  https://github.com/UKRI-Digital-Research-Skills-Catalyst/quarto-intro
+url: >-
+  https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
+repository: 'https://zenodo.org/records/18848356'
+abstract: >-
+  Materials for a two-hour on-line workshop that introduces
+  you to Quarto, a scientific and technical publishing
+  system designed to facilitate reproducible working
+  practices by allowing you to integrate code, results, and
+  narrative text in a single document. Quarto supports
+  multiple programming languages, including R, Python,
+  Julia, and Observable JavaScript.
+
+
+  The workshop is taught using R and RStudio, but the
+  concepts are applicable to other programming languages
+  supported by Quarto. Some familiarity with the layout of
+  RStudio and beginner level knowledge of R is assumed.
+
+
+  By the end of this workshop, participants will be able to
+  transform raw data into a professional, polished report
+  (HTML, Word, or PDF) where the text and analysis remain in
+  sync. We will use the Gapminder data on global development
+  to demonstrate how to produce a reproducible country
+  profile report that analyses the relationship between
+  wealth (GDP per capita) and health (Life Expectancy) over
+  the last 50 years.
+keywords:
+  - R programming
+  - RStudio
+  - reproducibility
+  - automated reporting
+  - scientific publishing
+  - code
+  - Observable
+  - data analysis
+license: CC-BY-NC-SA-4.0
+commit: e491d09
+version: v0.1.0-alpha
+date-released: '2026-03-03'
