@@ -61,7 +61,7 @@ Participants will learn how to:
 ## Instructor
 
 Emma Rand is a Professor in the Department of Biology at the University
-of York where she specializes in teaching data science and
+of York where she specialises in teaching data science and
 reproducibility, particularly to those who do not see themselves as
 programmers. She leads a UKRI funded projects called
 [Cloud-SPAN](https://cloud-span.york.ac.uk/) and the [UKRI Digital
