@@ -9,7 +9,7 @@ website:
   title: "Reproducible reports<br>with Quarto"
   favicon: images/logo_no_text_transparent.png
   page-footer:
-    left: "<https://digitalskillscatalyst.ac.uk/>."
+    left: "<https://digitalskillscatalyst.ac.uk/>"
   navbar:
     logo: images/logo_transparent_background.png
     background: primary
