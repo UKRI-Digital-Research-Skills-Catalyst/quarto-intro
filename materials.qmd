@@ -6,1002 +6,374 @@ toc-location: right
 
 # Introduction
 
-<!-- This workshop introduces you to Quarto [@Allaire_Quarto_2024] for -->
+## Current process
 
-<!-- creating reproducible reports. -->
+-   Typically people analyse, plot and write up in different programs.
 
-<!-- 🎬 An instruction to do something -->
+-   Updates to data require manual updates to all the figures and tables
+    as well as to text reporting results.
 
-<!-- ## Learning Outcomes -->
+-   Graphs are saved to files and inserted into the final report.
 
-<!-- The successful student will be able to: -->
+-   Reordering figures, tables and equations means updating everywhere
+    they are cross-referenced.
 
-<!-- -   explain what Quarto and markdown are -->
+-   Submitting to a different journal requires reformatting the
+    document.
 
-<!-- -   appreciate the role of the YAML header -->
+-   Manual labour ..... error prone
 
-<!-- -   set default code chunk behaviour and that for individual chunks -->
+## What is Quarto?
 
-<!-- -   use headings, simple text formatting and special characters -->
+-   An open-source scientific and technical publishing system that
+    allows you to create dynamic reproducible reports in a variety of
+    output formats.
 
-<!-- -   add citations and references -->
+-   Next generation RMarkdown. Many new features, greater
+    standardisation and more flexibility.
 
-<!-- -   use inline code to report results in text -->
+    -   Markdown is a lightweight markup language for creating formatted
+        text using a plain-text editor. It was designed by [John Gruber
+        in 2004](https://daringfireball.net/projects/markdown/)
 
-<!-- -   create automatically numbered tables and figures and cross reference -->
+    -   RMarkdown is an extension of Markdown that adds support for
+        embedding R code chunks in Markdown documents. It was created by
+        JJ Allaire and Yihui Xie early in 2014 but has been worked on by
+        many others since.
 
-<!--     them in text -->
+-   Mutli-language: Python, R, Julia, and Observable.
 
-<!-- ## Current process -->
+-   Include auto-numbered equations, figures and tables that can be
+    cross referenced
 
-<!-- -   Typically people analyse, plot and write up in different programs. -->
+# Exercises
 
-<!--     90% use Word/Pages/Writer/Googledocs -->
+## Scenario
 
-<!-- -   Updates to data require manual updates to all the figures and tables -->
+You are a data analyst for an international NGO. You have been asked to
+produce a reproducible country profile report that analyses the
+relationship between wealth (GDP per capita) and health (Life
+Expectancy) over the last 50 years.
 
-<!--     as well as to text reporting results. -->
+## The data
 
-<!-- -   Graphs are saved to files and inserted into the final report. -->
+```{r}
+#| echo: false
+library(tidyverse)
 
-<!-- -   Reordering figures, tables and equations means updating everywhere -->
+gapminder <- read_tsv("data-raw/gapminder.tsv")
 
-<!--     they are cross-referenced. -->
 
-<!-- -   Submitting to a different journal requires reformatting the -->
 
-<!--     document. -->
+```
 
-<!-- -   Manual labour ..... error prone -->
+We will use data from [Gapminder](https://www.gapminder.org/). Gapminder
+was founded in 2005 by Ola Rosling, Anna Rosling Rönnlund and Hans
+Rosling. It aims to combat misguided global strategies rooted in
+misconceptions by promoting a fact-based worldview grounded reliable
+statistics. A subset of the data is
+[gapminder.tsv](dat-raw/gapminder.tsv). It has `r nrow(gapminder)` rows
+and `r ncol(gapminder)` columns (variables). The variables are:
+`r paste(colnames(gapminder), collapse = ", ")`[^1]. There are
+per-capita GDP and life expectancy data from
+`r length(unique(gapminder$year))` years (from `r min(gapminder$year)`
+to `r max(gapminder$year)`) for each of
+`r length(unique(gapminder$country))` countries.
 
-<!-- ## What is Quarto? -->
+[^1]: Per-capita GDP (Gross domestic product) is given in units
+    of [international
+    dollars](https://en.wikipedia.org/wiki/Geary%E2%80%93Khamis_dollar),
+    “a hypothetical unit of currency that has the same purchasing power
+    parity that the U.S. dollar had in the United States at a given
+    point in time” – 2005, in this case.
 
-<!-- -   An open-source scientific and technical publishing system that -->
+```{r}
+#| echo: false
+knitr::kable(gapminder) |> 
+  kableExtra::kable_styling() |> 
+  kableExtra::scroll_box(height = "200px")
+```
 
-<!--     allows you to create dynamic reproducible reports in a variety of -->
+## Create a new Quarto document
 
-<!--     output formats. -->
+### Create a new project
 
-<!-- -   Next generation RMarkdown. Many new features, greater -->
+🎬 File \| New Project \| New Directory \| Quarto Project
 
-<!--     standardisation and more flexibility. -->
+-   Browse to an appropriate place and give your project a name.
 
-<!--     -   Markdown is a lightweight markup language for creating formatted -->
+-   I used `ngo-report`
 
-<!--         text using a plain-text editor. It was designed by [John Gruber -->
+-   Choose Engine: Knitr
 
-<!--         in 2004](https://daringfireball.net/projects/markdown/) -->
+-   Turn visual markdown editor off (for now)
 
-<!--     -   RMarkdown is an extension of Markdown that adds support for -->
+### Change some RStudio settings
 
-<!--         embedding R code chunks in Markdown documents. It was created by -->
+🎬 Tools \| Global Options
 
-<!--         JJ Allaire and Yihui Xie early in 2014 but has been worked on by -->
+-   General:
 
-<!--         many others since. -->
+    -   Turn off the three "Restore ...." options
 
-<!-- -   Mutli-language: Python, R, Julia, and Observable. -->
+    -   Turn "Save workspace to .RData on exit" to Never
 
-<!-- -   Include auto-numbered and cross-referencable equations, figures and -->
+-   R Markdown:
 
-<!--     tables -->
+    -   Turn "Show output preview in:" to Viewer pane
 
-<!-- -   Integrates with Zotero -->
+### Your project contains
 
-<!-- # Quarto: live demonstration -->
+-   `ngo-report.RProj` - what makes the folder an RStudio project
 
-<!-- 🎬 Make a copy of the `wr-chaff` repository: -->
+-   `_quarto.yml` - the configuration file
 
-<!-- ```{r} -->
+-   `ngo-report.md` - the main document containing some template text
 
-<!-- #| eval: false -->
+The code is normal functioning code. You can run it interactively as you
+write your report.
 
-<!-- usethis::use_course("3mmaRand/wr-chaff", destdir = ".") -->
+🎬 Place your cursor in the code chunk and run it (Ctrl-Enter or use the
+green run button)
 
-<!-- ``` -->
+🎬 Hit Render (Ctrl-Shift-K)
 
-<!-- ```          -->
+Note that `ngo-report.html` is created and opened in the Viewer pane
 
-<!-- ✔ Downloading from <https://github.com/3mmaRand/wr-chaff/zipball/HEAD>. -->
+## Edit the YAML header
 
-<!-- Downloaded: 0.73 MB   -->
+🎬 Add your name, and a title. Also add the engine and format
 
-<!-- ✔ Download stored in ./3mmaRand-wr-chaff-3c34954.zip. -->
+``` yml
+---
+title: "The relationship between Gross Domestic Product per capita and Life Expectancy."
+author: "Emma Rand"
+engine: knitr
+format:
+  html
+---
+```
 
-<!-- ✔ Unpacking ZIP file into 3mmaRand-wr-chaff-3c34954/ (61 files extracted). -->
+### Add some content
 
-<!-- Shall we delete the ZIP file (3mmaRand-wr-chaff-3c34954.zip)? -->
+🎬 Add a code chunk (Ctrl-Shift-I) for a simple graph.
 
-<!-- 1: Definitely -->
+```{r}
+#| echo: fenced
+hist(rnorm(100))
+```
 
-<!-- 2: Not now -->
+🎬 Hit Render (Ctrl-Shift-K)
 
-<!-- 3: No way -->
+### Edit the YAML header: default code chunk options
 
-<!-- ``` -->
+🎬 Set some default code chunk options. I recommend these for reports
 
-<!-- 🎬 Choose the option that means yes. -->
+``` yml
+---
+title: "The relationship between Gross Domestic Product per capita and Life Expectancy."
+author: "Emma Rand"
+engine: knitr
+format:
+  html
+execute:
+  echo: false
+  include: true
+  error: false
+  message: false
+  warning: false
 
-<!-- ```          -->
+---
+```
 
-<!-- Selection: 1 -->
+🚨 Indentation matters in YAML. Make sure the `execute` options are
+indented under `execute`.
 
-<!-- ✔ Deleting 3mmaRand-wr-chaff-3c34954.zip. -->
+🎬 Hit Render (Ctrl-Shift-K)
 
-<!-- ✔ Opening project in RStudio. -->
+Code chunk options
 
-<!-- ``` -->
+-   `echo: false` code will not be included in output
+-   `include: true` output will be included
+-   `error: false` halt render if a code error occurs
+-   `message: false` messages and warnings will not be included
+-   `warning: false`
 
-<!-- ## Key points from the demo -->
+🎬 Experiment with change the options and re-rendering. Try misspelling
+`rnorm` and switching between `error: true` and `error: false` to see
+the error option in action.
 
-<!-- -   Quarto mixes text and code to create dynamic reports -->
+## Adding content
 
-<!-- -   The YAML header sets the default behaviour for the document and is -->
+🎬 Delete everything except the YAML header.
 
-<!--     between `---` at the top of the document -->
+🎬 Add headings for: Introduction, Methods, Results, Discussion, and
+References
 
-<!-- -   R Code chunks are between ```` ```{r} ```` and ```` ``` ```` and -->
+🎬 Add a code chunk for package loading
 
-<!--     chunk options, starting `#|`, determine how/whether they run whether -->
+```{r}
+#| echo: fenced
+#| label: load-packages
+library(tidyverse)
+```
 
-<!--     code/output is included in the rendered document -->
+`#| label: load-packages` is a code chunk label. These are useful (here)
+and essential (later) for cross-referencing.
 
-<!-- -   You can run code chunk interactively or through rendering -->
+### An Introduction
 
-<!-- -   Comments: `|#`, `#` in code chunks, `<!-- in text -->
+🎬 Add this test to the Introduction
 
-\` but use --\> <!--     Ctrl+Shift+C -->
+> There is a relationship between wealth and health. We will explore
+> this relationship using the relationship between Gross Domestic
+> Product (GDP) per capita and Life Expectancy across countries and over
+> time.
 
-<!-- # Markdown foundations -->
+🎬 Make the "per capita" italic
 
-<!-- ## Text Formatting -->
+🎬 Make "Gross Domestic Product (GDP)" a link to
+<https://en.wikipedia.org/wiki/Gross_domestic_product>
 
-<!-- +---------------------+---------------------+ -->
+### Data import
 
-<!-- | Markdown Syntax     | Output              | -->
+🎬 Make a folder called `data-raw`
 
-<!-- +=====================+=====================+ -->
+🎬 Save [gapminder.tsv](data-raw/gapminder.tsv) to `data-raw`
 
-<!-- | ``` markdown        | *italics*, **bold** | -->
+🎬 Add a code chunk with:
 
-<!-- | *italics*,**bold**  |                     | -->
+```{r}
+#| echo: fenced
+#| label: import-data
+file <- "data-raw/gapminder.tsv"
+gapminder <- read_tsv(file)
+```
 
-<!-- | ```                 |                     | -->
+🎬 Run chunks interactively
 
-<!-- +---------------------+---------------------+ -->
+🎬 Render
 
-<!-- | ``` markdown        | ***bold italics***  | -->
+### Methods text
 
-<!-- | ***bold italics *** |                     | -->
+🎬 Add this text to Methods:
 
-<!-- | ```                 |                     | -->
+> We took per capita GDP and life expectancy data from 12 years (from
+> 1952 to 2007) for each of 142 countries. Analysis was carried out with
+> R and tidyverse packages.
 
-<!-- +---------------------+---------------------+ -->
+It would be good not to have "hard coded" those numbers in the text.
+What if we get more data. Or we just misremember or mis-type the
+numbers?
 
-<!-- | ``` markdown        | superscript^2^      | -->
+## Inline code: reproducible reporting
 
-<!-- | superscript^2^      |                     | -->
+-   Inline code is how you include a variable value, like a sample size,
+    mean or statistical result, in a section of text.
 
-<!-- | ```                 |                     | -->
+-   In fact, any code output can be inserted directly into the text of a
+    .qmd file using inline code.
 
-<!-- +---------------------+---------------------+ -->
+Inline code goes between \`r\` and \` .
 
-<!-- | ``` markdown        | subscript~2~        | -->
+For example by writing:
 
-<!-- | subscript~2~        |                     | -->
+The squareroot of 2 is \`r `sqrt(2)` \`
 
-<!-- | ```                 |                     | -->
+you will get:
 
-<!-- +---------------------+---------------------+ -->
+The squareroot of 2 is `r sqrt(2)`
 
-<!-- | ``` markdown        | ~~strikethrough~~   | -->
+### Extract summary information for use in inline code
 
-<!-- | ~~strikethrough~~   |                     | -->
+🎬 Add a code chunk with:
 
-<!-- | ```                 |                     | -->
+```{r}
+#| echo: fenced
+#| label: extract-summary
+# extract values for inline reporting
+n_years <- length(unique(gapminder$year))
+min_year <- min(gapminder$year)
+max_year <- max(gapminder$year)
+n_counties <- length(unique(gapminder$country))
 
-<!-- +---------------------+---------------------+ -->
+```
 
-<!-- | ``` markdown        | `verbatim code`     | -->
+🎬 Replace numbers in the Methods text with inline code:
 
-<!-- | `verbatim code`     |                     | -->
+> We took per capita GDP and life expectancy data from \`r n_years\`
+> years (from \`r min_year\` to \`r max_year\`) for each of \`r
+> n_counties\` countries.
 
-<!-- | ```                 |                     | -->
+🎬 Render
 
-<!-- +---------------------+---------------------+ -->
+Teach: Headers (# Introduction), bolding (**key findings**), and lists
+(Study goals).
 
-<!-- ## Headings -->
+Teach: The YAML header (Add a Title: "Global Health Trends", Author, and
+toc: true).
 
-<!-- +-----------------+---------------+ -->
+Part 2: Integrating Data (0:30 – 1:00) Goal: Show how code and text live
+together.
 
-<!-- | Markdown Syntax | Output        | -->
+The Task: Load the data and pull out specific stats for the text.
 
-<!-- +=================+===============+ -->
+Scenario Action:
 
-<!-- | ``` markdown    | # Header 1    | -->
+Insert a code chunk to load library(tidyverse) and library(gapminder).
 
-<!-- | # Header 1      |               | -->
+Filter the data to the most recent year (2007).
 
-<!-- | ```             |               | -->
+Teach: Inline Code. "The average life expectancy across all countries in
+2007 was r mean(gapminder_2007\$lifeExp) years." (This is a huge "Aha!"
+moment for admin staff who manually update reports).
 
-<!-- +-----------------+---------------+ -->
+```{r}
+#| label: data-prep
+#| fence: true
 
-<!-- | ``` markdown    | ## Header 2   | -->
+# Filter the dataset to the most recent year for our report
+gapminder_2007 <- gapminder |> 
+  filter(year == 2007)
+```
 
-<!-- | ## Header 2     |               | -->
+Part 3: Tables and Visuals (1:00 – 1:30) Goal: Demonstrate professional
+output.
 
-<!-- | ```             |               | -->
+The Task: Create a summary table and a chart.
 
-<!-- +-----------------+---------------+ -->
+Scenario Action:
 
-<!-- | ``` markdown    | ### Header 3  | -->
+The Table: Use knitr::kable() or the gt package to show the "Top 5
+Countries by Life Expectancy."
 
-<!-- | ### Header 3    |               | -->
+Teach: Chunk options like #\| echo: false (hiding the code so the
+manager only sees the table).
 
-<!-- | ```             |               | -->
+The Plot: Create a ggplot scatterplot of GDP vs. Life Expectancy,
+colored by Continent.
 
-<!-- +-----------------+---------------+ -->
+Teach: Figure captions and cross-referencing ("As seen in @fig-gdp...").
 
-<!-- | ``` markdown    | #### Header 4 | -->
+Part 4: The "Power User" Finish (1:30 – 2:00) Goal: Show why Quarto is
+better than Word.
 
-<!-- | #### Header 4   |               | -->
+The Task: Citations and Formats.
 
-<!-- | ```             |               | -->
+Scenario Action:
 
-<!-- +-----------------+---------------+ -->
+Citations: Add a references.bib file. Cite Hans Rosling or the Gapminder
+foundation within the text.
 
-<!-- ### Links & Images -->
+Rendering: Render the report to HTML. Then, with one click, render it to
+Word (for the boss who tracks changes) or PDF (for the formal
+publication).
 
-<!-- +-------------------------+------------------------------+ -->
+Bonus (if time permits): Parameters. Change the country parameter in the
+YAML to "Canada" or "Kenya" and watch the whole report update
+automatically for that specific country.
 
-<!-- | Markdown Syntax         | Output                       | -->
+Pages made with R [@R-core], Quarto [@Allaire_Quarto_2026], `knitr`
+[@knitr1; @knitr2; @knitr3], `kableExtra` [@kableExtra]
 
-<!-- +=========================+==============================+ -->
-
-<!-- | ``` markdown            | [Quarto](https://quarto.org) | -->
-
-<!-- | [Quar                   |                              | -->
-
-<!-- | to](https://quarto.org) |                              | -->
-
-<!-- | ```                     |                              | -->
-
-<!-- +-------------------------+------------------------------+ -->
-
-<!-- | ``` markdown            | ![Caption](images/chaff.jpg) | -->
-
-<!-- | ![Cap                   |                              | -->
-
-<!-- | tion](images/chaff.jpg) |                              | -->
-
-<!-- | ```                     |                              | -->
-
-<!-- +-------------------------+------------------------------+ -->
-
-<!-- ## Equations -->
-
-<!-- Use `$` delimiters for inline maths and `$$` delimiters for display -->
-
-<!-- maths. For example: -->
-
-<!-- +---------------------------+--------------------------+ -->
-
-<!-- | Markdown Syntax           | Output                   | -->
-
-<!-- +===========================+==========================+ -->
-
-<!-- | ``` markdown              | inline maths: $E=mc^{2}$ | -->
-
-<!-- | i                         |                          | -->
-
-<!-- | nline maths: $E = mc^{2}$ |                          | -->
-
-<!-- | ```                       |                          | -->
-
-<!-- +---------------------------+--------------------------+ -->
-
-<!-- | ``` markdown              | display maths:           | -->
-
-<!-- | display maths:            |                          | -->
-
-<!-- |                           | $$E = mc^{2}$$           | -->
-
-<!-- | $$E = mc^{2}$$            |                          | -->
-
-<!-- | ```                       |                          | -->
-
-<!-- +---------------------------+--------------------------+ -->
-
-<!-- ## Divs -->
-
-<!-- "Divs" are used to group content together. They can be used to apply -->
-
-<!-- styling to that content. -->
-
-<!-- We also use them for grouping a code chunks with text. This is useful -->
-
-<!-- for creating multi-panel figures with legends. -->
-
-<!-- # Create your own Quarto document -->
-
-<!-- ## Create a new project -->
-
-<!-- 🎬 File \| New Project \| New Directory \| Quarto Project -->
-
-<!-- -   Browse to an appropriate place and give your project a name. -->
-
-<!-- -   I used `wr-chaff` -->
-
-<!-- -   Choose Engine: Knitr -->
-
-<!-- -   Turn visual markdown editor off (for now) -->
-
-<!-- ## Change some RStudio settings -->
-
-<!-- 🎬 Tools \| Global Options -->
-
-<!-- -   General: -->
-
-<!--     -   Turn off the three "Restore ...." options -->
-
-<!--     -   Turn "Save workspace to .RData on exit" to Never -->
-
-<!-- -   R Markdown: -->
-
-<!--     -   Turn "Show output preview in:" to Viewer pane -->
-
-<!-- ## Your project contains -->
-
-<!-- -   `wr-chaff.RProj` - what makes the folder an RStudio project -->
-
-<!-- -   `_quarto.yml` - the configuration file -->
-
-<!-- -   `wr-chaff.md` - the main document containing some template text -->
-
-<!-- 🎬 Hit Render (Ctrl-Shift-K) -->
-
-<!-- Note that `wr-chaff.html` is created and opened in the Viewer pane -->
-
-<!-- # Edit the YAML header -->
-
-<!-- 🎬 Add your name, and a title. Also add the engine and format -->
-
-<!-- ``` yml -->
-
-<!-- --- -->
-
-<!-- title: "The difference in mass between subspecies of common chaffinch." -->
-
-<!-- author: "Emma Rand" -->
-
-<!-- engine: knitr -->
-
-<!-- format: -->
-
-<!--   html -->
-
-<!-- --- -->
-
-<!-- ``` -->
-
-<!-- ## Add some content -->
-
-<!-- 🎬 Add a code chunk (Ctrl-Shift-I) for a simple graph. -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: fenced -->
-
-<!-- hist(rnorm(100)) -->
-
-<!-- ``` -->
-
-<!-- 🎬 Hit Render (Ctrl-Shift-K) -->
-
-<!-- ## Edit the YAML header: default code chunk options -->
-
-<!-- 🎬 Set some default code chunk options. I recommend these for reports -->
-
-<!-- ``` yml -->
-
-<!-- --- -->
-
-<!-- title: "The difference in mass between subspecies of common chaffinch." -->
-
-<!-- author: "Emma Rand" -->
-
-<!-- engine: knitr -->
-
-<!-- format: -->
-
-<!--   html -->
-
-<!-- execute: -->
-
-<!--   echo: false -->
-
-<!--   include: true -->
-
-<!--   error: false -->
-
-<!--   message: false -->
-
-<!--   warning: false -->
-
-<!-- --- -->
-
-<!-- ``` -->
-
-<!-- 🎬 Hit Render (Ctrl-Shift-K) -->
-
-<!-- Code chunk options -->
-
-<!-- -   `echo: false` code will not be included in output -->
-
-<!-- -   `include: true` output will be included -->
-
-<!-- -   `error: false` halt render if a code error occurs -->
-
-<!-- -   `message: false` messages and warnings will not be included -->
-
-<!-- -   `warning: false` -->
-
-<!-- 🎬 Experiment with change the options and re-rendering. Try misspelling -->
-
-<!-- `rnorm` to see the error option in action. -->
-
-<!-- # Adding content -->
-
-<!-- 🎬 Delete everything except the YAML header. -->
-
-<!-- 🎬 Add headings for: Introduction, Methods, Results, Discussion, and -->
-
-<!-- References -->
-
-<!-- 🎬 Add a code chunk for - we need `tidyverse` [@tidyverse] -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: fenced -->
-
-<!-- #| label: load-packages -->
-
-<!-- library(tidyverse) -->
-
-<!-- ``` -->
-
-<!-- `#| label: load-packages` is a code chunk label. These are useful (here) -->
-
-<!-- and essential (later) for cross-referencing. -->
-
-<!-- ## An Introduction -->
-
-<!-- 🎬 Add this test to the Introduction -->
-
-<!-- > A number of subspecies of the common chaffinch, Fringilla coelebs, -->
-
-<!-- > have been described based principally on the differences in the -->
-
-<!-- > pattern and colour of the adult male plumage. Two of groups of these -->
-
-<!-- > subspecies are the "coelebs group" that occurs in Europe and Asia and -->
-
-<!-- > the "canariensis group" that occurs on the Canary Islands. -->
-
-<!-- 🎬 Make the species name italic -->
-
-<!-- 🎬 Make "common chaffinch" a link to -->
-
-<!-- <https://en.wikipedia.org/wiki/Common_chaffinch> -->
-
-<!-- ## Data import -->
-
-<!-- 🎬 Make a folder called `data-raw` -->
-
-<!-- 🎬 Save [chaff.txt](data-raw/chaff.txt) to `data-raw` -->
-
-<!-- 🎬 Add a code chunk with: -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: fenced -->
-
-<!-- #| label: import-data -->
-
-<!-- file <- "data-raw/chaff.txt" -->
-
-<!-- chaff <- read_table(file) -->
-
-<!-- ``` -->
-
-<!-- 🎬 Run chunks interactively -->
-
-<!-- 🎬 Render -->
-
-<!-- ## Data summary -->
-
-<!-- 🎬 Add a code chunk with: -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: fenced -->
-
-<!-- #| label: data-summary -->
-
-<!-- chaff_summary <- chaff |>  -->
-
-<!--   group_by(subspecies) |>   -->
-
-<!--   summarise(mean = mean(mass, na.rm = TRUE), -->
-
-<!--             sd = sd(mass, na.rm = TRUE), -->
-
-<!--             n = length(mass), -->
-
-<!--             se = sd / sqrt(n)) -->
-
-<!-- ``` -->
-
-<!-- 🎬 Render -->
-
-<!-- Notice the chunk labels being used in "Background Jobs" -->
-
-<!-- ## Methods text -->
-
-<!-- 🎬 Add this text to Methods: -->
-
-<!-- > We randomly sampled 20 *F. c. coelebs* males and 20 *F. c. palmae* -->
-
-<!-- > males and determined their mass with spring scales. Analysis was -->
-
-<!-- > carried out with R and tidyverse packages. -->
-
-<!-- It would be good not to have "hard coded" those numbers in the text. -->
-
-<!-- What if we get more data. Or we just misremember or mis-type the -->
-
-<!-- numbers? -->
-
-<!-- # Inline code: reproducible reporting -->
-
-<!-- -   Inline code is how you include a variable value, like a sample size, -->
-
-<!--     mean or statistical result, in a section of text. -->
-
-<!-- -   In fact, any code output can be inserted directly into the text of a -->
-
-<!--     .qmd file using inline code. -->
-
-<!-- Inline code goes between \`r\` and \` . -->
-
-<!-- For example by writing: -->
-
-<!-- The squareroot of 2 is \`r `sqrt(2)` \` -->
-
-<!-- you will get: -->
-
-<!-- The squareroot of 2 is `r sqrt(2)` -->
-
-<!-- ## Extract summary information for use in inline code -->
-
-<!-- 🎬 Add a code chunk with: -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: fenced -->
-
-<!-- #| label: extract-summary -->
-
-<!-- # extract values for inline reporting -->
-
-<!-- # sample sizes -->
-
-<!-- n_coelebs <- chaff_summary |>  -->
-
-<!--   filter(subspecies == "coelebs") |>  -->
-
-<!--   pull(n) -->
-
-<!-- n_canariensis <- chaff_summary |>  -->
-
-<!--   filter(subspecies == "canariensis") |>  -->
-
-<!--   pull(n) -->
-
-<!-- ``` -->
-
-<!-- 🎬 Replace the sample sizes in the Methods text with inline code -->
-
-<!-- 🎬 Render -->
-
-<!-- # Figures -->
-
-<!-- 🎬 Add a code chunk to the Results section with: -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: fenced -->
-
-<!-- #| label: fig-chaff -->
-
-<!-- ggplot() + -->
-
-<!--   geom_point(data = chaff, aes(x = subspecies, y = mass), -->
-
-<!--              position = position_jitter(width = 0.1, height = 0), -->
-
-<!--              colour = "gray50") + -->
-
-<!--   geom_errorbar(data = chaff_summary,  -->
-
-<!--                 aes(x = subspecies, ymin = mean - se, ymax = mean + se), -->
-
-<!--                 width = 0.3) + -->
-
-<!--   geom_errorbar(data = chaff_summary,  -->
-
-<!--                 aes(x = subspecies, ymin = mean, ymax = mean), -->
-
-<!--                 width = 0.2) + -->
-
-<!--   scale_y_continuous(name = "Mass (g)",  -->
-
-<!--                      limits = c(0, 30),  -->
-
-<!--                      expand = c(0, 0)) + -->
-
-<!--   scale_x_discrete(name = "Subspecies",  -->
-
-<!--                    labels = c("Canariensis", "Coelebs")) + -->
-
-<!--   theme_classic() -->
-
-<!-- ``` -->
-
-<!-- 🎬 Render -->
-
-<!-- Note: It is automatically labelled as Figure 1! -->
-
-<!-- ## Cross referencing figures -->
-
-<!-- The label of the code chunk is important when creating figures because -->
-
-<!-- it is used to cross reference the figure in the text. We give cross -->
-
-<!-- references with `@` followed by the label of the code chunk. -->
-
-<!-- That is starts with a `fig-` prefix also matters - this is what -->
-
-<!-- determines what is treated as a figure numbered in order of appearance. -->
-
-<!-- 🎬 Add a sentence with a cross reference to the figure: -->
-
-<!-- > Canariensis have higher mass than coelebs. See \@fig-chaff. -->
-
-<!-- ## Figure legends -->
-
-<!-- There are two ways to add a legend: -->
-
-<!-- 1.  Add the `fig-cap` chunk option: `fig-cap: "Mass of chaffinches"` to -->
-
-<!--     the code chunk. -->
-
-<!-- 2.  Use a div. `:::` -->
-
-<!-- Divs are more flexible: -->
-
-<!-- -   You can include inline code, citations, special characters and -->
-
-<!--     formatting -->
-
-<!-- -   You can more easily make multipanel figures -->
-
-<!-- ## A figure legend with a div -->
-
-<!-- 🎬 Add a div by: -->
-
-<!-- -   removing the `fig-cap` option **and** the `label` option -->
-
-<!-- -   adding `:::` before and after the code chunk -->
-
-<!-- -   placing the label after the opening `:::` like this: -->
-
-<!--     `:::{#fig-chaff}` Note the`#` is important for numbering -->
-
-<!-- -   Putting the legend text between the code chunk and the closing `:::` -->
-
-<!-- In the example figure legend I have included inline code, formatting and -->
-
-<!-- a special character using inline math. -->
-
-<!-- ## Set the figure size and alignment -->
-
-<!-- 🎬 Add a chunk options `fig-width`, `fig-height` and `fig-align` to the -->
-
-<!-- code chunk: -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: fenced -->
-
-<!-- #| fig-width: 3.5 -->
-
-<!-- #| fig-height: 3.5 -->
-
-<!-- ggplot() + -->
-
-<!--   geom_point(data = chaff, aes(x = subspecies, y = mass), -->
-
-<!--              position = position_jitter(width = 0.1, height = 0), -->
-
-<!--              colour = "gray50") + -->
-
-<!--   geom_errorbar(data = chaff_summary,  -->
-
-<!--                 aes(x = subspecies, ymin = mean - se, ymax = mean + se), -->
-
-<!--                 width = 0.3) + -->
-
-<!--   geom_errorbar(data = chaff_summary,  -->
-
-<!--                 aes(x = subspecies, ymin = mean, ymax = mean), -->
-
-<!--                 width = 0.2) + -->
-
-<!--   scale_y_continuous(name = "Mass (g)",  -->
-
-<!--                      limits = c(0, 30),  -->
-
-<!--                      expand = c(0, 0)) + -->
-
-<!--   scale_x_discrete(name = "Subspecies",  -->
-
-<!--                    labels = c("Canariensis", "Coelebs")) + -->
-
-<!--   theme_classic() -->
-
-<!-- ``` -->
-
-<!-- # Two panel figures -->
-
-<!-- -   We are going to add another figure, this time a figure with two -->
-
-<!--     panels (it's an unnecessary figure for this data, but works for -->
-
-<!--     demonstration). -->
-
-<!-- -   The figure will be two histogram of the mass of each subspecies. -->
-
-<!-- -   We will again use a div which will contain two code chunks, one for -->
-
-<!--     each graph. -->
-
-<!-- -   There will be a label on the div for the figure as a whole and -->
-
-<!--     labels on each of the chunk to cross reference the sub figures. -->
-
-<!-- -   Figure layout information will be added to the div. -->
-
-<!-- ## The panels -->
-
-<!-- 🎬 Add these two chunks to the Results section below the last figure -->
-
-<!-- (make sure you're outside the last div) -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: fenced -->
-
-<!-- #| label: fig-hist-canariensis -->
-
-<!-- chaff |> filter(subspecies == "canariensis") |> -->
-
-<!--   ggplot(aes(x = mass)) + -->
-
-<!--   geom_histogram(bins = 8) + -->
-
-<!--   theme_minimal() -->
-
-<!-- ``` -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: fenced -->
-
-<!-- #| label: fig-hist-coelebs -->
-
-<!-- chaff |> filter(subspecies == "coelebs") |> -->
-
-<!--   ggplot(aes(x = mass)) + -->
-
-<!--   geom_histogram(bins = 8) + -->
-
-<!--   theme_minimal() -->
-
-<!-- ``` -->
-
-<!-- If you render, you'll see that the two figures are added as separate -->
-
-<!-- figures. -->
-
-<!-- ## As one figure -->
-
-<!-- To make them into one figure we need to use a div. -->
-
-<!-- 🎬 Add the div a round those chunks -->
-
-<!-- `{##fig-histograms layout-ncol=2}` -->
-
-<!-- > *the two code chunks* -->
-
-<!-- `:::` -->
-
-<!-- 🎬 Render -->
-
-<!-- 🛝 Add a figure legend to the two panel figure -->
-
-<!-- 🛝 Add a sentence with a cross reference to the figure. Can you cross -->
-
-<!-- reference the sub figures? -->
-
-<!-- 🛝 Change the order of the figures and marvel at the updated numbers -->
-
-<!-- # Tables -->
-
-<!-- There are several ways to add tables to a document. We will use the -->
-
-<!-- `knitr::kable()` function to create a table from a data frame or the -->
-
-<!-- summary information -->
-
-<!-- 🎬 Add a table of the summary information for the chaffinch data: -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: fenced -->
-
-<!-- #| label: tbl-chaff -->
-
-<!-- chaff_summary |>  -->
-
-<!--   knitr::kable(caption = "Summary of mass(g) for the two subspecies of chaffinch.") -->
-
-<!-- ``` -->
-
-<!-- ## Crossreferencing Tables -->
-
-<!-- Just as the `fig-` prefix matters for corrected numbering of figures, -->
-
-<!-- the `tbl-` prefix is important for the corrected numbering of figures. -->
-
-<!-- Just as the label of the code chunk is important for cross referencing -->
-
-<!-- of figures so it is for tables and we use `@` followed by the label of -->
-
-<!-- the code chunk to cross reference the table in the text. -->
-
-<!-- 🎬 Add a sentence with a cross reference to the table. -->
-
-<!-- ## Tables - improve format -->
-
-<!-- The decimal places are over-the-top. They can be set -->
-
-<!-- 1.  in the table by adding `digits = 2` to the `kable()` function -->
-
-<!-- 2.  For the document overall by adding: -->
-
-<!-- ```{r} -->
-
-<!-- #| echo: fenced -->
-
-<!-- options(digits = 2) -->
-
-<!-- ``` -->
-
-<!-- 🎬 Do one of these. -->
-
-<!-- ## Tables - improve format -->
-
-<!-- A handy tidyverse function, `str_to_sentence()`, can be used for -->
-
-<!-- converting lower case to sentence case. We will do this for column names -->
-
-<!-- 🎬 Add `col.names = names(chaff_summary) |> str_to_sentence()` to the -->
-
-<!-- `kable()` function -->
-
-<!-- # The visual editor! -->
-
-<!-- -   The visual editor is a WYSIWYG editor for Quarto documents. It can -->
-
-<!--     be accessed by clicking the `Visual Editor` button in the top right -->
-
-<!--     or by Ctrl-Shift-F4 -->
-
-<!-- -   It makes it easier to add and edit content (although I find I often -->
-
-<!--     want to use the source) -->
-
-<!-- -   It is especially useful for adding citations. -->
-
-<!-- -   Especially if you use zotero. -->
-
-<!-- # Citations -->
-
-<!-- ## Package citations -->
-
-<!-- You can add citations for R and packages, from doi, from a .bib file, or -->
-
-<!-- from zotero. -->
-
-<!-- 🎬 Put your cursor where you want the citation to go and click the -->
-
-<!-- `Insert` button in the top right and select `Citation` (Ctrl-Shift-F8) -->
-
-<!-- and add a citation for the `tidverse` package. -->
-
-<!-- 🎬 Render -->
-
-<!-- -   the in-text citation has been added -->
-
-<!-- -   the reference has been added to the references section -->
-
-<!-- -   a `references.bib` file has been created in the project folder -->
-
-<!-- ## Citations from DOI -->
-
-<!-- 🎬 Put your cursor after "plumage" in the Introduction and click the -->
-
-<!-- `Insert` button in the top right and select `Citation` (Ctrl-Shift-F8). -->
-
-<!-- Select From DOI and paste in 10.1016/j.ympev.2009.07.018 -->
-
-<!-- 🎬 Render -->
-
-<!-- You can also add citations to the .bib file manually. E.g. for R itself -->
-
-<!-- ## Extra exercises -->
-
-<!-- 🛝 Make a folder called `images` and save these two images of the -->
-
-<!-- subspecies to it: [canariensis.jpg](images/canariensis.jpg) and -->
-
-<!-- [coelebs.jpg](images/coelebs.jpg). Then add images of each of the -->
-
-<!-- chaffinch subspecies as a multi-panel figure in the introduction -->
-
-<!-- # Summary -->
-
-<!-- -   Quarto is a Mutli-language scientific publishing system for creating -->
-
-<!--     dynamic reproducible reports in a many formats. It is based on R -->
-
-<!--     Markdown. -->
-
-<!-- -   The YAML header provides metadata and sets the default behaviour for -->
-
-<!--     the document -->
-
-<!-- -   Code chunk options determine how/whether they run whether -->
-
-<!--     code/output is included in the rendered document -->
-
-<!-- -   Code can be run interactively -->
-
-<!-- -   “Divs” are used to group content together and apply styling to that -->
-
-<!--     content. -->
-
-<!-- -   Figures, images, tables and equations can be numbered automatically -->
-
-<!--     and cross referenced in text. The `fig-` and `tbl-` (etc) prefixes -->
-
-<!--     are important for this. -->
-
-<!-- -   You can add citations and references. -->
-
-<!-- Pages made with R [@R-core], Quarto [@Allaire_Quarto_2024], `knitr` -->
-
-<!-- [@knitr1; @knitr2; @knitr3], `kableExtra` [@kableExtra] -->
-
-<!-- # References -->
+# References
