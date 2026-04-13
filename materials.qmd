@@ -274,11 +274,11 @@ numbers?
 -   In fact, any code output can be inserted directly into the text of a
     .qmd file using inline code.
 
-Inline code goes between \`r\` and \` .
+Inline code goes between `` `r `` and `` ` ``.
 
 For example by writing:
 
-The squareroot of 2 is \`r `sqrt(2)` \`
+The squareroot of 2 is `` `r sqrt(2)` ``
 
 you will get:
 
@@ -301,9 +301,9 @@ n_counties <- length(unique(gapminder$country))
 
 🎬 Replace numbers in the Methods text with inline code:
 
-> We took per capita GDP and life expectancy data from \`r n_years\`
-> years (from \`r min_year\` to \`r max_year\`) for each of \`r
-> n_counties\` countries.
+> We took per capita GDP and life expectancy data from `` `r n_years` ``
+> years (from `` `r min_year` `` to `` `r max_year` ``) for each of
+> `` `r n_counties` `` countries.
 
 🎬 Render
 
