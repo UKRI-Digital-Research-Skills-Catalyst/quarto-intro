@@ -282,9 +282,7 @@ For example by writing:
 
 you will get:
 
-`r sqrt(2)`
-
-### Extract summary information for use in inline code
+`r sqrt(2)` \### Extract summary information for use in inline code
 
 🎬 Add a code chunk with:
 
