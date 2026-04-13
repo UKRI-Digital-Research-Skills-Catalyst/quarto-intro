@@ -30,7 +30,6 @@ jobs:
           sudo apt-get install -y libharfbuzz-dev 
           sudo apt-get install -y libfribidi-dev
           
-      - uses: r-lib/actions/setup-renv@v2
 
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/install-quarto@v1
