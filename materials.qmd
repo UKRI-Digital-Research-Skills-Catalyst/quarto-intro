@@ -408,7 +408,6 @@ If you want the table to appear in the rendered output you need to print.
 
 ```{r}
 #| echo: fenced
-#| execute: false
 #| label: max-year-top-pop-print
 max_year_top_pop
 ```
@@ -428,14 +427,15 @@ from the `knitr`[^2] to make a nice table.
 🎬 Replace the `max_year_top_pop` in the previous code chunk with:
 
 ```         
-max_year_pop_pop |> 
+max_year_top_pop |> 
   knitr::kable(caption = "Table 1. Five most populated countries in 2007.")
 ```
 
-You now have a nice table with a caption. We have written Table 1 in manually.
-This is not ideal because we might want to add/remove tables and cross reference
-them in the text and would not want to manually update all the places where the
-table is mentioned.
+You now have a nice table with a caption!
+
+We have written Table 1 in manually. This is not ideal because we might want to
+add/remove tables and cross reference them in the text and would not want to
+manually update all the places where the table is mentioned.
 
 Quarto has a great feature for naming, autonumbering and cross referencing
 tables. We simply have to include `tbl-` in the chunk label.
@@ -444,20 +444,19 @@ tables. We simply have to include `tbl-` in the chunk label.
 
 ```{r}
 #| echo: fenced
-#| execute: false
 #| label: tbl-max-year-top-pop
-max_year_pop_pop |> 
+max_year_top_pop |> 
   knitr::kable(caption = "Five most populated countries in 2007.")
 ```
 
-in the code chunk options and then we can refer to the table in the text with
-`@tab-max-year-top-pop`.
+To cross reference we can refer to the table in the text with
+`@tbl-max-year-top-pop`.
 
 🎬 Edit the text to say:
 
 ::: blockquote
-Data about about the five most populated countries in `@tab-max-year-top-pop` is
-shown in Table 1.
+Data about about the five most populated countries in is shown in
+`@tbl-max-year-top-pop`
 :::
 
 Teach: Figure captions and cross-referencing ("As seen in @fig-gdp...").
