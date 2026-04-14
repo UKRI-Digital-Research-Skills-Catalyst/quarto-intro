@@ -427,8 +427,7 @@ from the `knitr`[^2] to make a nice table.
 
 🎬 Replace the `max_year_top_pop` in the previous code chunk with:
 
-```{r}
-#| label: max-year-top-pop-print
+```         
 max_year_pop_pop |> 
   knitr::kable(caption = "Table 1. Five most populated countries in 2007.")
 ```
@@ -453,6 +452,13 @@ max_year_pop_pop |>
 
 in the code chunk options and then we can refer to the table in the text with
 `@tab-max-year-top-pop`.
+
+🎬 Edit the text to say:
+
+::: blockquote
+Data about about the five most populated countries in `@tab-max-year-top-pop` is
+shown in Table 1.
+:::
 
 Teach: Figure captions and cross-referencing ("As seen in @fig-gdp...").
 
