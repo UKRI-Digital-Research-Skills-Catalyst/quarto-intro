@@ -383,8 +383,8 @@ it in a table.
 🎬 Add a small piece of text to the results section:
 
 ::: blockquote
-Data about about the five most populated countries in \` r max_year\` is shown
-in the table.
+Data about about the five most populated countries in `r inline('max_year')` is
+shown in Table 1.
 :::
 
 🎬 Add a code chunk with:
@@ -392,7 +392,7 @@ in the table.
 ```{r}
 #| echo: fenced
 #| label: max-year-top-pop
-max_year_pop_pop <- gapminder |> 
+max_year_top_pop <- gapminder |> 
   filter(year == max_year) |> 
   arrange(desc(pop)) |> 
   slice_head(n = 5) 
@@ -408,14 +408,15 @@ If you want the table to appear in the rendered output you need to print.
 
 ```{r}
 #| echo: fenced
+#| execute: false
 #| label: max-year-top-pop-print
-max_year_pop_pop
+max_year_top_pop
 ```
 
 🎬 Hit Render (Ctrl-Shift-K)
 
 As you can see, this is not a very nice table. We can use the `kable` function
-from the `knitr`[^2]
+from the `knitr`[^2] to make a nice table.
 
 [^2]: There are several packages for formatting tables in R such as
     [**`gt`**](https://gt.rstudio.com/) and
@@ -424,25 +425,34 @@ from the `knitr`[^2]
     [**`flextable`**](https://davidgohel.github.io/flextable/index.html) if you
     have to render to Word
 
-🎬 Add a table of the summary information for the chaffinch data:
+🎬 Replace the `max_year_top_pop` in the previous code chunk with:
+
+```{r}
+#| label: max-year-top-pop-print
+max_year_pop_pop |> 
+  knitr::kable(caption = "Table 1. Five most populated countries in 2007.")
+```
+
+You now have a nice table with a caption. We have written Table 1 in manually.
+This is not ideal because we might want to add/remove tables and cross reference
+them in the text and would not want to manually update all the places where the
+table is mentioned.
+
+Quarto has a great feature for naming, autonumbering and cross referencing
+tables. We simply have to include `tbl-` in the chunk label.
+
+🎬 Edit the chunk like this:
 
 ```{r}
 #| echo: fenced
-#| label: tbl-chaff
-chaff_summary |> 
-  knitr::kable(caption = "Summary of mass(g) for the two subspecies of chaffinch.")
+#| execute: false
+#| label: tbl-max-year-top-pop
+max_year_pop_pop |> 
+  knitr::kable(caption = "Five most populated countries in 2007.")
 ```
 
-Scenario Action:
-
-The Table: Use knitr::kable() or the gt package to show the "Top 5 Countries by
-Life Expectancy."
-
-Teach: Chunk options like #\| echo: false (hiding the code so the manager only
-sees the table).
-
-The Plot: Create a ggplot scatterplot of GDP vs. Life Expectancy, colored by
-Continent.
+in the code chunk options and then we can refer to the table in the text with
+`@tab-max-year-top-pop`.
 
 Teach: Figure captions and cross-referencing ("As seen in @fig-gdp...").
 
