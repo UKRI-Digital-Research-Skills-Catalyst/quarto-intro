@@ -333,7 +333,7 @@ get more data? Or want to make a report for a subset of the data?
 -   In fact, any code output can be inserted directly into the text of a .qmd
     file using inline code.
 
-Inline code goes between \`r and \` .
+Inline code goes between \`r\` and \` .
 
 For example by writing:
 
@@ -373,6 +373,13 @@ countries. Analysis was carried out with R and tidyverse packages.
 Suppose we want to open our results section with information about the five most
 populated countries in `r max_year`. We can extract this information and report
 it in a table.
+
+🎬 Add a small piece of text to the results section:
+
+```         
+Data about about the five most populated countries in `r max_year` is 
+shown in the table.
+```
 
 🎬 Add a code chunk with:
 
