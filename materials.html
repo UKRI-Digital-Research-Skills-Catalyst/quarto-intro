@@ -200,7 +200,9 @@ div.csl-indent {
   <li>
 <a href="#adding-content" id="toc-adding-content" class="nav-link" data-scroll-target="#adding-content">Adding content</a>
   <ul class="collapse">
-<li><a href="#an-introduction" id="toc-an-introduction" class="nav-link" data-scroll-target="#an-introduction">An Introduction</a></li>
+<li><a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings">Headings</a></li>
+  <li><a href="#formatting-text" id="toc-formatting-text" class="nav-link" data-scroll-target="#formatting-text">Formatting text</a></li>
+  <li><a href="#links-images" id="toc-links-images" class="nav-link" data-scroll-target="#links-images">Links &amp; Images</a></li>
   <li><a href="#data-import" id="toc-data-import" class="nav-link" data-scroll-target="#data-import">Data import</a></li>
   <li><a href="#methods-text" id="toc-methods-text" class="nav-link" data-scroll-target="#methods-text">Methods text</a></li>
   </ul>
@@ -14004,16 +14006,109 @@ div.csl-indent {
 <p>🎬 Experiment with change the options and re-rendering. Try misspelling <code>rnorm</code> and switching between <code>error: true</code> and <code>error: false</code> to see the error option in action.</p>
 </section></section><section id="adding-content" class="level2"><h2 class="anchored" data-anchor-id="adding-content">Adding content</h2>
 <p>🎬 Delete everything except the YAML header.</p>
+<section id="headings" class="level3"><h3 class="anchored">Headings</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 22%">
+</colgroup>
+<thead><tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Header 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td><h1 id="header-1">Header 1</h1></td>
+</tr>
+<tr class="even">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Header 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td><h2 id="header-2" class="anchored" data-anchor-id="headings">Header 2</h2></td>
+</tr>
+<tr class="odd">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Header 3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td><h3 id="header-3" class="anchored">Header 3</h3></td>
+</tr>
+<tr class="even">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Header 4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td><h4 id="header-4" class="anchored">Header 4</h4></td>
+</tr>
+</tbody>
+</table>
 <p>🎬 Add headings for: Introduction, Methods, Results, Discussion, and References</p>
 <p>🎬 Add a code chunk for package loading</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-packages</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-packages</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><code>#| label: load-packages</code> is a code chunk label. These are useful (here) and essential (later) for cross-referencing.</p>
-<section id="an-introduction" class="level3"><h3 class="anchored" data-anchor-id="an-introduction">An Introduction</h3>
+</section><section id="formatting-text" class="level3"><h3 class="anchored" data-anchor-id="formatting-text">Formatting text</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 30%">
+</colgroup>
+<thead><tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>*italics*,**bold**</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td>
+<em>italics</em>, <strong>bold</strong>
+</td>
+</tr>
+<tr class="even">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>*</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>**bold italics ***</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td><strong><em>bold italics</em></strong></td>
+</tr>
+<tr class="odd">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>superscript^2^</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td>superscript<sup>2</sup>
+</td>
+</tr>
+<tr class="even">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>subscript~2~</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td>subscript<sub>2</sub>
+</td>
+</tr>
+<tr class="odd">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>~~strikethrough~~</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td><del>strikethrough</del></td>
+</tr>
+<tr class="even">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="in">`verbatim code`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td><code>verbatim code</code></td>
+</tr>
+</tbody>
+</table></section><section id="links-images" class="level3"><h3 class="anchored" data-anchor-id="links-images">Links &amp; Images</h3>
+<table class="caption-top table">
+<thead><tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>[Quar</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>t</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>o](https://quarto.org)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td><a href="https://quarto.org">Quarto</a></td>
+</tr>
+<tr class="even">
+<td><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>![Cap</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>tion](images/logo_no</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>_text_transparent.png)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></td>
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/log o_no_text_tr ansparent.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Capt ion"><img src="images/log o_no_text_tr ansparent.png" class="img-fluid figure-img" width="130" alt="Capt ion"></a></p>
+<figcaption>Capt ion</figcaption></figure>
+</div></td>
+</tr>
+</tbody>
+</table>
 <p>🎬 Add this text to the Introduction</p>
 <div class="blockquote">
 <p>There is a relationship between wealth and health. We will explore this relationship using the relationship between Gross Domestic Product (GDP) per capita and Life Expectancy across countries and over time.</p>
@@ -14025,11 +14120,11 @@ div.csl-indent {
 <p>🎬 Save <a href="data-raw/gapminder.tsv">gapminder.tsv</a> to <code>data-raw</code></p>
 <p>🎬 Add a code chunk with:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: import-data</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>file <span class="ot">&lt;-</span> <span class="st">"data-raw/gapminder.tsv"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(file)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: import-data</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>file <span class="ot">&lt;-</span> <span class="st">"data-raw/gapminder.tsv"</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(file)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🎬 Run chunks interactively</p>
 <p>🎬 Render</p>
@@ -14038,7 +14133,7 @@ div.csl-indent {
 <div class="blockquote">
 <p>We took per capita GDP and life expectancy data from 12 years (from 1952 to 2007) for each of 142 countries. Analysis was carried out with R and tidyverse packages.</p>
 </div>
-<p>It would be good not to have “hard coded” those numbers in the text. What if we get more data. Or we just misremember or mis-type the numbers?</p>
+<p>It would be good not to have “hard coded” those numbers in the text. What if we get more data? Or want to make a report for a subset of the data?</p>
 </section></section><section id="inline-code-reproducible-reporting" class="level2"><h2 class="anchored" data-anchor-id="inline-code-reproducible-reporting">Inline code: reproducible reporting</h2>
 <ul>
 <li><p>Inline code is how you include a variable value, like a sample size, mean or statistical result, in a section of text.</p></li>
@@ -14052,21 +14147,20 @@ div.csl-indent {
 <section id="extract-summary-information-for-use-in-inline-code" class="level3"><h3 class="anchored" data-anchor-id="extract-summary-information-for-use-in-inline-code">Extract summary information for use in inline code</h3>
 <p>🎬 Add a code chunk with:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: extract-summary</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># extract values for inline reporting</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>n_years <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(gapminder<span class="sc">$</span>year))</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>min_year <span class="ot">&lt;-</span> <span class="fu">min</span>(gapminder<span class="sc">$</span>year)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>max_year <span class="ot">&lt;-</span> <span class="fu">max</span>(gapminder<span class="sc">$</span>year)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>n_counties <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(gapminder<span class="sc">$</span>country))</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: extract-summary</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># extract values for inline reporting</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>n_years <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(gapminder<span class="sc">$</span>year))</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>min_year <span class="ot">&lt;-</span> <span class="fu">min</span>(gapminder<span class="sc">$</span>year)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>max_year <span class="ot">&lt;-</span> <span class="fu">max</span>(gapminder<span class="sc">$</span>year)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>n_counties <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(gapminder<span class="sc">$</span>country))</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🎬 Replace numbers in the Methods text with inline code:</p>
 <div class="blockquote">
 <p>We took per capita GDP and life expectancy data from <code>r n_years</code> years (from <code>r min_year</code> to <code>r max_year</code>) for each of <code>r n_counties</code> countries.</p>
 </div>
 <p>🎬 Render</p>
-<p>Teach: Headers (# Introduction), bolding (<strong>key findings</strong>), and lists (Study goals).</p>
 <p>Teach: The YAML header (Add a Title: “Global Health Trends”, Author, and toc: true).</p>
 <p>Part 2: Integrating Data (0:30 – 1:00) Goal: Show how code and text live together.</p>
 <p>The Task: Load the data and pull out specific stats for the text.</p>
@@ -14075,7 +14169,7 @@ div.csl-indent {
 <p>Filter the data to the most recent year (2007).</p>
 <p>Teach: Inline Code. “The average life expectancy across all countries in 2007 was r mean(gapminder_2007$lifeExp) years.” (This is a huge “Aha!” moment for admin staff who manually update reports).</p>
 <div class="cell" data-fence="true">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Filter the dataset to the most recent year for our report</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Filter the dataset to the most recent year for our report</span></span>
 <span><span class="va">gapminder_2007</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2007</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
