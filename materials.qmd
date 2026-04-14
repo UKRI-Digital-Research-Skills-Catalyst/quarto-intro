@@ -360,10 +360,13 @@ n_counties <- length(unique(gapminder$country))
 
 🎬 Replace numbers in the Methods text with inline code:
 
-```         
-We took per capita GDP and life expectancy data from `r n_years` years
-(from `r min_year` to `r max_year`) for each of `r n_counties`
-countries. Analysis was carried out with R and tidyverse packages.
+```{=html}
+<blockquote class="blockquote">
+We took per capita GDP and life expectancy data from <code>`r n_years`</code>
+years (from <code>`r min_year`</code> to <code>`r max_year`</code>) for each of
+<code>`r n_counties`</code> countries. Analysis was carried out with R and
+tidyverse packages.
+</blockquote>
 ```
 
 🎬 Hit Render (Ctrl-Shift-K)
@@ -391,8 +394,6 @@ max_year_pop_pop <- gapminder |>
   arrange(desc(pop)) |> 
   slice_head(n = 5) 
 ```
-
-Part 3: Tables and Visuals (1:00 – 1:30) Goal: Demonstrate professional output.
 
 The Task: Create a summary table and a chart.
 
