@@ -207,6 +207,28 @@ the error option in action.
 
 🎬 Delete everything except the YAML header.
 
+### Headings
+
++-----------------+---------------+
+| Markdown Syntax | Output        |
++=================+===============+
+| ``` markdown    | # Header 1    |
+| # Header 1      |               |
+| ```             |               |
++-----------------+---------------+
+| ``` markdown    | ## Header 2   |
+| ## Header 2     |               |
+| ```             |               |
++-----------------+---------------+
+| ``` markdown    | ### Header 3  |
+| ### Header 3    |               |
+| ```             |               |
++-----------------+---------------+
+| ``` markdown    | #### Header 4 |
+| #### Header 4   |               |
+| ```             |               |
++-----------------+---------------+
+
 🎬 Add headings for: Introduction, Methods, Results, Discussion, and
 References
 
@@ -221,7 +243,54 @@ library(tidyverse)
 `#| label: load-packages` is a code chunk label. These are useful (here)
 and essential (later) for cross-referencing.
 
-### An Introduction
+### Formatting text
+
++--------------------+---------------------+
+| Markdown Syntax    | Output              |
++====================+=====================+
+| ``` markdown       | *italics*, **bold** |
+| *italics*,**bold** |                     |
+| ```                |                     |
++--------------------+---------------------+
+| ``` markdown       | ***bold italics***  |
+| *                  |                     |
+| **bold italics *** |                     |
+| ```                |                     |
++--------------------+---------------------+
+| ``` markdown       | superscript^2^      |
+| superscript^2^     |                     |
+| ```                |                     |
++--------------------+---------------------+
+| ``` markdown       | subscript~2~        |
+| subscript~2~       |                     |
+| ```                |                     |
++--------------------+---------------------+
+| ``` markdown       | ~~strikethrough~~   |
+| ~~strikethrough~~  |                     |
+| ```                |                     |
++--------------------+---------------------+
+| ``` markdown       | `verbatim code`     |
+| `verbatim code`    |                     |
+| ```                |                     |
++--------------------+---------------------+
+
+### Links & Images
+
++------------------------+--------------------------------------------+
+| Markdown Syntax        | Output                                     |
++========================+============================================+
+| ``` markdown           | [Quarto](https://quarto.org)               |
+| [Quar                  |                                            |
+| t                      |                                            |
+| o](https://quarto.org) |                                            |
+| ```                    |                                            |
++------------------------+--------------------------------------------+
+| ``` markdown           | ![Capt                                     |
+| ![Cap                  | ion](images/log                            |
+| tion](images/logo_no   | o_no_text_tr%20ansparent.png){width="130"} |
+| _text_transparent.png) |                                            |
+| ```                    |                                            |
++------------------------+--------------------------------------------+
 
 🎬 Add this text to the Introduction
 
@@ -266,8 +335,8 @@ tidyverse packages.
 :::
 
 It would be good not to have "hard coded" those numbers in the text.
-What if we get more data. Or we just misremember or mis-type the
-numbers?
+What if we get more data? Or want to make a report for a subset of the
+data?
 
 ## Inline code: reproducible reporting
 
@@ -313,9 +382,6 @@ We took per capita GDP and life expectancy data from
 :::
 
 🎬 Render
-
-Teach: Headers (# Introduction), bolding (**key findings**), and lists
-(Study goals).
 
 Teach: The YAML header (Add a Title: "Global Health Trends", Author, and
 toc: true).
