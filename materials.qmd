@@ -209,25 +209,26 @@ the error option in action.
 
 ### Headings
 
-+-----------------+---------------+
-| Markdown Syntax | Output        |
-+=================+===============+
-| ``` markdown    | # Header 1    |
-| # Header 1      |               |
-| ```             |               |
-+-----------------+---------------+
-| ``` markdown    | ## Header 2   |
-| ## Header 2     |               |
-| ```             |               |
-+-----------------+---------------+
-| ``` markdown    | ### Header 3  |
-| ### Header 3    |               |
-| ```             |               |
-+-----------------+---------------+
-| ``` markdown    | #### Header 4 |
-| #### Header 4   |               |
-| ```             |               |
-+-----------------+---------------+
++-----------------+--------------+
+| Markdown Syntax | Output       |
++=================+==============+
+| ``` markdown    | # Header 1   |
+| # Header 1      |              |
+| ```             |              |
++-----------------+--------------+
+| ``` markdown    | ## Header 2  |
+| ## Header 2     |              |
+| ```             |              |
++-----------------+--------------+
+| ``` markdown    | ### Header 3 |
+| ### Header 3    |              |
+| ```             |              |
++-----------------+--------------+
+| ``` markdown    | #            |
+| #               |              |
+| ### Header 4    | ### Header 4 |
+| ```             |              |
++-----------------+--------------+
 
 🎬 Add headings for: Introduction, Methods, Results, Discussion, and
 References
@@ -245,52 +246,53 @@ and essential (later) for cross-referencing.
 
 ### Formatting text
 
-+--------------------+---------------------+
-| Markdown Syntax    | Output              |
-+====================+=====================+
-| ``` markdown       | *italics*, **bold** |
-| *italics*,**bold** |                     |
-| ```                |                     |
-+--------------------+---------------------+
-| ``` markdown       | ***bold italics***  |
-| *                  |                     |
-| **bold italics *** |                     |
-| ```                |                     |
-+--------------------+---------------------+
-| ``` markdown       | superscript^2^      |
-| superscript^2^     |                     |
-| ```                |                     |
-+--------------------+---------------------+
-| ``` markdown       | subscript~2~        |
-| subscript~2~       |                     |
-| ```                |                     |
-+--------------------+---------------------+
-| ``` markdown       | ~~strikethrough~~   |
-| ~~strikethrough~~  |                     |
-| ```                |                     |
-+--------------------+---------------------+
-| ``` markdown       | `verbatim code`     |
-| `verbatim code`    |                     |
-| ```                |                     |
-+--------------------+---------------------+
++------------------+---------------------+
+| Markdown Syntax  | Output              |
++==================+=====================+
+| ``` markdown     | *italics*, **bold** |
+| *                |                     |
+| i                |                     |
+| talics*,**bold** |                     |
+| ```              |                     |
++------------------+---------------------+
+| ``` markdown     | ***bold italics***  |
+| *                |                     |
+| *                |                     |
+| *                |                     |
+| bold italics *** |                     |
+| ```              |                     |
++------------------+---------------------+
+| ``` markdown     | superscript^2^      |
+| superscript^2^   |                     |
+| ```              |                     |
++------------------+---------------------+
+| ``` markdown     | subscript~2~        |
+| subscript~2~     |                     |
+| ```              |                     |
++------------------+---------------------+
+| ``` markdown     | ~~strikethrough~~   |
+| ~                |                     |
+| ~strikethrough~~ |                     |
+| ```              |                     |
++------------------+---------------------+
+| ``` markdown     | `verbatim code`     |
+| `verbatim code`  |                     |
+| ```              |                     |
++------------------+---------------------+
 
 ### Links & Images
 
-+------------------------+--------------------------------------------+
-| Markdown Syntax        | Output                                     |
-+========================+============================================+
-| ``` markdown           | [Quarto](https://quarto.org)               |
-| [Quar                  |                                            |
-| t                      |                                            |
-| o](https://quarto.org) |                                            |
-| ```                    |                                            |
-+------------------------+--------------------------------------------+
-| ``` markdown           | ![Capt                                     |
-| ![Cap                  | ion](images/log                            |
-| tion](images/logo_no   | o_no_text_tr%20ansparent.png){width="130"} |
-| _text_transparent.png) |                                            |
-| ```                    |                                            |
-+------------------------+--------------------------------------------+
++------------------------------+------------------------------------------+
+| Markdown Syntax              | Output                                   |
++==============================+==========================================+
+| ``` markdown                 | [Quarto](https://quarto.org)             |
+| [Quarto](https://quarto.org) |                                          |
+| ```                          |                                          |
++------------------------------+------------------------------------------+
+| ``` markdown                 | ![Caption](images/logo.png){width="130"} |
+| ![Caption](images/logo.png)  |                                          |
+| ```                          |                                          |
++------------------------------+------------------------------------------+
 
 🎬 Add this text to the Introduction
 
@@ -374,11 +376,10 @@ n_counties <- length(unique(gapminder$country))
 🎬 Replace numbers in the Methods text with inline code:
 
 ::: blockquote
-We took per capita GDP and life expectancy data from
-`r knitr::inline_expr("n_years")` years (from
-`r knitr::inline_expr("min_year")` to
-`r knitr::inline_expr("max_year")`) for each of
-`r knitr::inline_expr("n_counties")` countries.
+We took per capita GDP and life expectancy data from `` `r n_years` ``
+years (from `` `r min_year` `` to `` `r max_year` ``) for each of
+`` `r n_counties` `` countries. Analysis was carried out with R and
+tidyverse packages.
 :::
 
 🎬 Render
