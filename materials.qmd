@@ -333,7 +333,7 @@ get more data? Or want to make a report for a subset of the data?
 -   In fact, any code output can be inserted directly into the text of a .qmd
     file using inline code.
 
-Inline code goes between \`r\` and \` .
+Inline code goes between \`r and \` .
 
 For example by writing:
 
@@ -360,12 +360,11 @@ n_counties <- length(unique(gapminder$country))
 
 🎬 Replace numbers in the Methods text with inline code:
 
-::: blockquote
-We took per capita GDP and life expectancy data from <code>\`r n_years\`</code>
-years (from <code>\`r min_year\`</code> to <code>\`r max_year\`</code>) for each
-of <code>\`r n_counties\`</code> countries. Analysis was carried out with R and
-tidyverse packages.
-:::
+```         
+We took per capita GDP and life expectancy data from `r n_years` years
+(from `r min_year` to `r max_year`) for each of `r n_counties`
+countries. Analysis was carried out with R and tidyverse packages.
+```
 
 🎬 Hit Render (Ctrl-Shift-K)
 
