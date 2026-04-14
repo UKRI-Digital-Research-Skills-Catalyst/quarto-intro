@@ -310,7 +310,7 @@ gapminder <- read_tsv(file)
 
 🎬 Run chunks interactively
 
-🎬 Render
+🎬 Hit Render (Ctrl-Shift-K)
 
 ### Methods text
 
@@ -361,13 +361,30 @@ n_counties <- length(unique(gapminder$country))
 🎬 Replace numbers in the Methods text with inline code:
 
 ::: blockquote
-We took per capita GDP and life expectancy data from <code>`r n_years`</code>
-years (from <code>`r min_year`</code> to <code>`r max_year`</code>) for each of
-<code>`r n_counties`</code> countries. Analysis was carried out with R and
+We took per capita GDP and life expectancy data from <code>\`r n_years\`</code>
+years (from <code>\`r min_year\`</code> to <code>\`r max_year\`</code>) for each
+of <code>\`r n_counties\`</code> countries. Analysis was carried out with R and
 tidyverse packages.
 :::
 
-🎬 Render
+🎬 Hit Render (Ctrl-Shift-K)
+
+## Tables
+
+Suppose we want to open our results section with information about the five most
+populated countries in `r max_year`. We can extract this information and report
+it in a table.
+
+🎬 Add a code chunk with:
+
+```{r}
+#| echo: fenced
+#| label: max-year-top-pop
+max_year_pop_pop <- gapminder |> 
+  filter(year == max_year) |> 
+  arrange(desc(pop)) |> 
+  slice_head(n = 5) 
+```
 
 Part 3: Tables and Visuals (1:00 – 1:30) Goal: Demonstrate professional output.
 
