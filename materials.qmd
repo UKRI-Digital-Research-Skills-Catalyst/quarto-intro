@@ -10,50 +10,46 @@ toc-location: right
 
 -   Typically people analyse, plot and write up in different programs.
 
--   Updates to data require manual updates to all the figures and tables
-    as well as to text reporting results.
+-   Updates to data require manual updates to all the figures and tables as well
+    as to text reporting results.
 
 -   Graphs are saved to files and inserted into the final report.
 
--   Reordering figures, tables and equations means updating everywhere
-    they are cross-referenced.
+-   Reordering figures, tables and equations means updating everywhere they are
+    cross-referenced.
 
--   Submitting to a different journal requires reformatting the
-    document.
+-   Submitting to a different journal requires reformatting the document.
 
 -   Manual labour ..... error prone
 
 ## What is Quarto?
 
--   An open-source scientific and technical publishing system that
-    allows you to create dynamic reproducible reports in a variety of
-    output formats.
+-   An open-source scientific and technical publishing system that allows you to
+    create dynamic reproducible reports in a variety of output formats.
 
--   Next generation RMarkdown. Many new features, greater
-    standardisation and more flexibility.
+-   Next generation RMarkdown. Many new features, greater standardisation and
+    more flexibility.
 
-    -   Markdown is a lightweight markup language for creating formatted
-        text using a plain-text editor. It was designed by [John Gruber
-        in 2004](https://daringfireball.net/projects/markdown/)
+    -   Markdown is a lightweight markup language for creating formatted text
+        using a plain-text editor. It was designed by [John Gruber in
+        2004](https://daringfireball.net/projects/markdown/)
 
-    -   RMarkdown is an extension of Markdown that adds support for
-        embedding R code chunks in Markdown documents. It was created by
-        JJ Allaire and Yihui Xie early in 2014 but has been worked on by
-        many others since.
+    -   RMarkdown is an extension of Markdown that adds support for embedding R
+        code chunks in Markdown documents. It was created by JJ Allaire and
+        Yihui Xie early in 2014 but has been worked on by many others since.
 
 -   Mutli-language: Python, R, Julia, and Observable.
 
--   Include auto-numbered equations, figures and tables that can be
-    cross referenced
+-   Include auto-numbered equations, figures and tables that can be cross
+    referenced
 
 # Exercises
 
 ## Scenario
 
-You are a data analyst for an international NGO. You have been asked to
-produce a reproducible country profile report that analyses the
-relationship between wealth (GDP per capita) and health (Life
-Expectancy) over the last 50 years.
+You are a data analyst for an international NGO. You have been asked to produce
+a reproducible country profile report that analyses the relationship between
+wealth (GDP per capita) and health (Life Expectancy) over the last 50 years.
 
 ## The data
 
@@ -67,25 +63,23 @@ gapminder <- read_tsv("data-raw/gapminder.tsv")
 
 ```
 
-We will use data from [Gapminder](https://www.gapminder.org/). Gapminder
-was founded in 2005 by Ola Rosling, Anna Rosling Rönnlund and Hans
-Rosling. It aims to combat misguided global strategies rooted in
-misconceptions by promoting a fact-based worldview grounded reliable
-statistics. A subset of the data is
-[gapminder.tsv](dat-raw/gapminder.tsv). It has `r nrow(gapminder)` rows
-and `r ncol(gapminder)` columns (variables). The variables are:
-`r paste(colnames(gapminder), collapse = ", ")`[^1]. There are
-per-capita GDP and life expectancy data from
-`r length(unique(gapminder$year))` years (from `r min(gapminder$year)`
-to `r max(gapminder$year)`) for each of
+We will use data from [Gapminder](https://www.gapminder.org/). Gapminder was
+founded in 2005 by Ola Rosling, Anna Rosling Rönnlund and Hans Rosling. It aims
+to combat misguided global strategies rooted in misconceptions by promoting a
+fact-based worldview grounded reliable statistics. A subset of the data is
+[gapminder.tsv](dat-raw/gapminder.tsv). It has `r nrow(gapminder)` rows and
+`r ncol(gapminder)` columns (variables). The variables are:
+`r paste(colnames(gapminder), collapse = ", ")`[^1]. There are per-capita GDP
+and life expectancy data from `r length(unique(gapminder$year))` years (from
+`r min(gapminder$year)` to `r max(gapminder$year)`) for each of
 `r length(unique(gapminder$country))` countries.
 
 [^1]: Per-capita GDP (Gross domestic product) is given in units
     of [international
-    dollars](https://en.wikipedia.org/wiki/Geary%E2%80%93Khamis_dollar),
-    “a hypothetical unit of currency that has the same purchasing power
-    parity that the U.S. dollar had in the United States at a given
-    point in time” – 2005, in this case.
+    dollars](https://en.wikipedia.org/wiki/Geary%E2%80%93Khamis_dollar), “a
+    hypothetical unit of currency that has the same purchasing power parity that
+    the U.S. dollar had in the United States at a given point in time” – 2005,
+    in this case.
 
 ```{r}
 #| echo: false
@@ -130,11 +124,11 @@ knitr::kable(gapminder) |>
 
 -   `ngo-report.md` - the main document containing some template text
 
-The code is normal functioning code. You can run it interactively as you
-write your report.
+The code is normal functioning code. You can run it interactively as you write
+your report.
 
-🎬 Place your cursor in the code chunk and run it (Ctrl-Enter or use the
-green run button)
+🎬 Place your cursor in the code chunk and run it (Ctrl-Enter or use the green
+run button)
 
 🎬 Hit Render (Ctrl-Shift-K)
 
@@ -186,8 +180,8 @@ execute:
 ---
 ```
 
-🚨 Indentation matters in YAML. Make sure the `execute` options are
-indented under `execute`.
+🚨 Indentation matters in YAML. Make sure the `execute` options are indented
+under `execute`.
 
 🎬 Hit Render (Ctrl-Shift-K)
 
@@ -199,9 +193,9 @@ Code chunk options
 -   `message: false` messages and warnings will not be included
 -   `warning: false`
 
-🎬 Experiment with change the options and re-rendering. Try misspelling
-`rnorm` and switching between `error: true` and `error: false` to see
-the error option in action.
+🎬 Experiment with change the options and re-rendering. Try misspelling `rnorm`
+and switching between `error: true` and `error: false` to see the error option
+in action.
 
 ## Adding content
 
@@ -230,8 +224,7 @@ the error option in action.
 | ```             |              |
 +-----------------+--------------+
 
-🎬 Add headings for: Introduction, Methods, Results, Discussion, and
-References
+🎬 Add headings for: Introduction, Methods, Results, Discussion, and References
 
 🎬 Add a code chunk for package loading
 
@@ -241,44 +234,38 @@ References
 library(tidyverse)
 ```
 
-`#| label: load-packages` is a code chunk label. These are useful (here)
-and essential (later) for cross-referencing.
+`#| label: load-packages` is a code chunk label. These are useful (here) and
+essential (later) for cross-referencing.
 
 ### Formatting text
 
-+------------------+---------------------+
-| Markdown Syntax  | Output              |
-+==================+=====================+
-| ``` markdown     | *italics*, **bold** |
-| *                |                     |
-| i                |                     |
-| talics*,**bold** |                     |
-| ```              |                     |
-+------------------+---------------------+
-| ``` markdown     | ***bold italics***  |
-| *                |                     |
-| *                |                     |
-| *                |                     |
-| bold italics *** |                     |
-| ```              |                     |
-+------------------+---------------------+
-| ``` markdown     | superscript^2^      |
-| superscript^2^   |                     |
-| ```              |                     |
-+------------------+---------------------+
-| ``` markdown     | subscript~2~        |
-| subscript~2~     |                     |
-| ```              |                     |
-+------------------+---------------------+
-| ``` markdown     | ~~strikethrough~~   |
-| ~                |                     |
-| ~strikethrough~~ |                     |
-| ```              |                     |
-+------------------+---------------------+
-| ``` markdown     | `verbatim code`     |
-| `verbatim code`  |                     |
-| ```              |                     |
-+------------------+---------------------+
++---------------------+---------------------+
+| Markdown Syntax     | Output              |
++=====================+=====================+
+| ``` markdown        | *italics*, **bold** |
+| *italics*,**bold**  |                     |
+| ```                 |                     |
++---------------------+---------------------+
+| ``` markdown        | ***bold italics***  |
+| ***bold italics *** |                     |
+| ```                 |                     |
++---------------------+---------------------+
+| ``` markdown        | superscript^2^      |
+| superscript^2^      |                     |
+| ```                 |                     |
++---------------------+---------------------+
+| ``` markdown        | subscript~2~        |
+| subscript~2~        |                     |
+| ```                 |                     |
++---------------------+---------------------+
+| ``` markdown        | ~~strikethrough~~   |
+| ~~strikethrough~~   |                     |
+| ```                 |                     |
++---------------------+---------------------+
+| ``` markdown        | `verbatim code`     |
+| `verbatim code`     |                     |
+| ```                 |                     |
++---------------------+---------------------+
 
 ### Links & Images
 
@@ -298,8 +285,8 @@ and essential (later) for cross-referencing.
 
 ::: blockquote
 There is a relationship between wealth and health. We will explore this
-relationship using the relationship between Gross Domestic Product (GDP)
-per capita and Life Expectancy across countries and over time.
+relationship using the relationship between Gross Domestic Product (GDP) per
+capita and Life Expectancy across countries and over time.
 :::
 
 🎬 Make the "per capita" italic
@@ -331,22 +318,21 @@ gapminder <- read_tsv(file)
 🎬 Add this text to Methods:
 
 ::: blockquote
-We took per capita GDP and life expectancy data from 12 years (from 1952
-to 2007) for each of 142 countries. Analysis was carried out with R and
-tidyverse packages.
+We took per capita GDP and life expectancy data from 12 years (from 1952 to
+2007) for each of 142 countries. Analysis was carried out with R and tidyverse
+packages.
 :::
 
-It would be good not to have "hard coded" those numbers in the text.
-What if we get more data? Or want to make a report for a subset of the
-data?
+It would be good not to have "hard coded" those numbers in the text. What if we
+get more data? Or want to make a report for a subset of the data?
 
 ## Inline code: reproducible reporting
 
--   Inline code is how you include a variable value, like a sample size,
-    mean or statistical result, in a section of text.
+-   Inline code is how you include a variable value, like a sample size, mean or
+    statistical result, in a section of text.
 
--   In fact, any code output can be inserted directly into the text of a
-    .qmd file using inline code.
+-   In fact, any code output can be inserted directly into the text of a .qmd
+    file using inline code.
 
 Inline code goes between \`r\` and \` .
 
@@ -376,61 +362,33 @@ n_counties <- length(unique(gapminder$country))
 🎬 Replace numbers in the Methods text with inline code:
 
 ::: blockquote
-We took per capita GDP and life expectancy data from
-<code>`r n_years`</code> years (from <code>`r min_year`</code> to
-<code>`r max_year`</code>) for each of <code>`r n_counties`</code>
-countries. Analysis was carried out with R and tidyverse packages.
+We took per capita GDP and life expectancy data from <code>`r n_years`</code>
+years (from <code>`r min_year`</code> to <code>`r max_year`</code>) for each of
+<code>`r n_counties`</code> countries. Analysis was carried out with R and
+tidyverse packages.
 :::
 
 🎬 Render
 
-Teach: The YAML header (Add a Title: "Global Health Trends", Author, and
-toc: true).
-
-Part 2: Integrating Data (0:30 – 1:00) Goal: Show how code and text live
-together.
-
-The Task: Load the data and pull out specific stats for the text.
-
-Scenario Action:
-
-Insert a code chunk to load library(tidyverse) and library(gapminder).
-
-Filter the data to the most recent year (2007).
-
-Teach: Inline Code. "The average life expectancy across all countries in
-2007 was r mean(gapminder_2007\$lifeExp) years." (This is a huge "Aha!"
-moment for admin staff who manually update reports).
-
-```{r}
-#| label: data-prep
-#| fence: true
-
-# Filter the dataset to the most recent year for our report
-gapminder_2007 <- gapminder |> 
-  filter(year == 2007)
-```
-
-Part 3: Tables and Visuals (1:00 – 1:30) Goal: Demonstrate professional
-output.
+Part 3: Tables and Visuals (1:00 – 1:30) Goal: Demonstrate professional output.
 
 The Task: Create a summary table and a chart.
 
 Scenario Action:
 
-The Table: Use knitr::kable() or the gt package to show the "Top 5
-Countries by Life Expectancy."
+The Table: Use knitr::kable() or the gt package to show the "Top 5 Countries by
+Life Expectancy."
 
-Teach: Chunk options like #\| echo: false (hiding the code so the
-manager only sees the table).
+Teach: Chunk options like #\| echo: false (hiding the code so the manager only
+sees the table).
 
-The Plot: Create a ggplot scatterplot of GDP vs. Life Expectancy,
-colored by Continent.
+The Plot: Create a ggplot scatterplot of GDP vs. Life Expectancy, colored by
+Continent.
 
 Teach: Figure captions and cross-referencing ("As seen in @fig-gdp...").
 
-Part 4: The "Power User" Finish (1:30 – 2:00) Goal: Show why Quarto is
-better than Word.
+Part 4: The "Power User" Finish (1:30 – 2:00) Goal: Show why Quarto is better
+than Word.
 
 The Task: Citations and Formats.
 
@@ -439,15 +397,14 @@ Scenario Action:
 Citations: Add a references.bib file. Cite Hans Rosling or the Gapminder
 foundation within the text.
 
-Rendering: Render the report to HTML. Then, with one click, render it to
-Word (for the boss who tracks changes) or PDF (for the formal
-publication).
+Rendering: Render the report to HTML. Then, with one click, render it to Word
+(for the boss who tracks changes) or PDF (for the formal publication).
 
-Bonus (if time permits): Parameters. Change the country parameter in the
-YAML to "Canada" or "Kenya" and watch the whole report update
-automatically for that specific country.
+Bonus (if time permits): Parameters. Change the country parameter in the YAML to
+"Canada" or "Kenya" and watch the whole report update automatically for that
+specific country.
 
-Pages made with R [@R-core], Quarto [@Allaire_Quarto_2026], `knitr`
-[@knitr1; @knitr2; @knitr3], `kableExtra` [@kableExtra]
+Pages made with R [@R-core], Quarto [@Allaire_Quarto_2026], `knitr` [@knitr1;
+@knitr2; @knitr3], `kableExtra` [@kableExtra]
 
 # References
