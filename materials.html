@@ -213,6 +213,7 @@ div.csl-indent {
 <li><a href="#extract-summary-information-for-use-in-inline-code" id="toc-extract-summary-information-for-use-in-inline-code" class="nav-link" data-scroll-target="#extract-summary-information-for-use-in-inline-code">Extract summary information for use in inline code</a></li>
   </ul>
 </li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
   </ul>
 </li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -14122,7 +14123,7 @@ div.csl-indent {
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🎬 Run chunks interactively</p>
-<p>🎬 Render</p>
+<p>🎬 Hit Render (Ctrl-Shift-K)</p>
 </section><section id="methods-text" class="level3"><h3 class="anchored" data-anchor-id="methods-text">Methods text</h3>
 <p>🎬 Add this text to Methods:</p>
 <div class="blockquote">
@@ -14152,10 +14153,25 @@ div.csl-indent {
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🎬 Replace numbers in the Methods text with inline code:</p>
-<div class="blockquote">
-<p>We took per capita GDP and life expectancy data from <code>12</code> years (from <code>1952</code> to <code>2007</code>) for each of <code>142</code> countries. Analysis was carried out with R and tidyverse packages.</p>
+<pre><code>We took per capita GDP and life expectancy data from 12 years
+(from 1952 to 2007) for each of 142
+countries. Analysis was carried out with R and tidyverse packages.</code></pre>
+<p>🎬 Hit Render (Ctrl-Shift-K)</p>
+</section></section><section id="tables" class="level2"><h2 class="anchored" data-anchor-id="tables">Tables</h2>
+<p>Suppose we want to open our results section with information about the five most populated countries in 2007. We can extract this information and report it in a table.</p>
+<p>🎬 Add a small piece of text to the results section:</p>
+<pre><code>Data about about the five most populated countries in 2007 is 
+shown in the table.</code></pre>
+<p>🎬 Add a code chunk with:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: max-year-top-pop</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>max_year_pop_pop <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> max_year) <span class="sc">|&gt;</span> </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(pop)) <span class="sc">|&gt;</span> </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>) </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>🎬 Render</p>
 <p>Part 3: Tables and Visuals (1:00 – 1:30) Goal: Demonstrate professional output.</p>
 <p>The Task: Create a summary table and a chart.</p>
 <p>Scenario Action:</p>
@@ -14170,7 +14186,7 @@ div.csl-indent {
 <p>Rendering: Render the report to HTML. Then, with one click, render it to Word (for the boss who tracks changes) or PDF (for the formal publication).</p>
 <p>Bonus (if time permits): Parameters. Change the country parameter in the YAML to “Canada” or “Kenya” and watch the whole report update automatically for that specific country.</p>
 <p>Pages made with R <span class="citation" data-cites="R-core">(<a href="#ref-R-core" role="doc-biblioref">R Core Team 2026</a>)</span>, Quarto <span class="citation" data-cites="Allaire_Quarto_2026">(<a href="#ref-Allaire_Quarto_2026" role="doc-biblioref">Allaire et al. 2026</a>)</span>, <code>knitr</code> <span class="citation" data-cites="knitr1 knitr2 knitr3">(<a href="#ref-knitr1" role="doc-biblioref">Xie 2025</a>, <a href="#ref-knitr2" role="doc-biblioref">2015</a>, <a href="#ref-knitr3" role="doc-biblioref">2014</a>)</span>, <code>kableExtra</code> <span class="citation" data-cites="kableExtra">(<a href="#ref-kableExtra" role="doc-biblioref">Zhu 2024</a>)</span></p>
-</section></section></section><section id="references" class="level1">
+</section></section><section id="references" class="level1">
 
 
 
