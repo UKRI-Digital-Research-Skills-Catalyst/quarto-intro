@@ -379,9 +379,11 @@ it in a table.
 
 🎬 Add a small piece of text to the results section:
 
-```         
-Data about about the five most populated countries in `r max_year` is 
-shown in the table.
+```{=html}
+<blockquote class="blockquote">       
+Data about about the five most populated countries in <code>`r max_year` <\code>
+is shown in the table.
+</blockquote>
 ```
 
 🎬 Add a code chunk with:
