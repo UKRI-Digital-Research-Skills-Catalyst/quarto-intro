@@ -14035,9 +14035,9 @@ div.csl-indent {
 <p>🎬 Render</p>
 </section><section id="methods-text" class="level3"><h3 class="anchored" data-anchor-id="methods-text">Methods text</h3>
 <p>🎬 Add this text to Methods:</p>
-<blockquote class="blockquote">
+<div class="blockquote">
 <p>We took per capita GDP and life expectancy data from 12 years (from 1952 to 2007) for each of 142 countries. Analysis was carried out with R and tidyverse packages.</p>
-</blockquote>
+</div>
 <p>It would be good not to have “hard coded” those numbers in the text. What if we get more data. Or we just misremember or mis-type the numbers?</p>
 </section></section><section id="inline-code-reproducible-reporting" class="level2"><h2 class="anchored" data-anchor-id="inline-code-reproducible-reporting">Inline code: reproducible reporting</h2>
 <ul>
@@ -14062,9 +14062,9 @@ div.csl-indent {
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🎬 Replace numbers in the Methods text with inline code:</p>
-<blockquote class="blockquote">
-<p>We took per capita GDP and life expectancy data from <code>12</code> years (from <code>1952</code> to <code>2007</code>) for each of <code>142</code> countries.</p>
-</blockquote>
+<div class="blockquote">
+<p>We took per capita GDP and life expectancy data from <code>r n_years</code> years (from <code>r min_year</code> to <code>r max_year</code>) for each of <code>r n_counties</code> countries.</p>
+</div>
 <p>🎬 Render</p>
 <p>Teach: Headers (# Introduction), bolding (<strong>key findings</strong>), and lists (Study goals).</p>
 <p>Teach: The YAML header (Add a Title: “Global Health Trends”, Author, and toc: true).</p>
