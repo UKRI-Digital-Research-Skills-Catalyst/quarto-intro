@@ -360,14 +360,11 @@ n_counties <- length(unique(gapminder$country))
 
 🎬 Replace numbers in the Methods text with inline code:
 
-```{=html}
-<blockquote class="blockquote">
-We took per capita GDP and life expectancy data from <code>`r n_years`</code>
-years (from <code>`r min_year`</code> to <code>`r max_year`</code>) for each of
-<code>`r n_counties`</code> countries. Analysis was carried out with R and
-tidyverse packages.
-</blockquote>
-```
+::: blockquote
+We took per capita GDP and life expectancy data from \` r n_years\` years (from
+\` r min_year`to \` r max_year\`) for each of \` r n_counties\` countries.
+Analysis was carried out with R and tidyverse packages.
+:::
 
 🎬 Hit Render (Ctrl-Shift-K)
 
@@ -379,12 +376,10 @@ it in a table.
 
 🎬 Add a small piece of text to the results section:
 
-```{=html}
-<blockquote class="blockquote">       
-Data about about the five most populated countries in <code>`r max_year` <\code>
-is shown in the table.
-</blockquote>
-```
+::: blockquote
+Data about about the five most populated countries in \` r max_year\` is shown
+in the table.
+:::
 
 🎬 Add a code chunk with:
 
@@ -397,7 +392,24 @@ max_year_pop_pop <- gapminder |>
   slice_head(n = 5) 
 ```
 
-The Task: Create a summary table and a chart.
+If you run the code chunk interactively, you will see the data frame
+`max_year_pop_pop` in the Environment pane. Highlighting and executing the name
+`max_year_pop_pop` will show the data frame in qmd.
+
+If you want the table to appear in the rendered output you need to print.
+
+🎬 Add a code chunk with:
+
+```{r}
+#| echo: fenced
+#| label: max-year-top-pop-print
+max_year_pop_pop
+```
+
+🎬 Hit Render (Ctrl-Shift-K)
+
+As you can see, this is not a very nice table. We can use the `kable` function
+from the `knitr`
 
 Scenario Action:
 
