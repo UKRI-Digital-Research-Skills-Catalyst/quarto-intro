@@ -14179,12 +14179,11 @@ div.csl-indent {
 <p>If you run the code chunk interactively, you will see the data frame <code>max_year_pop_pop</code> in the Environment pane. Highlighting and executing the name <code>max_year_pop_pop</code> will show the data frame in qmd.</p>
 <p>If you want the table to appear in the rendered output you need to print.</p>
 <p>🎬 Add a code chunk with:</p>
-<div class="cell" data-execute="false">
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| execute: false</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: max-year-top-pop-print</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>max_year_top_pop</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: max-year-top-pop-print</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>max_year_top_pop</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 6
   country       continent  year lifeExp        pop gdpPercap
@@ -14199,32 +14198,84 @@ div.csl-indent {
 <p>🎬 Hit Render (Ctrl-Shift-K)</p>
 <p>As you can see, this is not a very nice table. We can use the <code>kable</code> function from the <code>knitr</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> to make a nice table.</p>
 <p>🎬 Replace the <code>max_year_top_pop</code> in the previous code chunk with:</p>
-<pre><code>max_year_pop_pop |&gt; 
+<pre><code>max_year_top_pop |&gt; 
   knitr::kable(caption = "Table 1. Five most populated countries in 2007.")</code></pre>
-<p>You now have a nice table with a caption. We have written Table 1 in manually. This is not ideal because we might want to add/remove tables and cross reference them in the text and would not want to manually update all the places where the table is mentioned.</p>
+<p>You now have a nice table with a caption!</p>
+<p>We have written Table 1 in manually. This is not ideal because we might want to add/remove tables and cross reference them in the text and would not want to manually update all the places where the table is mentioned.</p>
 <p>Quarto has a great feature for naming, autonumbering and cross referencing tables. We simply have to include <code>tbl-</code> in the chunk label.</p>
 <p>🎬 Edit the chunk like this:</p>
-<div id="tbl-max-year-top-pop" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execute="false">
-<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-max-year-top-pop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1
-</figcaption><div aria-describedby="tbl-max-year-top-pop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| execute: false</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-max-year-top-pop</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>max_year_pop_pop <span class="sc">|&gt;</span> </span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Five most populated countries in 2007."</span>)</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error:
-! object 'max_year_pop_pop' not found</code></pre>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-max-year-top-pop</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>max_year_top_pop <span class="sc">|&gt;</span> </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Five most populated countries in 2007."</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tbl-max-year-top-pop" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-max-year-top-pop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Five most populated countries in 2007.
+</figcaption><div aria-describedby="tbl-max-year-top-pop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">country</th>
+<th style="text-align: left;">continent</th>
+<th style="text-align: right;">year</th>
+<th style="text-align: right;">lifeExp</th>
+<th style="text-align: right;">pop</th>
+<th style="text-align: right;">gdpPercap</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">China</td>
+<td style="text-align: left;">Asia</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">72.961</td>
+<td style="text-align: right;">1318683096</td>
+<td style="text-align: right;">4959.115</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">India</td>
+<td style="text-align: left;">Asia</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">64.698</td>
+<td style="text-align: right;">1110396331</td>
+<td style="text-align: right;">2452.210</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">United States</td>
+<td style="text-align: left;">Americas</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">78.242</td>
+<td style="text-align: right;">301139947</td>
+<td style="text-align: right;">42951.653</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Indonesia</td>
+<td style="text-align: left;">Asia</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">70.650</td>
+<td style="text-align: right;">223547000</td>
+<td style="text-align: right;">3540.652</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brazil</td>
+<td style="text-align: left;">Americas</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">72.390</td>
+<td style="text-align: right;">190010647</td>
+<td style="text-align: right;">9065.801</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </figure>
 </div>
-<p>in the code chunk options and then we can refer to the table in the text with <code>@tab-max-year-top-pop</code>.</p>
+</div>
+<p>To cross reference we can refer to the table in the text with <code>@tbl-max-year-top-pop</code>.</p>
 <p>🎬 Edit the text to say:</p>
 <div class="blockquote">
-<p>Data about about the five most populated countries in <code>@tab-max-year-top-pop</code> is shown in Table 1.</p>
+<p>Data about about the five most populated countries in is shown in <code>@tbl-max-year-top-pop</code></p>
 </div>
 <p>Teach: Figure captions and cross-referencing (“As seen in <strong>?@fig-gdp</strong>…”).</p>
 <p>Part 4: The “Power User” Finish (1:30 – 2:00) Goal: Show why Quarto is better than Word.</p>
