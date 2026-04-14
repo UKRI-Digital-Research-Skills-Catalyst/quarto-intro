@@ -274,15 +274,17 @@ numbers?
 -   In fact, any code output can be inserted directly into the text of a
     .qmd file using inline code.
 
-Inline code goes between `` `r `` and `` ` ``.
+Inline code goes between \`r\` and \` .
 
 For example by writing:
 
-`` `r sqrt(2)` ``
+The squareroot of 2 is \`r `sqrt(2)` \`
 
 you will get:
 
-`r sqrt(2)` \### Extract summary information for use in inline code
+The squareroot of 2 is `r sqrt(2)`
+
+### Extract summary information for use in inline code
 
 🎬 Add a code chunk with:
 
