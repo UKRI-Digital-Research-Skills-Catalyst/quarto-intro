@@ -45,7 +45,7 @@ div.callout-tip.callout-titled .callout-body {
   color: #2E2D62; /* york-navy for body text */
 }
 
-blockquote {
+.blockquote {
   font-size: 1.1em;
   color: #58579B; /* york-blue */
 }

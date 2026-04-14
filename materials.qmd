@@ -259,9 +259,11 @@ gapminder <- read_tsv(file)
 
 🎬 Add this text to Methods:
 
-> We took per capita GDP and life expectancy data from 12 years (from
-> 1952 to 2007) for each of 142 countries. Analysis was carried out with
-> R and tidyverse packages.
+::: blockquote
+We took per capita GDP and life expectancy data from 12 years (from 1952
+to 2007) for each of 142 countries. Analysis was carried out with R and
+tidyverse packages.
+:::
 
 It would be good not to have "hard coded" those numbers in the text.
 What if we get more data. Or we just misremember or mis-type the
@@ -302,9 +304,13 @@ n_counties <- length(unique(gapminder$country))
 
 🎬 Replace numbers in the Methods text with inline code:
 
-> We took per capita GDP and life expectancy data from `` `r n_years` ``
-> years (from `` `r min_year` `` to `` `r max_year` ``) for each of
-> `` `r n_counties` `` countries.
+::: blockquote
+We took per capita GDP and life expectancy data from
+`r knitr::inline_expr("n_years")` years (from
+`r knitr::inline_expr("min_year")` to
+`r knitr::inline_expr("max_year")`) for each of
+`r knitr::inline_expr("n_counties")` countries.
+:::
 
 🎬 Render
 
