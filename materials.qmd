@@ -4,6 +4,11 @@ toc: true
 toc-location: right
 ---
 
+```{r}
+#| label: setup
+inline <- function(x = "") paste0("`` `r ", x, "` ``")
+```
+
 # Introduction
 
 ## Current process
@@ -361,9 +366,10 @@ n_counties <- length(unique(gapminder$country))
 🎬 Replace numbers in the Methods text with inline code:
 
 ::: blockquote
-We took per capita GDP and life expectancy data from \` r n_years\` years (from
-\` r min_year`to \` r max_year\`) for each of \` r n_counties\` countries.
-Analysis was carried out with R and tidyverse packages.
+We took per capita GDP and life expectancy data from `r inline('n_years')` years
+(from `r inline('min_year')` to `r inline('max_year')`) for each of
+`r inline('n_counties')` countries. Analysis was carried out with R and
+tidyverse packages.
 :::
 
 🎬 Hit Render (Ctrl-Shift-K)
@@ -409,7 +415,23 @@ max_year_pop_pop
 🎬 Hit Render (Ctrl-Shift-K)
 
 As you can see, this is not a very nice table. We can use the `kable` function
-from the `knitr`
+from the `knitr`[^2]
+
+[^2]: There are several packages for formatting tables in R such as
+    [**`gt`**](https://gt.rstudio.com/) and
+    [**`formattable`**](https://renkun-ken.github.io/formattable/) for HTML
+    tables and
+    [**`flextable`**](https://davidgohel.github.io/flextable/index.html) if you
+    have to render to Word
+
+🎬 Add a table of the summary information for the chaffinch data:
+
+```{r}
+#| echo: fenced
+#| label: tbl-chaff
+chaff_summary |> 
+  knitr::kable(caption = "Summary of mass(g) for the two subspecies of chaffinch.")
+```
 
 Scenario Action:
 
