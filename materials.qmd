@@ -6,6 +6,7 @@ toc-location: right
 
 ```{r}
 #| label: setup
+#| echo: false
 inline <- function(x = "") paste0("`` `r ", x, "` ``")
 ```
 
@@ -459,10 +460,21 @@ Data about about the five most populated countries in is shown in
 `@tbl-max-year-top-pop`
 :::
 
-Teach: Figure captions and cross-referencing ("As seen in @fig-gdp...").
+::: callout-challenge
+### 🧩 Challenge
 
-Part 4: The "Power User" Finish (1:30 – 2:00) Goal: Show why Quarto is better
-than Word.
+Can you add a table (and referring text) that shows the five most wealthy
+(gdpPercap) countries in `r max_year`? You will need to create new code chunks
+to extract the data and to print the table. Remember to include `tbl-` in the
+label of the code chunk that prints the table and to refer to it in the text
+with `@` followed by the chunk label.
+:::
+
+## Figures
+
+figure legends in the chunk
+
+figure legend as a div
 
 The Task: Citations and Formats.
 

@@ -45,6 +45,28 @@ div.callout-tip.callout-titled .callout-body {
   color: #2E2D62; /* york-navy for body text */
 }
 
+
+/* Style callout-note as "Challenge" with brand colors */
+div.callout-challenge.callout {
+  border-left-color: #58579B; /* york-blue */
+  background-color: #E0F1FA; /* york-light-blue */
+}
+
+div.callout-challenge.callout-style-default > .callout-header {
+  background-color: #E0F1FA; /* york-light-blue */
+}
+
+div.callout-challenge.callout-titled .callout-title {
+  color: #58579B; /* york-blue */
+  font-size: 1.1em;
+}
+
+div.callout-challenge.callout-titled .callout-body {
+  color: #58579B; /* york-blue */
+  font-size: 1.1em;
+}
+
+
 .blockquote {
   font-size: 1.1em;
   color: #58579B; /* york-blue */
