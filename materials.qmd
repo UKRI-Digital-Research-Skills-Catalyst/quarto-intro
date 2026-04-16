@@ -289,9 +289,9 @@ essential (later) for cross-referencing.
 🎬 Add this text to the Introduction
 
 ::: blockquote
-There is a relationship between wealth and health. We will explore this
-relationship using the relationship between Gross Domestic Product (GDP) per
-capita and Life Expectancy across countries and over time.
+There is a relationship between wealth and health. We will explore this using
+the relationship between Gross Domestic Product (GDP) per capita and Life
+Expectancy across countries and over time.
 :::
 
 🎬 Make the "per capita" italic
@@ -432,6 +432,8 @@ max_year_top_pop |>
   knitr::kable(caption = "Table 1. Five most populated countries in 2007.")
 ```
 
+🎬 Hit Render (Ctrl-Shift-K)
+
 You now have a nice table with a caption!
 
 We have written Table 1 in manually. This is not ideal because we might want to
@@ -450,6 +452,8 @@ max_year_top_pop |>
   knitr::kable(caption = "Five most populated countries in 2007.")
 ```
 
+🎬 Hit Render (Ctrl-Shift-K)
+
 To cross reference we can refer to the table in the text with
 `@tbl-max-year-top-pop`.
 
@@ -460,8 +464,10 @@ Data about about the five most populated countries in is shown in
 `@tbl-max-year-top-pop`
 :::
 
+🎬 Hit Render (Ctrl-Shift-K)
+
 ::: callout-challenge
-### 🧩 Challenge
+## 🧩 Challenge
 
 Can you add a table (and referring text) that shows the five most wealthy
 (gdpPercap) countries in `r max_year`? You will need to create new code chunks
@@ -472,23 +478,136 @@ with `@` followed by the chunk label.
 
 ## Figures
 
-figure legends in the chunk
+Figures can be included in a similar way. The label of the code chunk which
+produces the figure is important. Just as we had to use `tbl-` in the chunk
+label to have output numbered as a table, we need to use `fig-` in the chunk
+label to have output numbered as a figure.
 
-figure legend as a div
+We will make a bubble chart showing the relationship between GDP per capita and
+life expectancy in `r max_year`. The size of the bubbles will represent
+population and the colour will represent continent.
 
-The Task: Citations and Formats.
+🎬 Add a code chunk to the Results section to filter the data for the most
+recent year:
 
-Scenario Action:
+```{r}
+#| echo: fenced
+#| label: subset-max-year
 
-Citations: Add a references.bib file. Cite Hans Rosling or the Gapminder
-foundation within the text.
+# Filter the dataset to the most recent year for our report
+gapminder_max_year <- gapminder |> 
+  filter(year == max_year)
+```
 
-Rendering: Render the report to HTML. Then, with one click, render it to Word
-(for the boss who tracks changes) or PDF (for the formal publication).
+🎬 Now add the code for the figure. Make sure to include `fig-` in the chunk
+label
 
-Bonus (if time permits): Parameters. Change the country parameter in the YAML to
-"Canada" or "Kenya" and watch the whole report update automatically for that
-specific country.
+```{r}
+#| echo: fenced
+#| label: fig-gdp-life
+
+# Create a bubble chart
+ggplot(gapminder_max_year, aes(x = gdpPercap, 
+                               y = lifeExp, 
+                               color = continent, 
+                               size = pop/10^6)) +
+  geom_point() +
+  scale_size_continuous(name = "Population\n(millions)") +
+  scale_color_discrete(name = NULL) +
+  scale_x_continuous(name = "Gross Domestic Product per capita") +
+  scale_y_continuous(name = "Life Expectancy (years)") +
+  theme_classic()
+
+```
+
+🎬 Add a sentence with a cross reference to the figure:
+
+::: blockquote
+The relationship between Gross Domestic Product (GDP) per capita and Life
+Expectancy across countries in `r max_year` is in @fig-gdp-life.
+:::
+
+🎬 Hit Render (Ctrl-Shift-K)
+
+## Figure legends
+
+Our figure has a number (because we used `fig-` in the chunk label) but it does
+not have a legend. There are two ways to add a legend:
+
+1.  Using the `fig-cap` chunk option
+
+2.  Using a div `:::`
+
+Divs are more flexible and their use extends beyond figure legends. I will show
+both methods.
+
+### A figure legend with `fig-cap`
+
+🎬 Add the `fig-cap` chunk option:
+
+```{r}
+#| echo: fenced
+#| label: fig-gdp-life
+#| fig-cap: "The relationship between Gross Domestic Product (GDP) 
+#|           per capita and Life Expectancy across countries 
+#|           in 2007."
+# Create a bubble chart
+ggplot(gapminder_max_year, aes(x = gdpPercap, 
+                               y = lifeExp, 
+                               color = continent, 
+                               size = pop/10^6)) +
+  geom_point() +
+  scale_size_continuous(name = "Population\n(millions)") +
+  scale_color_discrete(name = NULL) +
+  scale_x_continuous(name = "Gross Domestic Product per capita") +
+  scale_y_continuous(name = "Life Expectancy (years)") +
+  theme_classic()
+
+```
+
+You will notice that we do not need to number the figure ourselves. The figure
+is automatically numbered as Figure 1 and the legend is automatically updated to
+include the figure number.
+
+### A figure legend with a div
+
+Instead of using the `fig-cap` chunk option, we can use a div to create a figure
+legend. This is more flexible than `fig-cap` because:
+
+-   You can include inline code, citations, special characters and formatting
+-   You can more easily make multipanel figures
+
+🎬 Add a div by:
+
+-   removing the `fig-cap` option **and** the `label` option
+
+-   adding `:::` before and after the code chunk
+
+-   placing the label after the opening `:::` like this: `:::{#fig-gdp-life}`
+    Note the`#` is important for numbering
+
+-   Putting the legend text between the code chunk and the closing `:::`
+
+:::: cell
+::: {#fig-gdp-life}
+31b8e172-b470-440e-83d8-e6b185028602:dAB5AHAAZQA6AE8AUQBCAGoAQQBHAEkAQQBOAHcAQQA1AEEARwBVAEEATgBnAEIAagBBAEMAMABBAE8AQQBBADQAQQBEAGcAQQBaAEEAQQB0AEEARABRAEEAWQBRAEEAdwBBAEcAVQBBAEwAUQBBADUAQQBHAE0AQQBPAFEAQgBpAEEAQwAwAEEAWgBnAEIAbQBBAEQAWQBBAE4AdwBCAGoAQQBHAFEAQQBOAEEAQQB3AEEARABRAEEAWgBRAEEAMgBBAEQAQQBBAAoAcABvAHMAaQB0AGkAbwBuADoATQBRAEEAMwBBAEQASQBBAE4AQQBBADUAQQBBAD0APQAKAHAAcgBlAGYAaQB4ADoACgBzAG8AdQByAGMAZQA6AFkAQQBCAGcAQQBHAEEAQQBlAHcAQgA3AEEASABJAEEAZgBRAEIAOQBBAEEAbwBBAEkAdwBBAGcAQQBFAE0AQQBjAGcAQgBsAEEARwBFAEEAZABBAEIAbABBAEMAQQBBAFkAUQBBAGcAQQBHAEkAQQBkAFEAQgBpAEEARwBJAEEAYgBBAEIAbABBAEMAQQBBAFkAdwBCAG8AQQBHAEUAQQBjAGcAQgAwAEEAQQBvAEEAWgB3AEIAbgBBAEgAQQBBAGIAQQBCAHYAQQBIAFEAQQBLAEEAQgBuAEEARwBFAEEAYwBBAEIAdABBAEcAawBBAGIAZwBCAGsAQQBHAFUAQQBjAGcAQgBmAEEARwAwAEEAWQBRAEIANABBAEYAOABBAGUAUQBCAGwAQQBHAEUAQQBjAGcAQQBzAEEAQwBBAEEAWQBRAEIAbABBAEgATQBBAEsAQQBCADQAQQBDAEEAQQBQAFEAQQBnAEEARwBjAEEAWgBBAEIAdwBBAEYAQQBBAFoAUQBCAHkAQQBHAE0AQQBZAFEAQgB3AEEAQwB3AEEASQBBAEEASwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBlAFEAQQBnAEEARAAwAEEASQBBAEIAcwBBAEcAawBBAFoAZwBCAGwAQQBFAFUAQQBlAEEAQgB3AEEAQwB3AEEASQBBAEEASwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBZAHcAQgB2AEEARwB3AEEAYgB3AEIAeQBBAEMAQQBBAFAAUQBBAGcAQQBHAE0AQQBiAHcAQgB1AEEASABRAEEAYQBRAEIAdQBBAEcAVQBBAGIAZwBCADAAQQBDAHcAQQBJAEEAQQBLAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAEkAQQBBAGcAQQBDAEEAQQBJAEEAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEMAQQBBAGMAdwBCAHAAQQBIAG8AQQBaAFEAQQBnAEEARAAwAEEASQBBAEIAdwBBAEcAOABBAGMAQQBBAHYAQQBEAEUAQQBNAEEAQgBlAEEARABZAEEASwBRAEEAcABBAEMAQQBBAEsAdwBBAEsAQQBDAEEAQQBJAEEAQgBuAEEARwBVAEEAYgB3AEIAdABBAEYAOABBAGMAQQBCAHYAQQBHAGsAQQBiAGcAQgAwAEEAQwBnAEEASwBRAEEAZwBBAEMAcwBBAEMAZwBBAGcAQQBDAEEAQQBjAHcAQgBqAEEARwBFAEEAYgBBAEIAbABBAEYAOABBAGMAdwBCAHAAQQBIAG8AQQBaAFEAQgBmAEEARwBNAEEAYgB3AEIAdQBBAEgAUQBBAGEAUQBCAHUAQQBIAFUAQQBiAHcAQgAxAEEASABNAEEASwBBAEIAdQBBAEcARQBBAGIAUQBCAGwAQQBDAEEAQQBQAFEAQQBnAEEAQwBJAEEAVQBBAEIAdgBBAEgAQQBBAGQAUQBCAHMAQQBHAEUAQQBkAEEAQgBwAEEARwA4AEEAYgBnAEIAYwBBAEcANABBAEsAQQBCAHQAQQBHAGsAQQBiAEEAQgBzAEEARwBrAEEAYgB3AEIAdQBBAEgATQBBAEsAUQBBAGkAQQBDAGsAQQBJAEEAQQByAEEAQQBvAEEASQBBAEEAZwBBAEgATQBBAFkAdwBCAGgAQQBHAHcAQQBaAFEAQgBmAEEARwBNAEEAYgB3AEIAcwBBAEcAOABBAGMAZwBCAGYAQQBHAFEAQQBhAFEAQgB6AEEARwBNAEEAYwBnAEIAbABBAEgAUQBBAFoAUQBBAG8AQQBHADQAQQBZAFEAQgB0AEEARwBVAEEASQBBAEEAOQBBAEMAQQBBAFQAZwBCAFYAQQBFAHcAQQBUAEEAQQBwAEEAQwBBAEEASwB3AEEASwBBAEMAQQBBAEkAQQBCAHoAQQBHAE0AQQBZAFEAQgBzAEEARwBVAEEAWAB3AEIANABBAEYAOABBAFkAdwBCAHYAQQBHADQAQQBkAEEAQgBwAEEARwA0AEEAZABRAEIAdgBBAEgAVQBBAGMAdwBBAG8AQQBHADQAQQBZAFEAQgB0AEEARwBVAEEASQBBAEEAOQBBAEMAQQBBAEkAZwBCAEgAQQBIAEkAQQBiAHcAQgB6AEEASABNAEEASQBBAEIARQBBAEcAOABBAGIAUQBCAGwAQQBIAE0AQQBkAEEAQgBwAEEARwBNAEEASQBBAEIAUQBBAEgASQBBAGIAdwBCAGsAQQBIAFUAQQBZAHcAQgAwAEEAQwBBAEEAYwBBAEIAbABBAEgASQBBAEkAQQBCAGoAQQBHAEUAQQBjAEEAQgBwAEEASABRAEEAWQBRAEEAaQBBAEMAawBBAEkAQQBBAHIAQQBBAG8AQQBJAEEAQQBnAEEASABNAEEAWQB3AEIAaABBAEcAdwBBAFoAUQBCAGYAQQBIAGsAQQBYAHcAQgBqAEEARwA4AEEAYgBnAEIAMABBAEcAawBBAGIAZwBCADEAQQBHADgAQQBkAFEAQgB6AEEAQwBnAEEAYgBnAEIAaABBAEcAMABBAFoAUQBBAGcAQQBEADAAQQBJAEEAQQBpAEEARQB3AEEAYQBRAEIAbQBBAEcAVQBBAEkAQQBCAEYAQQBIAGcAQQBjAEEAQgBsAEEARwBNAEEAZABBAEIAaABBAEcANABBAFkAdwBCADUAQQBDAEEAQQBLAEEAQgA1AEEARwBVAEEAWQBRAEIAeQBBAEgATQBBAEsAUQBBAGkAQQBDAGsAQQBJAEEAQQByAEEAQQBvAEEASQBBAEEAZwBBAEgAUQBBAGEAQQBCAGwAQQBHADAAQQBaAFEAQgBmAEEARwBNAEEAYgBBAEIAaABBAEgATQBBAGMAdwBCAHAAQQBHAE0AQQBLAEEAQQBwAEEAQQBvAEEAWQBBAEIAZwBBAEcAQQBBAAoAcwB1AGYAZgBpAHgAOgA=:31b8e172-b470-440e-83d8-e6b185028602
+**The relationship between Gross Domestic Product (GDP) *per capita* and Life
+Expectancy across countries `r inline("max_year")`.** Each point represents a
+country, plotted by gross domestic product (GDP) *per capita* (international
+dollars, x-axis) against life expectancy at birth in years (y-axis). Point
+colour indicates continental region and point size is proportional to population
+size (millions). Data are from the Gapminder dataset and were analysed with R
+and tidyverse packages.
+:::
+::::
+
+## Divs in general
+
+## Citations
+
+## PDF output
+
+## Parameterised reports
 
 Pages made with R [@R-core], Quarto [@Allaire_Quarto_2026], `knitr` [@knitr1;
 @knitr2; @knitr3], `kableExtra` [@kableExtra]
