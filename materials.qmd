@@ -467,6 +467,8 @@ Data about about the five most populated countries in is shown in
 🎬 Hit Render (Ctrl-Shift-K)
 
 ::: callout-challenge
+## 🧩 Challenge
+
 Can you add a table (and referring text) that shows the five most wealthy
 (gdpPercap) countries in `r max_year`? You will need to create new code chunks
 to extract the data and to print the table. Remember to include `tbl-` in the
