@@ -56,8 +56,8 @@ div.callout-important.callout-style-default > .callout-header {
   background-color: #E0F1FA; /* york-light-blue */
 }
 
-div.callout-important > .callout-header::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><text y="20" font-size="20">🧩</text></svg>');
+div.callout-important > .callout-header .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><text y="20" font-size="20">🧩</text></svg>') !important;
 }
 
 div.callout-important.callout-titled .callout-title {
