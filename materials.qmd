@@ -466,7 +466,7 @@ Data about about the five most populated countries in is shown in
 
 🎬 Hit Render (Ctrl-Shift-K)
 
-::: {.callout-important title="🧩 Challenge"}
+::: callout-important
 Can you add a table (and referring text) that shows the five most wealthy
 (gdpPercap) countries in `r max_year`? You will need to create new code chunks
 to extract the data and to print the table. Remember to include `tbl-` in the
@@ -502,7 +502,7 @@ label
 
 ```{r}
 #| echo: fenced
-#| label: fig-gdp-life
+#| label: fig-gdp-life-max-year
 
 # Create a bubble chart
 ggplot(gapminder_max_year, aes(x = gdpPercap, 
@@ -521,7 +521,7 @@ ggplot(gapminder_max_year, aes(x = gdpPercap,
 
 ::: blockquote
 The relationship between Gross Domestic Product (GDP) per capita and Life
-Expectancy across countries in `r max_year` is in @fig-gdp-life.
+Expectancy across countries in `r max_year` is in @fig-gdp-life-max-year.
 :::
 
 🎬 Hit Render (Ctrl-Shift-K)
@@ -575,6 +575,40 @@ legend. This is more flexible than `fig-cap` because:
     Note the`#` is important for numbering
 
 -   Putting the legend text between the code chunk and the closing `:::`
+
+```` markdown
+::: {#fig-gdp-life-max-year}
+```{r}
+# Create a bubble chart
+ggplot(gapminder_max_year, aes(x = gdpPercap, 
+                               y = lifeExp, 
+                               color = continent, 
+                               size = pop/10^6)) +
+  geom_point() +
+  scale_size_continuous(name = "Population\n(millions)") +
+  scale_color_discrete(name = NULL) +
+  scale_x_continuous(name = "Gross Domestic Product per capita") +
+  scale_y_continuous(name = "Life Expectancy (years)") +
+  theme_classic()
+```
+
+**The relationship between Gross Domestic Product (GDP) *per capita* and Life
+Expectancy across countries `r inline("max_year")`.** Each point represents a country,
+plotted by gross domestic product (GDP) *per capita* (international dollars,
+x-axis) against life expectancy at birth in years (y-axis). Point colour
+indicates continental region and point size is proportional to population size
+(millions). Data are from the Gapminder dataset and were analysed with R and
+tidyverse packages.
+:::
+````
+
+::: callout-important
+Can you add a figure that shows the relationship between Gross Domestic Product
+(GDP) *per capita* and Life Expectancy across countries in `r min_year` You will
+need to create new code chunks to subset the data and make the figure. Add the
+figure legend with a div. Remember to include `fig-` in the div label and to
+refer to it in the text with `@` followed by the chunk label.
+:::
 
 ## Divs in general
 

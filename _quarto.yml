@@ -38,6 +38,7 @@ engine: knitr
 format:
   html:
     css: styles.css
+    callout-important-title: "Challenge"
     link-external-newwindow: true
     link-external-filter: '^(?:http:|https:)\/\/ukri-digital-research-skills-catalyst\.github\.io\/quarto-intro'
     code-copy: true
