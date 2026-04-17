@@ -46,22 +46,26 @@ div.callout-tip.callout-titled .callout-body {
 }
 
 
-/* Style callout-note as "Challenge" with brand colors */
-div.callout-challenge.callout {
+/* Style callout-important as "Challenge" with brand colors */
+div.callout-important.callout {
   border-left-color: #58579B; /* york-blue */
   background-color: #E0F1FA; /* york-light-blue */
 }
 
-div.callout-challenge.callout-style-default > .callout-header {
+div.callout-important.callout-style-default > .callout-header {
   background-color: #E0F1FA; /* york-light-blue */
 }
 
-div.callout-challenge.callout-titled .callout-title {
+div.callout-important > .callout-header::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2358579B"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>');
+}
+
+div.callout-important.callout-titled .callout-title {
   color: #58579B; /* york-blue */
   font-size: 1.1em;
 }
 
-div.callout-challenge.callout-titled .callout-body {
+div.callout-important.callout-titled .callout-body {
   color: #58579B; /* york-blue */
   font-size: 1.1em;
 }
