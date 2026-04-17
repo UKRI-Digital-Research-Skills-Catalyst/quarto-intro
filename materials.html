@@ -213,13 +213,20 @@ div.csl-indent {
 <li><a href="#extract-summary-information-for-use-in-inline-code" id="toc-extract-summary-information-for-use-in-inline-code" class="nav-link" data-scroll-target="#extract-summary-information-for-use-in-inline-code">Extract summary information for use in inline code</a></li>
   </ul>
 </li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
+  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge">🧩 Challenge</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a></li>
   <li>
-<a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a>
+<a href="#figure-legends" id="toc-figure-legends" class="nav-link" data-scroll-target="#figure-legends">Figure legends</a>
   <ul class="collapse">
-<li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge">🧩 Challenge</a></li>
+<li><a href="#a-figure-legend-with-fig-cap" id="toc-a-figure-legend-with-fig-cap" class="nav-link" data-scroll-target="#a-figure-legend-with-fig-cap">A figure legend with <code>fig-cap</code></a></li>
+  <li><a href="#a-figure-legend-with-a-div" id="toc-a-figure-legend-with-a-div" class="nav-link" data-scroll-target="#a-figure-legend-with-a-div">A figure legend with a div</a></li>
   </ul>
 </li>
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a></li>
+  <li><a href="#divs-in-general" id="toc-divs-in-general" class="nav-link" data-scroll-target="#divs-in-general">Divs in general</a></li>
+  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a></li>
+  <li><a href="#pdf-output" id="toc-pdf-output" class="nav-link" data-scroll-target="#pdf-output">PDF output</a></li>
+  <li><a href="#parameterised-reports" id="toc-parameterised-reports" class="nav-link" data-scroll-target="#parameterised-reports">Parameterised reports</a></li>
   </ul>
 </li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -238,7 +245,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">15 April, 2026</p>
+      <p class="date">17 April, 2026</p>
     </div>
   </div>
   
@@ -14113,7 +14120,7 @@ div.csl-indent {
 </table>
 <p>🎬 Add this text to the Introduction</p>
 <div class="blockquote">
-<p>There is a relationship between wealth and health. We will explore this relationship using the relationship between Gross Domestic Product (GDP) per capita and Life Expectancy across countries and over time.</p>
+<p>There is a relationship between wealth and health. We will explore this using the relationship between Gross Domestic Product (GDP) per capita and Life Expectancy across countries and over time.</p>
 </div>
 <p>🎬 Make the “per capita” italic</p>
 <p>🎬 Make “Gross Domestic Product (GDP)” a link to <a href="https://en.wikipedia.org/wiki/Gross_domestic_product" class="uri">https://en.wikipedia.org/wiki/Gross_domestic_product</a></p>
@@ -14203,6 +14210,7 @@ div.csl-indent {
 <p>🎬 Replace the <code>max_year_top_pop</code> in the previous code chunk with:</p>
 <pre><code>max_year_top_pop |&gt; 
   knitr::kable(caption = "Table 1. Five most populated countries in 2007.")</code></pre>
+<p>🎬 Hit Render (Ctrl-Shift-K)</p>
 <p>You now have a nice table with a caption!</p>
 <p>We have written Table 1 in manually. This is not ideal because we might want to add/remove tables and cross reference them in the text and would not want to manually update all the places where the table is mentioned.</p>
 <p>Quarto has a great feature for naming, autonumbering and cross referencing tables. We simply have to include <code>tbl-</code> in the chunk label.</p>
@@ -14275,21 +14283,97 @@ Table&nbsp;1: Five most populated countries in 2007.
 </figure>
 </div>
 </div>
+<p>🎬 Hit Render (Ctrl-Shift-K)</p>
 <p>To cross reference we can refer to the table in the text with <code>@tbl-max-year-top-pop</code>.</p>
 <p>🎬 Edit the text to say:</p>
 <div class="blockquote">
 <p>Data about about the five most populated countries in is shown in <code>@tbl-max-year-top-pop</code></p>
 </div>
-<section id="challenge" class="level3 callout-challenge"><h3 class="anchored" data-anchor-id="challenge">🧩 Challenge</h3>
+<p>🎬 Hit Render (Ctrl-Shift-K)</p>
+</section><section id="challenge" class="level2 callout-challenge"><h2 class="anchored" data-anchor-id="challenge">🧩 Challenge</h2>
 <p>Can you add a table (and referring text) that shows the five most wealthy (gdpPercap) countries in 2007? You will need to create new code chunks to extract the data and to print the table. Remember to include <code>tbl-</code> in the label of the code chunk that prints the table and to refer to it in the text with <code>@</code> followed by the chunk label.</p>
-</section></section><section id="figures" class="level2"><h2 class="anchored" data-anchor-id="figures">Figures</h2>
-<p>figure legends in the chunk</p>
-<p>figure legend as a div</p>
-<p>The Task: Citations and Formats.</p>
-<p>Scenario Action:</p>
-<p>Citations: Add a references.bib file. Cite Hans Rosling or the Gapminder foundation within the text.</p>
-<p>Rendering: Render the report to HTML. Then, with one click, render it to Word (for the boss who tracks changes) or PDF (for the formal publication).</p>
-<p>Bonus (if time permits): Parameters. Change the country parameter in the YAML to “Canada” or “Kenya” and watch the whole report update automatically for that specific country.</p>
+</section><section id="figures" class="level2"><h2 class="anchored" data-anchor-id="figures">Figures</h2>
+<p>Figures can be included in a similar way. The label of the code chunk which produces the figure is important. Just as we had to use <code>tbl-</code> in the chunk label to have output numbered as a table, we need to use <code>fig-</code> in the chunk label to have output numbered as a figure.</p>
+<p>We will make a bubble chart showing the relationship between GDP per capita and life expectancy in 2007. The size of the bubbles will represent population and the colour will represent continent.</p>
+<p>🎬 Add a code chunk to the Results section to filter the data for the most recent year:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: subset-max-year</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter the dataset to the most recent year for our report</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>gapminder_max_year <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> max_year)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>🎬 Now add the code for the figure. Make sure to include <code>fig-</code> in the chunk label</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-gdp-life</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bubble chart</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder_max_year, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, </span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>                               <span class="at">y =</span> lifeExp, </span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">color =</span> continent, </span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">size =</span> pop<span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)) <span class="sc">+</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">name =</span> <span class="st">"Population</span><span class="sc">\n</span><span class="st">(millions)"</span>) <span class="sc">+</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Gross Domestic Product per capita"</span>) <span class="sc">+</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Life Expectancy (years)"</span>) <span class="sc">+</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-gdp-life" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-gdp-life-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="materials_files/figure-html/fig-gdp-life-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;1: "><img src="materials_files/figure-html/fig-gdp-life-1.svg" id="fig-gdp-life" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-gdp-life-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>🎬 Add a sentence with a cross reference to the figure:</p>
+<div class="blockquote">
+<p>The relationship between Gross Domestic Product (GDP) per capita and Life Expectancy across countries in 2007 is in <a href="#fig-gdp-life" class="quarto-xref">Figure&nbsp;1</a>.</p>
+</div>
+<p>🎬 Hit Render (Ctrl-Shift-K)</p>
+</section><section id="figure-legends" class="level2"><h2 class="anchored" data-anchor-id="figure-legends">Figure legends</h2>
+<p>Our figure has a number (because we used <code>fig-</code> in the chunk label) but it does not have a legend. There are two ways to add a legend:</p>
+<ol type="1">
+<li><p>Using the <code>fig-cap</code> chunk option</p></li>
+<li><p>Using a div <code>:::</code></p></li>
+</ol>
+<p>Divs are more flexible and their use extends beyond figure legends. I will show both methods.</p>
+<section id="a-figure-legend-with-fig-cap" class="level3"><h3 class="anchored" data-anchor-id="a-figure-legend-with-fig-cap">A figure legend with <code>fig-cap</code>
+</h3>
+<p>🎬 Add the <code>fig-cap</code> chunk option:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "The relationship between Gross Domestic Product (GDP) </span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">#|           per capita and Life Expectancy across countries </span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#|           in 2007."</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bubble chart</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You will notice that we do not need to number the figure ourselves. The figure is automatically numbered as Figure 1 and the legend is automatically updated to include the figure number.</p>
+</section><section id="a-figure-legend-with-a-div" class="level3"><h3 class="anchored" data-anchor-id="a-figure-legend-with-a-div">A figure legend with a div</h3>
+<p>Instead of using the <code>fig-cap</code> chunk option, we can use a div to create a figure legend. This is more flexible than <code>fig-cap</code> because:</p>
+<ul>
+<li>You can include inline code, citations, special characters and formatting</li>
+<li>You can more easily make multipanel figures</li>
+</ul>
+<p>🎬 Add a div by:</p>
+<ul>
+<li><p>removing the <code>fig-cap</code> option <strong>and</strong> the <code>label</code> option</p></li>
+<li><p>adding <code>:::</code> before and after the code chunk</p></li>
+<li><p>placing the label after the opening <code>:::</code> like this: <code>:::{#fig-gdp-life}</code> Note the<code>#</code> is important for numbering</p></li>
+<li><p>Putting the legend text between the code chunk and the closing <code>:::</code></p></li>
+</ul></section></section><section id="divs-in-general" class="level2"><h2 class="anchored" data-anchor-id="divs-in-general">Divs in general</h2>
+</section><section id="citations" class="level2"><h2 class="anchored" data-anchor-id="citations">Citations</h2>
+</section><section id="pdf-output" class="level2"><h2 class="anchored" data-anchor-id="pdf-output">PDF output</h2>
+</section><section id="parameterised-reports" class="level2"><h2 class="anchored" data-anchor-id="parameterised-reports">Parameterised reports</h2>
 <p>Pages made with R <span class="citation" data-cites="R-core">(<a href="#ref-R-core" role="doc-biblioref">R Core Team 2026</a>)</span>, Quarto <span class="citation" data-cites="Allaire_Quarto_2026">(<a href="#ref-Allaire_Quarto_2026" role="doc-biblioref">Allaire et al. 2026</a>)</span>, <code>knitr</code> <span class="citation" data-cites="knitr1 knitr2 knitr3">(<a href="#ref-knitr1" role="doc-biblioref">Xie 2025</a>, <a href="#ref-knitr2" role="doc-biblioref">2015</a>, <a href="#ref-knitr3" role="doc-biblioref">2014</a>)</span>, <code>kableExtra</code> <span class="citation" data-cites="kableExtra">(<a href="#ref-kableExtra" role="doc-biblioref">Zhu 2024</a>)</span></p>
 </section></section><section id="references" class="level1">
 
