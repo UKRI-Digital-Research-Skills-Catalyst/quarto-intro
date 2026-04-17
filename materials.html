@@ -14289,13 +14289,13 @@ Table&nbsp;1: Five most populated countries in 2007.
 <p>Data about about the five most populated countries in is shown in <code>@tbl-max-year-top-pop</code></p>
 </div>
 <p>🎬 Hit Render (Ctrl-Shift-K)</p>
-<div class="callout callout-style-default callout-important callout-titled" title="🧩 Challenge">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>🧩 Challenge
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -14318,7 +14318,7 @@ Table&nbsp;1: Five most populated countries in 2007.
 <p>🎬 Now add the code for the figure. Make sure to include <code>fig-</code> in the chunk label</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-gdp-life</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-gdp-life-max-year</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bubble chart</span></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder_max_year, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, </span>
@@ -14333,11 +14333,11 @@ Table&nbsp;1: Five most populated countries in 2007.
 <span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-gdp-life" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-gdp-life-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="materials_files/figure-html/fig-gdp-life-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;1: "><img src="materials_files/figure-html/fig-gdp-life-1.svg" id="fig-gdp-life" class="img-fluid figure-img"></a>
+<div id="fig-gdp-life-max-year" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-gdp-life-max-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="materials_files/figure-html/fig-gdp-life-max-year-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;1: "><img src="materials_files/figure-html/fig-gdp-life-max-year-1.svg" id="fig-gdp-life-max-year" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-gdp-life-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-gdp-life-max-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1
 </figcaption></figure>
 </div>
@@ -14345,7 +14345,7 @@ Figure&nbsp;1
 </div>
 <p>🎬 Add a sentence with a cross reference to the figure:</p>
 <div class="blockquote">
-<p>The relationship between Gross Domestic Product (GDP) per capita and Life Expectancy across countries in 2007 is in <a href="#fig-gdp-life" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<p>The relationship between Gross Domestic Product (GDP) per capita and Life Expectancy across countries in 2007 is in <a href="#fig-gdp-life-max-year" class="quarto-xref">Figure&nbsp;1</a>.</p>
 </div>
 <p>🎬 Hit Render (Ctrl-Shift-K)</p>
 </section><section id="figure-legends" class="level2"><h2 class="anchored" data-anchor-id="figure-legends">Figure legends</h2>
@@ -14380,7 +14380,53 @@ Figure&nbsp;1
 <li><p>adding <code>:::</code> before and after the code chunk</p></li>
 <li><p>placing the label after the opening <code>:::</code> like this: <code>:::{#fig-gdp-life}</code> Note the<code>#</code> is important for numbering</p></li>
 <li><p>Putting the legend text between the code chunk and the closing <code>:::</code></p></li>
-</ul></section></section><section id="divs-in-general" class="level2"><h2 class="anchored" data-anchor-id="divs-in-general">Divs in general</h2>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>::: {#fig-gdp-life-max-year}</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{.r .cell-code}</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a bubble chart</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder_max_year, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, </span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>                               <span class="at">y =</span> lifeExp, </span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>                               <span class="at">color =</span> continent, </span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>                               <span class="at">size =</span> pop<span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>)) <span class="sc">+</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">name =</span> <span class="st">"Population</span><span class="sc">\n</span><span class="st">(millions)"</span>) <span class="sc">+</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Gross Domestic Product per capita"</span>) <span class="sc">+</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Life Expectancy (years)"</span>) <span class="sc">+</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>::: {.cell-output-display}</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="al">![](materials_files/figure-html/unnamed-chunk-5-1.svg)</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>**The relationship between Gross Domestic Product (GDP) *per capita* and Life</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>Expectancy across countries `<span class="in">` `</span>r max_year` ``.** Each point represents a country,</span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>plotted by gross domestic product (GDP) *per capita* (international dollars,</span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>x-axis) against life expectancy at birth in years (y-axis). Point colour</span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>indicates continental region and point size is proportional to population size</span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>(millions). Data are from the Gapminder dataset and were analysed with R and</span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>tidyverse packages.</span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Can you add a figure that shows the relationship between Gross Domestic Product (GDP) <em>per capita</em> and Life Expectancy across countries in 1952 You will need to create new code chunks to subset the data and make the figure. Add the figure legend with a div. Remember to include <code>fig-</code> in the div label and to refer to it in the text with <code>@</code> followed by the chunk label.</p>
+</div>
+</div>
+</section></section><section id="divs-in-general" class="level2"><h2 class="anchored" data-anchor-id="divs-in-general">Divs in general</h2>
 </section><section id="citations" class="level2"><h2 class="anchored" data-anchor-id="citations">Citations</h2>
 </section><section id="pdf-output" class="level2"><h2 class="anchored" data-anchor-id="pdf-output">PDF output</h2>
 </section><section id="parameterised-reports" class="level2"><h2 class="anchored" data-anchor-id="parameterised-reports">Parameterised reports</h2>
