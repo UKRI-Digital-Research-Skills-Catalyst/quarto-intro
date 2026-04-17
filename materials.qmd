@@ -517,7 +517,6 @@ ggplot(gapminder_max_year, aes(x = gdpPercap,
   scale_x_continuous(name = "Gross Domestic Product per capita") +
   scale_y_continuous(name = "Life Expectancy (years)") +
   theme_classic()
-
 ```
 
 🎬 Add a sentence with a cross reference to the figure:
