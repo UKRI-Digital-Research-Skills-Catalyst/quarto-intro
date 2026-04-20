@@ -521,7 +521,7 @@ ggplot(gapminder_max_year, aes(x = gdpPercap,
 
 ::: blockquote
 The relationship between Gross Domestic Product (GDP) per capita and Life
-Expectancy across countries in `r max_year` is in @fig-gdp-life-max-year.
+Expectancy across countries in `r max_year` is in `@fig-gdp-life-max-year`.
 :::
 
 🎬 Hit Render (Ctrl-Shift-K)
