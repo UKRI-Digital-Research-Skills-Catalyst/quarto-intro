@@ -222,6 +222,7 @@ div.csl-indent {
   <li><a href="#a-figure-legend-with-a-div" id="toc-a-figure-legend-with-a-div" class="nav-link" data-scroll-target="#a-figure-legend-with-a-div">A figure legend with a div</a></li>
   </ul>
 </li>
+  <li><a href="#the-visual-editor" id="toc-the-visual-editor" class="nav-link" data-scroll-target="#the-visual-editor">The Visual editor!</a></li>
   <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a></li>
   <li><a href="#pdf-output" id="toc-pdf-output" class="nav-link" data-scroll-target="#pdf-output">PDF output</a></li>
   <li><a href="#parameterised-reports" id="toc-parameterised-reports" class="nav-link" data-scroll-target="#parameterised-reports">Parameterised reports</a></li>
@@ -243,7 +244,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">17 April, 2026</p>
+      <p class="date">20 April, 2026</p>
     </div>
   </div>
   
@@ -14380,6 +14381,7 @@ Figure&nbsp;1
 <li><p>placing the label after the opening <code>:::</code> like this: <code>:::{#fig-gdp-life}</code> Note the<code>#</code> is important for numbering</p></li>
 <li><p>Putting the legend text between the code chunk and the closing <code>:::</code></p></li>
 </ul>
+<p>You can use this for legend text:</p>
 <div class="blockquote">
 <p><strong>The relationship between Gross Domestic Product (GDP) <em>per capita</em> and Life Expectancy across countries <code>`r max_year`</code>.</strong> Each point represents a country, plotted by gross domestic product (GDP) <em>per capita</em> (international dollars, x-axis) against life expectancy at birth in years (y-axis). Point colour indicates continental region and point size is proportional to population size (millions). Data are from the Gapminder dataset and were analysed with R and tidyverse packages.</p>
 </div>
@@ -14396,7 +14398,77 @@ Figure&nbsp;1
 <p>Can you add a figure that shows the relationship between Gross Domestic Product (GDP) <em>per capita</em> and Life Expectancy across countries in 1952 You will need to create new code chunks to subset the data and make the figure. Add the figure legend with a div. Remember to include <code>fig-</code> in the div label and to refer to it in the text with <code>@</code> followed by the chunk label.</p>
 </div>
 </div>
-</section></section><section id="citations" class="level2"><h2 class="anchored" data-anchor-id="citations">Citations</h2>
+</section></section><section id="the-visual-editor" class="level2"><h2 class="anchored" data-anchor-id="the-visual-editor">The Visual editor!</h2>
+<ul>
+<li><p>The visual editor is a WYSIWYG editor for Quarto documents. It can be accessed by clicking the <code>Visual Editor</code> button in the top right or by Ctrl-Shift-F4</p></li>
+<li><p>It makes it easier to add and edit content (although I find I often want to use the source)</p></li>
+<li><p>It is especially useful for adding citations.</p></li>
+</ul></section><section id="citations" class="level2"><h2 class="anchored" data-anchor-id="citations">Citations</h2>
+<p>Quarto will automatically generate citations and a bibliography in a number of styles. To use this capability, you need:</p>
+<ul>
+<li><p>the citation to be formatted in markdown <code>@key</code> where <code>key</code> is the citation key for the reference you want to cite. The citation key is defined in the bibliography file (see below) and is often the first author’s surname followed by the year of publication, for example <code>@pollack_should_2007</code>.</p></li>
+<li><p>A bibliographic data source, for example a BibLaTeX (.bib) or BibTeX (.bibtex) file.</p></li>
+<li><p>Optionally, a CSL file which specifies the formatting to use when generating the citations and bibliography.</p></li>
+</ul>
+<p>The easiest way to add a citation is to use the visual editor which allows you to add citations from a variety of sources including: by doi, from Zotero and by searches of <a href="https://www.crossref.org/">Crossref</a>, <a href="https://datacite.org/">DataCite</a>, or <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a>.</p>
+<p>🎬 Switch to visual using the button or (Control-Shift-F4)</p>
+<p>Go to the methods section where we have this text:</p>
+<div class="blockquote">
+<p>Analysis was carried out with R and tidyverse packages.</p>
+</div>
+<p>🎬 Put your cursor after tidyverse and do Insert | Citation (Control-Shift-F8)</p>
+<p>🎬 Chose R Package and search for tidyverse</p>
+<p>Note that it says (towards the end) that it will Create a bibliography file called <code>references.bib</code> and add the citation to it.</p>
+<p>🎬 Click Insert</p>
+<p>🎬 Hit Render (Ctrl-Shift-K)</p>
+<p>Ta da! You have a citation in the text and a bibliography at the end of the document.</p>
+<p>Open <code>references.bib</code> and you will see the BibTex entry for tidyverse. You can edit the BibTex entry to add other references to <code>references.bib</code>:</p>
+<ul>
+<li>by copying and pasting BibTex entries manually from other sources.</li>
+<li>using the Insert | Citation (Control-Shift-F8) option and adding by doi, through a search, very usefully, a Zotero library if you have it set up.</li>
+</ul>
+<p>We will add the reference for R itself. You can find the reference for R using <code><a href="https://rdrr.io/r/utils/citation.html">citation()</a></code>:</p>
+<p>🎬 Get the reference for the version of R you are using:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>To cite R in publications use:
+
+  R Core Team (2026). _R: A Language and Environment for Statistical
+  Computing_. R Foundation for Statistical Computing, Vienna, Austria.
+  &lt;https://www.R-project.org/&gt;.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {R: A Language and Environment for Statistical Computing},
+    author = {{R Core Team}},
+    organization = {R Foundation for Statistical Computing},
+    address = {Vienna, Austria},
+    year = {2026},
+    url = {https://www.R-project.org/},
+  }
+
+We have invested a lot of time and effort in creating R, please cite it
+when using it for data analysis. See also 'citation("pkgname")' for
+citing R packages.</code></pre>
+</div>
+</div>
+<p>🎬 Copy the BibTex entry (starts with <code>@</code> and ends with <code>}</code> ) and paste it into <code>references.bib</code></p>
+<p>🎬 Edit in a <code>key</code> (I used <code>R-core</code>) and save.</p>
+<p>🎬 Put your cursor after R, do Insert | Citation (Control-Shift-F8), choose Bibliography and add <code>R-core</code> and Insert.</p>
+<p>🎬 Hit Render (Ctrl-Shift-K)</p>
+<p>We are now going to use an article by <span class="citation" data-cites="pollack_should_2007">Pollack et al. (<a href="#ref-pollack_should_2007" role="doc-biblioref">2007</a>)</span> as a reference for this statement:</p>
+<div class="blockquote">
+<p>There is a relationship between wealth and health</p>
+</div>
+<p>This article is available here:</p>
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0749379707003145?via%3Dihub" class="uri">https://www.sciencedirect.com/science/article/pii/S0749379707003145?via%3Dihub</a></p>
+<p>If you are using a reference manager you may be using a browser extension to save the article. Otherwise Click Cite and export to BibTex.</p>
+<p>Copy the contents of the BibTex file and paste it into <code>references.bib</code> in your project folder. Edit the entry to add a key (I used <code>pollack_should_2007</code>) and save.</p>
+<p>🎬 Put your cursor after “wealth and health”, do Insert | Citation (Control-Shift-F8), choose Bibliography and add <code>pollack_should_2007</code> and Insert.</p>
+<p>If you have any trouble getting hold of the BibTex entry, you can save <a href="pollack_should_2007.bib">pollack_should_2007.bib</a> and copy the contents into <code>references.bib</code> in your project folder.</p>
+<p>🎬 Hit Render (Ctrl-Shift-K)</p>
 </section><section id="pdf-output" class="level2"><h2 class="anchored" data-anchor-id="pdf-output">PDF output</h2>
 </section><section id="parameterised-reports" class="level2"><h2 class="anchored" data-anchor-id="parameterised-reports">Parameterised reports</h2>
 <p>Pages made with R <span class="citation" data-cites="R-core">(<a href="#ref-R-core" role="doc-biblioref">R Core Team 2026</a>)</span>, Quarto <span class="citation" data-cites="Allaire_Quarto_2026">(<a href="#ref-Allaire_Quarto_2026" role="doc-biblioref">Allaire et al. 2026</a>)</span>, <code>knitr</code> <span class="citation" data-cites="knitr1 knitr2 knitr3">(<a href="#ref-knitr1" role="doc-biblioref">Xie 2025</a>, <a href="#ref-knitr2" role="doc-biblioref">2015</a>, <a href="#ref-knitr3" role="doc-biblioref">2014</a>)</span>, <code>kableExtra</code> <span class="citation" data-cites="kableExtra">(<a href="#ref-kableExtra" role="doc-biblioref">Zhu 2024</a>)</span></p>
@@ -14407,6 +14479,9 @@ Figure&nbsp;1
 </section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-Allaire_Quarto_2026" class="csl-entry" role="listitem">
 Allaire, J. J., Charles Teague, Carlos Scheidegger, Yihui Xie, Christophe Dervieux, and Gordon Woodhull. 2026. <em><span>Quarto</span></em>. V. 1.9. Released March. <a href="https://doi.org/10.5281/zenodo.5960048">https://doi.org/10.5281/zenodo.5960048</a>.
+</div>
+<div id="ref-pollack_should_2007" class="csl-entry" role="listitem">
+Pollack, Craig Evan, Sekai Chideya, Catherine Cubbin, Brie Williams, Mercedes Dekker, and Paula Braveman. 2007. <span>“Should <span>Health</span> <span>Studies</span> <span>Measure</span> <span>Wealth</span>?: <span>A</span> <span>Systematic</span> <span>Review</span>.”</span> <em>American Journal of Preventive Medicine</em> 33 (3): 250–64. <a href="https://doi.org/10.1016/j.amepre.2007.04.033">https://doi.org/10.1016/j.amepre.2007.04.033</a>.
 </div>
 <div id="ref-R-core" class="csl-entry" role="listitem">
 R Core Team. 2026. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
