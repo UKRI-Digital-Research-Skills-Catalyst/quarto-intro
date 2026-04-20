@@ -576,6 +576,8 @@ legend. This is more flexible than `fig-cap` because:
 
 -   Putting the legend text between the code chunk and the closing `:::`
 
+You can use this for legend text:
+
 ::: blockquote
 **The relationship between Gross Domestic Product (GDP) *per capita* and Life
 Expectancy across countries `r inline("max_year")`.** Each point represents a
@@ -594,7 +596,114 @@ figure legend with a div. Remember to include `fig-` in the div label and to
 refer to it in the text with `@` followed by the chunk label.
 :::
 
+## The Visual editor!
+
+-   The visual editor is a WYSIWYG editor for Quarto documents. It can be
+    accessed by clicking the `Visual Editor` button in the top right or by
+    Ctrl-Shift-F4
+
+-   It makes it easier to add and edit content (although I find I often want to
+    use the source)
+
+-   It is especially useful for adding citations.
+
 ## Citations
+
+Quarto will automatically generate citations and a bibliography in a number of
+styles. To use this capability, you need:
+
+-   the citation to be formatted in markdown `@key` where `key` is the citation
+    key for the reference you want to cite. The citation key is defined in the
+    bibliography file (see below) and is often the first author’s surname
+    followed by the year of publication, for example `@pollack_should_2007`.
+
+-   A bibliographic data source, for example a BibLaTeX (.bib) or BibTeX
+    (.bibtex) file.
+
+-   Optionally, a CSL file which specifies the formatting to use when generating
+    the citations and bibliography.
+
+The easiest way to add a citation is to use the visual editor which allows you
+to add citations from a variety of sources including: by doi, from Zotero and by
+searches of [Crossref](https://www.crossref.org/),
+[DataCite](https://datacite.org/), or
+[PubMed](https://pubmed.ncbi.nlm.nih.gov/).
+
+🎬 Switch to visual using the button or (Control-Shift-F4)
+
+Go to the methods section where we have this text:
+
+::: blockquote
+Analysis was carried out with R and tidyverse packages.
+:::
+
+🎬 Put your cursor after tidyverse and do Insert \| Citation (Control-Shift-F8)
+
+🎬 Chose R Package and search for tidyverse
+
+Note that it says (towards the end) that it will Create a bibliography file
+called `references.bib` and add the citation to it.
+
+🎬 Click Insert
+
+🎬 Hit Render (Ctrl-Shift-K)
+
+Ta da! You have a citation in the text and a bibliography at the end of the
+document.
+
+Open `references.bib` and you will see the BibTex entry for tidyverse. You can
+edit the BibTex entry to add other references to `references.bib`:
+
+-   by copying and pasting BibTex entries manually from other sources.
+-   using the Insert \| Citation (Control-Shift-F8) option and adding by doi,
+    through a search, very usefully, a Zotero library if you have it set up.
+
+We will add the reference for R itself. You can find the reference for R using
+`citation()`:
+
+🎬 Get the reference for the version of R you are using:
+
+```{r}
+citation()
+```
+
+🎬 Copy the BibTex entry (starts with `@` and ends with `}` ) and paste it into
+`references.bib`
+
+🎬 Edit in a `key` (I used `R-core`) and save.
+
+🎬 Put your cursor after R, do Insert \| Citation (Control-Shift-F8), choose
+Bibliography and add `R-core` and Insert.
+
+🎬 Hit Render (Ctrl-Shift-K)
+
+We are now going to use an article by @pollack_should_2007 as a reference for
+this statement:
+
+::: blockquote
+There is a relationship between wealth and health
+:::
+
+This article is available here:
+
+<https://www.sciencedirect.com/science/article/pii/S0749379707003145?via%3Dihub>
+
+If you are using a reference manager you may be using a browser extension to
+save the article. Otherwise Click Cite and export to BibTex.
+
+Copy the contents of the BibTex file and paste it into `references.bib` in your
+project folder. Edit the entry to add a key (I used `pollack_should_2007`) and
+save.
+
+🎬 Put your cursor after "wealth and health", do Insert \| Citation
+(Control-Shift-F8), choose Bibliography and add `pollack_should_2007` and
+Insert.
+
+If you have any trouble getting hold of the BibTex entry, you can save
+[pollack_should_2007.bib](pollack_should_2007.bib) and copy the contents into
+`references.bib` in your project folder.
+
+🎬 Hit Render (Ctrl-Shift-K)
 
 ## PDF output
 
