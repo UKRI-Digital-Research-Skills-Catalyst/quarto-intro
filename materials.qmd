@@ -44,7 +44,7 @@ inline <- function(x = "") paste0("`` `r ", x, "` ``")
         code chunks in Markdown documents. It was created by JJ Allaire and
         Yihui Xie early in 2014 but has been worked on by many others since.
 
--   Mutli-language: Python, R, Julia, and Observable.
+-   Multi-language: Python, R, Julia, and Observable.
 
 -   Include auto-numbered equations, figures and tables that can be cross
     referenced
@@ -104,9 +104,13 @@ knitr::kable(gapminder) |>
 
 -   I used `ngo-report`
 
--   Choose Engine: Knitr
+-   Choose Engine: Knitr[^2]
 
 -   Turn visual markdown editor off (for now)
+
+[^2]: The engine determines how the code in the document is executed. Knitr is
+    the R-based engine - it processes R code chunks and inline R expressions.
+    Quarto also supports Jupyter (for Python) and ObservableJS
 
 ### Change some RStudio settings
 
@@ -118,9 +122,12 @@ knitr::kable(gapminder) |>
 
     -   Turn "Save workspace to .RData on exit" to Never
 
--   R Markdown:
+-   R Markdown[^3]:
 
     -   Turn "Show output preview in:" to Viewer pane
+
+[^3]: The similarity between markdown and quarto means that RStudio uses R
+    Markdown settings to control Quarto's preview behaviour.
 
 ### Your project contains
 
@@ -128,7 +135,7 @@ knitr::kable(gapminder) |>
 
 -   `_quarto.yml` - the configuration file
 
--   `ngo-report.md` - the main document containing some template text
+-   `ngo-report.qmd` - the main document containing some template text
 
 The code is normal functioning code. You can run it interactively as you write
 your report.
@@ -195,7 +202,9 @@ Code chunk options
 
 -   `echo: false` code will not be included in output
 -   `include: true` output will be included
--   `error: false` halt render if a code error occurs
+-   `error: false` the document will not render if a code error occurs
+-   `error: true` the document will render if a code error occurs and the errors
+    are displayed in the output instead of stopping the render
 -   `message: false` messages and warnings will not be included
 -   `warning: false`
 
@@ -239,8 +248,9 @@ in action.
 library(tidyverse)
 ```
 
-`#| label: load-packages` is a code chunk label. These are useful (here) and
-essential (later) for cross-referencing.
+`#| label: load-packages` is a code chunk label. These are useful here for
+navigating between chunks in RStudio, and essential later for cross-referencing
+figures and tables
 
 ### Formatting text
 
@@ -339,7 +349,8 @@ get more data? Or want to make a report for a subset of the data?
 -   In fact, any code output can be inserted directly into the text of a .qmd
     file using inline code.
 
-Inline code goes between \`r\` and \` .
+Inline code goes between \`r\` and \` i., you type a backtick, the letter r, a
+space, your R expression, then a closing backtick.
 
 For example by writing:
 
@@ -360,7 +371,7 @@ The squareroot of 2 is `r sqrt(2)`
 n_years <- length(unique(gapminder$year))
 min_year <- min(gapminder$year)
 max_year <- max(gapminder$year)
-n_counties <- length(unique(gapminder$country))
+n_countries <- length(unique(gapminder$country))
 
 ```
 
@@ -369,7 +380,7 @@ n_counties <- length(unique(gapminder$country))
 ::: blockquote
 We took per capita GDP and life expectancy data from `r inline('n_years')` years
 (from `r inline('min_year')` to `r inline('max_year')`) for each of
-`r inline('n_counties')` countries. Analysis was carried out with R and
+`r inline('n_countries')` countries. Analysis was carried out with R and
 tidyverse packages.
 :::
 
@@ -384,8 +395,8 @@ it in a table.
 🎬 Add a small piece of text to the results section:
 
 ::: blockquote
-Data about about the five most populated countries in `r inline('max_year')` is
-shown in Table 1.
+Data about the five most populated countries in `r inline('max_year')` is shown
+in Table 1.
 :::
 
 🎬 Add a code chunk with:
@@ -400,8 +411,8 @@ max_year_top_pop <- gapminder |>
 ```
 
 If you run the code chunk interactively, you will see the data frame
-`max_year_pop_pop` in the Environment pane. Highlighting and executing the name
-`max_year_pop_pop` will show the data frame in qmd.
+`max_year_top_pop` in the Environment pane. Highlighting and executing the name
+`max_year_top_pop` will show the data frame in qmd.
 
 If you want the table to appear in the rendered output you need to print.
 
@@ -416,9 +427,9 @@ max_year_top_pop
 🎬 Hit Render (Ctrl-Shift-K)
 
 As you can see, this is not a very nice table. We can use the `kable` function
-from the `knitr`[^2] to make a nice table.
+from the `knitr`[^4] to make a nice table.
 
-[^2]: There are several packages for formatting tables in R such as
+[^4]: There are several packages for formatting tables in R such as
     [**`gt`**](https://gt.rstudio.com/) and
     [**`formattable`**](https://renkun-ken.github.io/formattable/) for HTML
     tables and
@@ -460,7 +471,7 @@ To cross reference we can refer to the table in the text with
 🎬 Edit the text to say:
 
 ::: blockquote
-Data about about the five most populated countries in is shown in
+Data about the five most populated countries in is shown in
 `@tbl-max-year-top-pop`
 :::
 
@@ -567,12 +578,13 @@ legend. This is more flexible than `fig-cap` because:
 
 🎬 Add a div by:
 
--   removing the `fig-cap` option **and** the `label` option
+-   removing the `fig-cap` option **and** the `label` option. The label itself
+    moves from the chunk to the div — it is not deleted entirely
 
 -   adding `:::` before and after the code chunk
 
 -   placing the label after the opening `:::` like this: `:::{#fig-gdp-life}`
-    Note the`#` is important for numbering
+    Note the `#` is important for numbering
 
 -   Putting the legend text between the code chunk and the closing `:::`
 
