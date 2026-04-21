@@ -163,7 +163,7 @@ format:
 
 ### Add some content
 
-🎬 Add a code chunk (Ctrl-Shift-I) for a simple graph.
+🎬 Add a code chunk (Ctrl-Alt-I) for a simple graph.
 
 ```{r}
 #| echo: fenced
@@ -349,8 +349,8 @@ get more data? Or want to make a report for a subset of the data?
 -   In fact, any code output can be inserted directly into the text of a .qmd
     file using inline code.
 
-Inline code goes between \`r\` and \` i., you type a backtick, the letter r, a
-space, your R expression, then a closing backtick.
+Inline code goes between \`r\` and \`. That is, you type a backtick, the letter
+r, a space, your R expression, then a closing backtick.
 
 For example by writing:
 
