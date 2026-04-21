@@ -19,15 +19,16 @@ if (Sys.which("quarto") == "") {
   message("------------------------------------------------")
   message("🔍 Checking TinyTeX status...")
   
-  # Ask Quarto what tools it has listed
+  # Ask Quarto what tools it has listed using the updated command
   # We use 'tryCatch' in case the command fails entirely
   tools_info <- tryCatch(
-    system("quarto tools list", intern = TRUE), 
+    system("quarto tools", intern = TRUE), 
     error = function(e) character(0)
   )
   
-  # logic: Is tinytex in that list?
-  is_installed <- any(grepl("tinytex", tools_info, ignore.case = TRUE))
+  # Logic: Is tinytex in that list AND marked as "Up to date" or "Installed"?
+  # We use regex .* to bridge the gap between the tool name and its status
+  is_installed <- any(grepl("tinytex.*(Up to date|Installed)", tools_info, ignore.case = TRUE))
   
   if (is_installed) {
     message("✅ TinyTeX is already installed. Skipping download.")
@@ -55,10 +56,10 @@ tryCatch({
   message("✅ Tidyverse loaded")
   message("✅ Gapminder data loaded")
   
-  # Final check of the tools list
-  final_check <- system("quarto tools list", intern = TRUE)
+  # Final check of the tools list using the updated command
+  final_check <- system("quarto tools", intern = TRUE)
   
-  if (any(grepl("tinytex", final_check, ignore.case = TRUE))) {
+  if (any(grepl("tinytex.*(Up to date|Installed)", final_check, ignore.case = TRUE))) {
     message("✅ TinyTeX is registered") 
     message("\n🎉 READY FOR WORKSHOP! You are good to go.")
   } else {
