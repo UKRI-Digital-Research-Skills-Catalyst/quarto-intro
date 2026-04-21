@@ -225,9 +225,9 @@ div.csl-indent {
   <li><a href="#the-visual-editor" id="toc-the-visual-editor" class="nav-link" data-scroll-target="#the-visual-editor">The Visual editor!</a></li>
   <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a></li>
   <li><a href="#pdf-output" id="toc-pdf-output" class="nav-link" data-scroll-target="#pdf-output">PDF output</a></li>
-  <li><a href="#parameterised-reports" id="toc-parameterised-reports" class="nav-link" data-scroll-target="#parameterised-reports">Parameterised reports</a></li>
   </ul>
 </li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></nav>
     </div>
@@ -244,7 +244,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">20 April, 2026</p>
+      <p class="date">21 April, 2026</p>
     </div>
   </div>
   
@@ -14472,9 +14472,36 @@ citing R packages.</code></pre>
 <p>If you have any trouble getting hold of the BibTex entry, you can save <a href="pollack_should_2007.bib">pollack_should_2007.bib</a> and copy the contents into <code>references.bib</code> in your project folder.</p>
 <p>🎬 Hit Render (Ctrl-Shift-K)</p>
 </section><section id="pdf-output" class="level2"><h2 class="anchored" data-anchor-id="pdf-output">PDF output</h2>
-</section><section id="parameterised-reports" class="level2"><h2 class="anchored" data-anchor-id="parameterised-reports">Parameterised reports</h2>
+<p>To output to PDF instead of HTML, we need to change the <code>format</code> in the YAML header.</p>
+<p>🎬 Put your cursor after html and press enter to get a new line and add <code>pdf</code>. Then put put cursor on the html and do Ctrl-Shift-C to comment it out:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"The relationship between Gross Domestic Product per capita and Life Expectancy."</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Emma Rand"</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">engine</span><span class="kw">:</span><span class="at"> knitr</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co">  # html</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="at">  pdf</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">include</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">error</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>🎬 Hit Render (Ctrl-Shift-K)</p>
+</section></section><section id="summary" class="level1"><h1>Summary</h1>
+<ul>
+<li><p>Quarto is a Mutli-language scientific publishing system for creating dynamic reproducible reports in a many formats. It is based on R Markdown.</p></li>
+<li><p>The YAML header provides metadata and sets the default behaviour for the document</p></li>
+<li><p>Code chunk options determine how/whether they run whether code/output is included in the rendered document</p></li>
+<li><p>Code can be run interactively</p></li>
+<li><p>“Divs” are used to group content together and apply styling to that content.</p></li>
+<li><p>Figures, images, tables and equations can be numbered automatically and cross referenced in text. The <code>fig-</code> and <code>tbl-</code> (etc) prefixes are important for this.</p></li>
+<li><p>You can add citations and references.</p></li>
+</ul>
 <p>Pages made with R <span class="citation" data-cites="R-core">(<a href="#ref-R-core" role="doc-biblioref">R Core Team 2026</a>)</span>, Quarto <span class="citation" data-cites="Allaire_Quarto_2026">(<a href="#ref-Allaire_Quarto_2026" role="doc-biblioref">Allaire et al. 2026</a>)</span>, <code>knitr</code> <span class="citation" data-cites="knitr1 knitr2 knitr3">(<a href="#ref-knitr1" role="doc-biblioref">Xie 2025</a>, <a href="#ref-knitr2" role="doc-biblioref">2015</a>, <a href="#ref-knitr3" role="doc-biblioref">2014</a>)</span>, <code>kableExtra</code> <span class="citation" data-cites="kableExtra">(<a href="#ref-kableExtra" role="doc-biblioref">Zhu 2024</a>)</span></p>
-</section></section><section id="references" class="level1">
+</section><section id="references" class="level1">
 
 
 

@@ -151,14 +151,7 @@
     "href": "materials.html#pdf-output",
     "title": "Reproducible reports with Quarto",
     "section": "PDF output",
-    "text": "PDF output"
-  },
-  {
-    "objectID": "materials.html#parameterised-reports",
-    "href": "materials.html#parameterised-reports",
-    "title": "Reproducible reports with Quarto",
-    "section": "Parameterised reports",
-    "text": "Parameterised reports\nPages made with R (R Core Team 2026), Quarto (Allaire et al. 2026), knitr (Xie 2025, 2015, 2014), kableExtra (Zhu 2024)"
+    "text": "PDF output\nTo output to PDF instead of HTML, we need to change the format in the YAML header.\n🎬 Put your cursor after html and press enter to get a new line and add pdf. Then put put cursor on the html and do Ctrl-Shift-C to comment it out:\n---\ntitle: \"The relationship between Gross Domestic Product per capita and Life Expectancy.\"\nauthor: \"Emma Rand\"\nengine: knitr\nformat:\n  # html\n  pdf\nexecute:\n  echo: false\n  include: true\n  error: false\n  message: false\n  warning: false\n\n---\n🎬 Hit Render (Ctrl-Shift-K)"
   },
   {
     "objectID": "materials.html#footnotes",
