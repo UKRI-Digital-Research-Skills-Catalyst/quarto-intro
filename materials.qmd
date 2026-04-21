@@ -719,7 +719,52 @@ If you have any trouble getting hold of the BibTex entry, you can save
 
 ## PDF output
 
-## Parameterised reports
+To output to PDF instead of HTML, we need to change the `format` in the YAML
+header.
+
+🎬 Put your cursor after html and press enter to get a new line and add `pdf`.
+Then put put cursor on the html and do Ctrl-Shift-C to comment it out:
+
+``` yml
+---
+title: "The relationship between Gross Domestic Product per capita and Life Expectancy."
+author: "Emma Rand"
+engine: knitr
+format:
+  # html
+  pdf
+execute:
+  echo: false
+  include: true
+  error: false
+  message: false
+  warning: false
+
+---
+```
+
+🎬 Hit Render (Ctrl-Shift-K)
+
+# Summary
+
+-   Quarto is a Mutli-language scientific publishing system for creating dynamic
+    reproducible reports in a many formats. It is based on R Markdown.
+
+-   The YAML header provides metadata and sets the default behaviour for the
+    document
+
+-   Code chunk options determine how/whether they run whether code/output is
+    included in the rendered document
+
+-   Code can be run interactively
+
+-   “Divs” are used to group content together and apply styling to that content.
+
+-   Figures, images, tables and equations can be numbered automatically and
+    cross referenced in text. The `fig-` and `tbl-` (etc) prefixes are important
+    for this.
+
+-   You can add citations and references.
 
 Pages made with R [@R-core], Quarto [@Allaire_Quarto_2026], `knitr` [@knitr1;
 @knitr2; @knitr3], `kableExtra` [@kableExtra]
