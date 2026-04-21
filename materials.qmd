@@ -647,7 +647,7 @@ searches of [Crossref](https://www.crossref.org/),
 [DataCite](https://datacite.org/), or
 [PubMed](https://pubmed.ncbi.nlm.nih.gov/).
 
-🎬 Switch to visual using the button or (Control-Shift-F4)
+🎬 Switch to visual using the button or (Ctrl-Shift-F4)
 
 Go to the methods section where we have this text:
 
@@ -655,7 +655,7 @@ Go to the methods section where we have this text:
 Analysis was carried out with R and tidyverse packages.
 :::
 
-🎬 Put your cursor after tidyverse and do Insert \| Citation (Control-Shift-F8)
+🎬 Put your cursor after tidyverse and do Insert \| Citation (Ctrl-Shift-F8)
 
 🎬 Chose R Package and search for tidyverse
 
@@ -673,7 +673,7 @@ Open `references.bib` and you will see the BibTex entry for tidyverse. You can
 edit the BibTex entry to add other references to `references.bib`:
 
 -   by copying and pasting BibTex entries manually from other sources.
--   using the Insert \| Citation (Control-Shift-F8) option and adding by doi,
+-   using the Insert \| Citation (Ctrl-Shift-F8) option and adding by doi,
     through a search, very usefully, a Zotero library if you have it set up.
 
 We will add the reference for R itself. You can find the reference for R using
@@ -690,7 +690,7 @@ citation()
 
 🎬 Edit in a `key` (I used `R-core`) and save.
 
-🎬 Put your cursor after R, do Insert \| Citation (Control-Shift-F8), choose
+🎬 Put your cursor after R, do Insert \| Citation (Ctrl-Shift-F8), choose
 Bibliography and add `R-core` and Insert.
 
 🎬 Hit Render (Ctrl-Shift-K)
@@ -714,8 +714,7 @@ project folder. Edit the entry to add a key (I used `pollack_should_2007`) and
 save.
 
 🎬 Put your cursor after "wealth and health", do Insert \| Citation
-(Control-Shift-F8), choose Bibliography and add `pollack_should_2007` and
-Insert.
+(Ctrl-Shift-F8), choose Bibliography and add `pollack_should_2007` and Insert.
 
 If you have any trouble getting hold of the BibTex entry, you can save
 [pollack_should_2007.bib](pollack_should_2007.bib) and copy the contents into
