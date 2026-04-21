@@ -723,6 +723,10 @@ If you have any trouble getting hold of the BibTex entry, you can save
 
 🎬 Hit Render (Ctrl-Shift-K)
 
+::: {.callout-important title="Challenge"}
+Can you add citations for R and packages to the figure legends?
+:::
+
 ## PDF output
 
 To output to PDF instead of HTML, we need to change the `format` in the YAML
