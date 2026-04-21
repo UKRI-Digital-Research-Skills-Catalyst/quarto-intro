@@ -485,6 +485,12 @@ label of the code chunk that prints the table and to refer to it in the text
 with `@` followed by the chunk label.
 :::
 
+::: {.callout-important title="Challenge"}
+Try change the order of the table generating chunks and re-rendering. You will
+see that the table numbers are automatically updated and the cross references in
+the text are also automatically updated.
+:::
+
 ## Figures
 
 Figures can be included in a similar way. The label of the code chunk which
