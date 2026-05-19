@@ -1,5 +1,47 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "This on-line workshop introduces you to Quarto, a scientific and technical publishing system designed to facilitate reproducible working practices by allowing you to integrate code, results, and narrative text in a single document. Quarto supports multiple programming languages, including R, Python, Julia, and Observable JavaScript.\nThe workshop will be taught using R and RStudio, but the concepts are applicable to other programming languages supported by Quarto. Some familiarity with the layout of RStudio and beginner level knowledge of R is assumed.\nBy the end of this workshop, participants will be able to transform raw data into a professional, polished report (HTML, Word, or PDF) where the text and analysis remain in sync. We will use the Gapminder data on global development to demonstrate how to produce a reproducible country profile report that analyses the relationship between wealth (GDP per capita) and health (Life Expectancy) over the last 50 years.\n\n\n\nThis workshop is intended for researchers and research support staff in academia or industry or others that regularly produce reports with data analysis.\n\n\n\nThe on-line workshop is on 22 July 2026 1000 - 1200 GMT\nRegister for the workshop\n\n\n\nParticipants will learn how to:\n\nConstruct a structured Quarto (.qmd) document using YAML headers to define metadata (title, author, table of contents).\nFormat narrative text using Markdown syntax to create headers, lists, and emphasis without relying on word processor GUIs.\nIntegrate R code chunks into prose to produce tables and visualizations directly within the document.\nImplement “Inline Code” to insert dynamic statistics (e.g., specific means or p-values) directly into sentences, ensuring numbers update automatically if the data changes.\nControl report output using “Chunk Options” to hide raw code from the final reader while keeping the results visible.\nRender a single source document into multiple output formats (HTML for web, MS Word for collaboration, or PDF for publication).\n\n\n\n\nEmma Rand is a Professor in the Department of Biology at the University of York where she specialises in teaching data science and reproducibility, particularly to those who do not see themselves as programmers. She leads a UKRI funded projects called Cloud-SPAN and the UKRI Digital Research Skills Catalyst."
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Welcome",
+    "section": "",
+    "text": "This on-line workshop introduces you to Quarto, a scientific and technical publishing system designed to facilitate reproducible working practices by allowing you to integrate code, results, and narrative text in a single document. Quarto supports multiple programming languages, including R, Python, Julia, and Observable JavaScript.\nThe workshop will be taught using R and RStudio, but the concepts are applicable to other programming languages supported by Quarto. Some familiarity with the layout of RStudio and beginner level knowledge of R is assumed.\nBy the end of this workshop, participants will be able to transform raw data into a professional, polished report (HTML, Word, or PDF) where the text and analysis remain in sync. We will use the Gapminder data on global development to demonstrate how to produce a reproducible country profile report that analyses the relationship between wealth (GDP per capita) and health (Life Expectancy) over the last 50 years."
+  },
+  {
+    "objectID": "index.html#audience",
+    "href": "index.html#audience",
+    "title": "Welcome",
+    "section": "",
+    "text": "This workshop is intended for researchers and research support staff in academia or industry or others that regularly produce reports with data analysis."
+  },
+  {
+    "objectID": "index.html#how-to-sign-up",
+    "href": "index.html#how-to-sign-up",
+    "title": "Welcome",
+    "section": "",
+    "text": "The on-line workshop is on 22 July 2026 1000 - 1200 GMT\nRegister for the workshop"
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Welcome",
+    "section": "",
+    "text": "Participants will learn how to:\n\nConstruct a structured Quarto (.qmd) document using YAML headers to define metadata (title, author, table of contents).\nFormat narrative text using Markdown syntax to create headers, lists, and emphasis without relying on word processor GUIs.\nIntegrate R code chunks into prose to produce tables and visualizations directly within the document.\nImplement “Inline Code” to insert dynamic statistics (e.g., specific means or p-values) directly into sentences, ensuring numbers update automatically if the data changes.\nControl report output using “Chunk Options” to hide raw code from the final reader while keeping the results visible.\nRender a single source document into multiple output formats (HTML for web, MS Word for collaboration, or PDF for publication)."
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "Welcome",
+    "section": "",
+    "text": "Emma Rand is a Professor in the Department of Biology at the University of York where she specialises in teaching data science and reproducibility, particularly to those who do not see themselves as programmers. She leads a UKRI funded projects called Cloud-SPAN and the UKRI Digital Research Skills Catalyst."
+  },
+  {
     "objectID": "LICENSE.html",
     "href": "LICENSE.html",
     "title": "CC BY-NC-SA 4.0 Attribution-NonCommercial-ShareAlike 4.0 International",
@@ -116,7 +158,7 @@
     "href": "materials.html#citations",
     "title": "Reproducible reports with Quarto",
     "section": "Citations",
-    "text": "Citations\nQuarto will automatically generate citations and a bibliography in a number of styles. To use this capability, you need:\n\nthe citation to be formatted in markdown @key where key is the citation key for the reference you want to cite. The citation key is defined in the bibliography file (see below) and is often the first author’s surname followed by the year of publication, for example @pollack_should_2007.\nA bibliographic data source, for example a BibLaTeX (.bib) or BibTeX (.bibtex) file.\nOptionally, a CSL file which specifies the formatting to use when generating the citations and bibliography.\n\nThe easiest way to add a citation is to use the visual editor which allows you to add citations from a variety of sources including: by doi, from Zotero and by searches of Crossref, DataCite, or PubMed.\n🎬 Switch to visual using the button or (Ctrl-Shift-F4)\nGo to the methods section where we have this text:\n\nAnalysis was carried out with R and tidyverse packages.\n\n🎬 Put your cursor after tidyverse and do Insert | Citation (Ctrl-Shift-F8)\n🎬 Chose R Package and search for tidyverse\nNote that it says (towards the end) that it will Create a bibliography file called references.bib and add the citation to it.\n🎬 Click Insert\n🎬 Hit Render (Ctrl-Shift-K)\nTa da! You have a citation in the text and a bibliography at the end of the document.\nOpen references.bib and you will see the BibTex entry for tidyverse. You can edit the BibTex entry to add other references to references.bib:\n\nby copying and pasting BibTex entries manually from other sources.\nusing the Insert | Citation (Ctrl-Shift-F8) option and adding by doi, through a search, very usefully, a Zotero library if you have it set up.\n\nWe will add the reference for R itself. You can find the reference for R using citation():\n🎬 Get the reference for the version of R you are using:\n\ncitation()\n\nTo cite R in publications use:\n\n  R Core Team (2026). _R: A Language and Environment for Statistical\n  Computing_. R Foundation for Statistical Computing, Vienna, Austria.\n  &lt;https://www.R-project.org/&gt;.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {R: A Language and Environment for Statistical Computing},\n    author = {{R Core Team}},\n    organization = {R Foundation for Statistical Computing},\n    address = {Vienna, Austria},\n    year = {2026},\n    url = {https://www.R-project.org/},\n  }\n\nWe have invested a lot of time and effort in creating R, please cite it\nwhen using it for data analysis. See also 'citation(\"pkgname\")' for\nciting R packages.\n\n\n🎬 Copy the BibTex entry (starts with @ and ends with } ) and paste it into references.bib\n🎬 Edit in a key (I used R-core) and save.\n🎬 Put your cursor after R, do Insert | Citation (Ctrl-Shift-F8), choose Bibliography and add R-core and Insert.\n🎬 Hit Render (Ctrl-Shift-K)\nWe are now going to use an article by Pollack et al. (2007) as a reference for this statement:\n\nThere is a relationship between wealth and health\n\nThis article is available here:\nhttps://www.sciencedirect.com/science/article/pii/S0749379707003145?via%3Dihub\nIf you are using a reference manager you may be using a browser extension to save the article. Otherwise Click Cite and export to BibTex.\nCopy the contents of the BibTex file and paste it into references.bib in your project folder. Edit the entry to add a key (I used pollack_should_2007) and save.\n🎬 Put your cursor after “wealth and health”, do Insert | Citation (Ctrl-Shift-F8), choose Bibliography and add pollack_should_2007 and Insert.\nIf you have any trouble getting hold of the BibTex entry, you can save pollack_should_2007.bib and copy the contents into references.bib in your project folder.\n🎬 Hit Render (Ctrl-Shift-K)\n\n\n\n\n\n\nImportantChallenge\n\n\n\nCan you add citations for R and packages to the figure legends?"
+    "text": "Citations\nQuarto will automatically generate citations and a bibliography in a number of styles. To use this capability, you need:\n\nthe citation to be formatted in markdown @key where key is the citation key for the reference you want to cite. The citation key is defined in the bibliography file (see below) and is often the first author’s surname followed by the year of publication, for example @pollack_should_2007.\nA bibliographic data source, for example a BibLaTeX (.bib) or BibTeX (.bibtex) file.\nOptionally, a CSL file which specifies the formatting to use when generating the citations and bibliography.\n\nThe easiest way to add a citation is to use the visual editor which allows you to add citations from a variety of sources including: by doi, from Zotero and by searches of Crossref, DataCite, or PubMed.\n🎬 Switch to visual using the button or (Ctrl-Shift-F4)\nGo to the methods section where we have this text:\n\nAnalysis was carried out with R and tidyverse packages.\n\n🎬 Put your cursor after tidyverse and do Insert | Citation (Ctrl-Shift-F8)\n🎬 Chose R Package and search for tidyverse\nNote that it says (towards the end) that it will Create a bibliography file called references.bib and add the citation to it.\n🎬 Click Insert\n🎬 Hit Render (Ctrl-Shift-K)\nTa da! You have a citation in the text and a bibliography at the end of the document.\nOpen references.bib and you will see the BibTex entry for tidyverse. You can edit the BibTex entry to add other references to references.bib:\n\nby copying and pasting BibTex entries manually from other sources.\nusing the Insert | Citation (Ctrl-Shift-F8) option and adding by doi, through a search, very usefully, a Zotero library if you have it set up.\n\nWe will add the reference for R itself. You can find the reference for R using citation():\n🎬 Get the reference for the version of R you are using:\n\ncitation()\n\nTo cite R in publications use:\n\n  R Core Team (2026). _R: A Language and Environment for Statistical\n  Computing_. R Foundation for Statistical Computing, Vienna, Austria.\n  doi:10.32614/R.manuals &lt;https://doi.org/10.32614/R.manuals&gt;.\n  &lt;https://www.R-project.org/&gt;.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {R: A Language and Environment for Statistical Computing},\n    author = {{R Core Team}},\n    organization = {R Foundation for Statistical Computing},\n    address = {Vienna, Austria},\n    year = {2026},\n    doi = {10.32614/R.manuals},\n    url = {https://www.R-project.org/},\n  }\n\nWe have invested a lot of time and effort in creating R, please cite it\nwhen using it for data analysis. See also 'citation(\"pkgname\")' for\nciting R packages.\n\n\n🎬 Copy the BibTex entry (starts with @ and ends with } ) and paste it into references.bib\n🎬 Edit in a key (I used R-core) and save.\n🎬 Put your cursor after R, do Insert | Citation (Ctrl-Shift-F8), choose Bibliography and add R-core and Insert.\n🎬 Hit Render (Ctrl-Shift-K)\nWe are now going to use an article by Pollack et al. (2007) as a reference for this statement:\n\nThere is a relationship between wealth and health\n\nThis article is available here:\nhttps://www.sciencedirect.com/science/article/pii/S0749379707003145?via%3Dihub\nIf you are using a reference manager you may be using a browser extension to save the article. Otherwise Click Cite and export to BibTex.\nCopy the contents of the BibTex file and paste it into references.bib in your project folder. Edit the entry to add a key (I used pollack_should_2007) and save.\n🎬 Put your cursor after “wealth and health”, do Insert | Citation (Ctrl-Shift-F8), choose Bibliography and add pollack_should_2007 and Insert.\nIf you have any trouble getting hold of the BibTex entry, you can save pollack_should_2007.bib and copy the contents into references.bib in your project folder.\n🎬 Hit Render (Ctrl-Shift-K)\n\n\n\n\n\n\nImportantChallenge\n\n\n\nCan you add citations for R and packages to the figure legends?"
   },
   {
     "objectID": "materials.html#pdf-output",
@@ -152,47 +194,5 @@
     "title": "Pre-course instructions",
     "section": "Step 2: Install packages",
     "text": "Step 2: Install packages\nWe will use several R packages during the workshop. To install them, download setup.R from the course website and open it in RStudio and run it by clicking “Source” in the top right corner of the script editor.\nIf you are using Posit Cloud, use the “Upload” button in the Files pane to upload setup.R, then open it and click “Source”."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "This on-line workshop introduces you to Quarto, a scientific and technical publishing system designed to facilitate reproducible working practices by allowing you to integrate code, results, and narrative text in a single document. Quarto supports multiple programming languages, including R, Python, Julia, and Observable JavaScript.\nThe workshop will be taught using R and RStudio, but the concepts are applicable to other programming languages supported by Quarto. Some familiarity with the layout of RStudio and beginner level knowledge of R is assumed.\nBy the end of this workshop, participants will be able to transform raw data into a professional, polished report (HTML, Word, or PDF) where the text and analysis remain in sync. We will use the Gapminder data on global development to demonstrate how to produce a reproducible country profile report that analyses the relationship between wealth (GDP per capita) and health (Life Expectancy) over the last 50 years.\n\n\n\nThis workshop is intended for researchers and research support staff in academia or industry or others that regularly produce reports with data analysis.\n\n\n\nThe on-line workshop is on 22 April 2026 1400 - 1600 GMT\nRegister for the workshop\n\n\n\nParticipants will learn how to:\n\nConstruct a structured Quarto (.qmd) document using YAML headers to define metadata (title, author, table of contents).\nFormat narrative text using Markdown syntax to create headers, lists, and emphasis without relying on word processor GUIs.\nIntegrate R code chunks into prose to produce tables and visualizations directly within the document.\nImplement “Inline Code” to insert dynamic statistics (e.g., specific means or p-values) directly into sentences, ensuring numbers update automatically if the data changes.\nControl report output using “Chunk Options” to hide raw code from the final reader while keeping the results visible.\nRender a single source document into multiple output formats (HTML for web, MS Word for collaboration, or PDF for publication).\n\n\n\n\nEmma Rand is a Professor in the Department of Biology at the University of York where she specialises in teaching data science and reproducibility, particularly to those who do not see themselves as programmers. She leads a UKRI funded projects called Cloud-SPAN and the UKRI Digital Research Skills Catalyst."
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "Welcome",
-    "section": "",
-    "text": "This on-line workshop introduces you to Quarto, a scientific and technical publishing system designed to facilitate reproducible working practices by allowing you to integrate code, results, and narrative text in a single document. Quarto supports multiple programming languages, including R, Python, Julia, and Observable JavaScript.\nThe workshop will be taught using R and RStudio, but the concepts are applicable to other programming languages supported by Quarto. Some familiarity with the layout of RStudio and beginner level knowledge of R is assumed.\nBy the end of this workshop, participants will be able to transform raw data into a professional, polished report (HTML, Word, or PDF) where the text and analysis remain in sync. We will use the Gapminder data on global development to demonstrate how to produce a reproducible country profile report that analyses the relationship between wealth (GDP per capita) and health (Life Expectancy) over the last 50 years."
-  },
-  {
-    "objectID": "index.html#audience",
-    "href": "index.html#audience",
-    "title": "Welcome",
-    "section": "",
-    "text": "This workshop is intended for researchers and research support staff in academia or industry or others that regularly produce reports with data analysis."
-  },
-  {
-    "objectID": "index.html#how-to-sign-up",
-    "href": "index.html#how-to-sign-up",
-    "title": "Welcome",
-    "section": "",
-    "text": "The on-line workshop is on 22 April 2026 1400 - 1600 GMT\nRegister for the workshop"
-  },
-  {
-    "objectID": "index.html#learning-objectives",
-    "href": "index.html#learning-objectives",
-    "title": "Welcome",
-    "section": "",
-    "text": "Participants will learn how to:\n\nConstruct a structured Quarto (.qmd) document using YAML headers to define metadata (title, author, table of contents).\nFormat narrative text using Markdown syntax to create headers, lists, and emphasis without relying on word processor GUIs.\nIntegrate R code chunks into prose to produce tables and visualizations directly within the document.\nImplement “Inline Code” to insert dynamic statistics (e.g., specific means or p-values) directly into sentences, ensuring numbers update automatically if the data changes.\nControl report output using “Chunk Options” to hide raw code from the final reader while keeping the results visible.\nRender a single source document into multiple output formats (HTML for web, MS Word for collaboration, or PDF for publication)."
-  },
-  {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "Welcome",
-    "section": "",
-    "text": "Emma Rand is a Professor in the Department of Biology at the University of York where she specialises in teaching data science and reproducibility, particularly to those who do not see themselves as programmers. She leads a UKRI funded projects called Cloud-SPAN and the UKRI Digital Research Skills Catalyst."
   }
 ]
