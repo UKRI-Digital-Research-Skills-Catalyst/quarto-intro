@@ -17,7 +17,7 @@ authors:
     orcid: 'https://orcid.org/0000-0002-1358-8275'
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.20524981
+    value: 10.5281/zenodo.18848356'
     description: >-
       UKRI-Digital-Research-Skills-Catalyst/quarto-intro:
       v0.1.0-alpha
@@ -26,7 +26,7 @@ repository-code: >-
   https://github.com/UKRI-Digital-Research-Skills-Catalyst/quarto-intro
 url: >-
   https://ukri-digital-research-skills-catalyst.github.io/quarto-intro/
-repository: 'https://zenodo.org/records/20524981'
+repository: 'https://zenodo.org/records/18848356'
 abstract: >-
   Materials for a two-hour on-line workshop that introduces
   you to Quarto, a scientific and technical publishing
